@@ -1,0 +1,55 @@
+name: Sync to HuggingFace Space
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'prototype/**'
+      - 'Dockerfile'
+      - 'requirements.txt'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to HuggingFace Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # Prepare deploy directory
+          mkdir -p /tmp/hf-deploy
+          
+          # Copy Dockerfile and requirements
+          cp Dockerfile /tmp/hf-deploy/ 2>/dev/null || true
+          cp requirements.txt /tmp/hf-deploy/ 2>/dev/null || true
+          
+          # Copy prototype as app root
+          cp prototype/streamlit_app.py /tmp/hf-deploy/app.py
+          cp -r prototype/src/ /tmp/hf-deploy/src/
+          cp -r prototype/data/ /tmp/hf-deploy/data/ 2>/dev/null || true
+          cp -r prototype/storage/ /tmp/hf-deploy/storage/ 2>/dev/null || true
+          cp -r prototype/templates/ /tmp/hf-deploy/templates/ 2>/dev/null || true
+          mkdir -p /tmp/hf-deploy/outputs
+          
+          # Add README for HF
+          cat > /tmp/hf-deploy/README.md << 'EOF'
+          ---
+          title: Manufacturing AI RAG Demo
+          emoji: 🏭
+          colorFrom: blue
+          colorTo: indigo
+          sdk: docker
+          pinned: false
+          ---
+          EOF
+          
+          # Push to HF Space
+          cd /tmp/hf-deploy
+          git init
+          git checkout -b main
+          git add -A
+          git commit -m "sync from GitHub $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push --force https://guilindev:${HF_TOKEN}@huggingface.co/spaces/guilindev/mfg-rag-demo main
