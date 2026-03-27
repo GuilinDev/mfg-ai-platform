@@ -1,0 +1,444 @@
+{
+  "evaluation_date": "2026-03-26T23:14:31.467271",
+  "system": "final_tuned_rag",
+  "total_questions": 9,
+  "correct": 2,
+  "partially_correct": 3,
+  "wrong": 3,
+  "not_found": 1,
+  "errors": 0,
+  "weighted_accuracy_percent": 47.30769230769231,
+  "method_performance": {
+    "quality_filtered": {
+      "count": 5,
+      "average_score": 0.5415384615384615
+    },
+    "exact_pattern": {
+      "count": 4,
+      "average_score": 0.3875
+    }
+  },
+  "historical_comparison": {
+    "baseline_pymupdf": 11.1,
+    "improved_pymupdf4llm": 55.6,
+    "precision_enhanced": 49.6,
+    "final_tuned": 47.30769230769231
+  },
+  "target_achieved": false,
+  "results": [
+    {
+      "id": 1,
+      "question": "What is bending location tolerance?",
+      "expected": "0.300 mm",
+      "actual": "X.X \u00b10.20mm, X.XX \u00b10.10mm, X.XXX \u00b10.050mm, Angle \u03b8\u00b15\u00ba \nSource: 080-3649-E_design_guideline_FPC.pdf (Source 4)",
+      "score": 0.6,
+      "status": "PARTIALLY_CORRECT",
+      "method": "quality_filtered",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_297",
+          "score": 0.8870480060577393,
+          "search_term": null,
+          "preview": "For this reason, bends are usually pre-bent by flex vendors<br>and shipped flat. If a bend is required to keepits shape,a 3D clipmight be able be|16|. |5<br>accidentally on the ODB++ design, so make sure to go back and do a REV CAM<br>compare for the whole design.<br>NA<br>6<br>Traditional polyimide..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_298",
+          "score": 0.8907660245895386,
+          "search_term": null,
+          "preview": "For this reason, bends are usually pre-bent by flex vendors<br>and shipped flat. If a bend is required to keepits shape,a 3D clipmight be able be<br>16|5<br>accidentally on the ODB++ design, so make sure to go back and do a REV CAM<br>compare for the whole design.<br>NA<br>6<br>Traditional polyimide..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_299",
+          "score": 0.9486567378044128,
+          "search_term": null,
+          "preview": "For this reason, bends are usually pre-bent by flex vendors<br>and shipped flat. If a bend is required to keepits shape,a 3D clipmight be able be<br>16|5<br>accidentally on the ODB++ design, so make sure to go back and do a REV CAM<br>compare for the whole design.<br>NA<br>6<br>Traditional polyimide..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_302",
+          "score": 0.9656898975372314,
+          "search_term": null,
+          "preview": "LCP flexes are<br>stiffer and can shipmore easilyin the bent shape.\n|7|To control where vestige tabs can be placed, add a note in the MCO. See Vestige<br>tabs section for more information|67|\n|8|Block Tolerance: feature denoted as:<br>X.X \u00b10.20mm<br>X.XX \u00b10.10mm<br>X.XXX \u00b10.050mm<br>Angle\u03b8\u00b15\u00ba (angle..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_102",
+          "score": 0.9835213422775269,
+          "search_term": null,
+          "preview": "Table 5-2 Bend Categorical Rules. |\ufffdApple Inc.|Size:**Letter**Scale:**NONE**|Page**18 of 93**|\n|Title: Design Guidelines for Flexible Printed Circuits<br>Dwg Number: 080-3649<br>Rev: E. \u00d2\n\nCommodity Code: 01301\n\nP/N: 080-3649\n\n## Inc. Apple\n\n## **Bend Area Keep-out Guide**\n\nFigure 5-2 Bend Area Keep..."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is FPC design guideline of De-cap ?",
+      "expected": "When a flex needs to have different numbers of copper layers for different regions of the same flex, de-cap isrequired at the layer transition to cut away the excess layers. For example, a flex may have two layers of copper forhalf and be only one layer for the other half, with the layer transition being the area for de-cap. The cut awayprocess is done with either a pre-punch of PI and bonding sheet (usually only for 3+ layer flexes) before laminationor with a laser after lamination",
+      "actual": "The FPC de-cap process is a critical design guideline for Flexible Printed Circuits (FPCs) that requires the removal of excess copper layers at layer transitions to accommodate different layer counts in various regions of the same flex. \n\nAccording to the Apple Inc. design guidelines for FPCs (Source 1-5: 080-3649-E_design_guideline_FPC.pdf), de-cap is necessary when a flex needs to have different numbers of copper layers for different regions of the same flex. For instance, a flex may have two layers of copper for half and be only one layer for the other half, with the layer transition being the area for de-cap (Section 7, Source 4).\n\nThe de-cap process involves cutting away the excess layers at the layer transition to ensure a smooth transition between regions with different layer counts. This process can be done in two ways: either by pre-punching the Polyimide (PI) and bonding sheet before lamination (usually for 3+ layer flexes) or by using a laser after lamination (Source 4 and 5).\n\nDe-cap regions can be categorized into two main types: layer transitions with a nearby bend and those without bends. The design guidelines provide specific dimensional requirements for each type, including minimum distances between de-cap and bonding surfaces, de-cap and via distances, and corner radii (Tables 7-1 and 7-2, Source 1-3).\n\nIn summary, the FPC de-cap process is a necessary step in FPC design to accommodate different layer counts in various regions of the same flex. It involves cutting away excess copper layers at layer transitions, which can be done through pre-punching or laser cutting, and requires careful consideration of dimensional guidelines to ensure a reliable and efficient design (Source 1-5: 080-3649-E_design_guideline_FPC.pdf).",
+      "score": 0.8,
+      "status": "CORRECT",
+      "method": "quality_filtered",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_162",
+          "score": 0.8239417672157288,
+          "search_term": null,
+          "preview": "|\ufffdApple Inc.|Size:**Letter**Scale:**NONE**|Page**34 of 93**|\n|Title: Design Guidelines for Flexible Printed Circuits<br>Dwg Number: 080-3649<br>Rev: E. \u00d2. |AppleInc.<br>Commodity Code:01301P/N:080-3649\n|8|Minimum distance de-cap to bonding surface (ACF, solder,<br>etc)|0.600mm|0.500mm\n\nTable 7-1 De-..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_163",
+          "score": 0.9048322439193726,
+          "search_term": null,
+          "preview": "\u00d2. |AppleInc.<br>Commodity Code:01301P/N:080-3649\n|8|Minimum distance de-cap to bonding surface (ACF, solder,<br>etc)|0.600mm|0.500mm\n\nTable 7-1 De-cap dimensional guidelines for De-cap with NO bending nearby\n\nNote: _No DFM sign off required_ colloquially means \u201cthese are the rules that are safe to ..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_164",
+          "score": 0.9152973890304565,
+          "search_term": null,
+          "preview": "|AppleInc.<br>Commodity Code:01301P/N:080-3649\n|8|Minimum distance de-cap to bonding surface (ACF, solder,<br>etc)|0.600mm|0.500mm\n\nTable 7-1 De-cap dimensional guidelines for De-cap with NO bending nearby\n\nNote: _No DFM sign off required_ colloquially means \u201cthese are the rules that are safe to use..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_157",
+          "score": 0.9555562138557434,
+          "search_term": null,
+          "preview": "In addition, whether solder mask overlaps the coverlay or the coverlay overlaps the solder mask is a vendor preference.\n\n## Section 7. De-cap. When a flex needs to have different numbers of copper layers for different regions of the same flex, de-cap is required at the layer transition to cut away t..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_158",
+          "score": 0.9681065678596497,
+          "search_term": null,
+          "preview": "For example, a flex may have two layers of copper for half and be only one layer for the other half, with the layer transition being the area for de-cap. The cut away process is done with either a pre-punch of PI and bonding sheet (usually only for 3+ layer flexes) before lamination or with a laser ..."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the bonding adhesive patch back?",
+      "expected": "After drill hole plasma and wet desmear, the adhesive between 2 FCCL will has etch back. This is to ensure the palm and wet desmear are effective to remove adhesive.",
+      "actual": "The question about the bonding adhesive patch back is not directly answered in the provided sources. However, Source 3 mentions the material consists of a polyimide sheet with an adhesive bonding sheet, with standard material being 0.012 mm PI and 0.015 mm or 0.025 mm adhesive (Source 3: 080-3649-E_design_guideline_FPC.pdf, Page 52 of 93).\n\nAdditionally, Source 4 mentions a minimum effective thickness for local areas of the adhesive, which is 2um (Source 4: 080-3649-E_design_guideline_FPC.pdf, Figure 11-5).\n\nIt is also worth noting that Source 1 and Source 2 provide information on adhesives for use not on stiffeners, with specifications such as minimum web width, minimum total area, and minimum corner radius (Source 1 and Source 2: 080-3649-E_design_guideline_FPC.pdf).\n\nHowever, without more specific information, it is difficult to provide an exact answer to the question about the bonding adhesive patch back. If more context or information is provided, a more precise answer may be possible.",
+      "score": 0.3076923076923077,
+      "status": "WRONG",
+      "method": "quality_filtered",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_345",
+          "score": 0.9328488111495972,
+          "search_term": null,
+          "preview": "|(i)TOMAINTAINTHISDOCUMENT IN CONFIDENCE(ii) NOT TOREPRODUCEORCOPY IT(iii) NOT TOREVEALOR PUBLISH IT IN WHOLEOR INPART\n|\ufffdApple Inc.|Size:**Letter**Scale:**NONE**|Page**74 of 93**|\n|Title: Design Guidelines for Flexible Printed Circuits<br>Dwg Number: 080-3649<br>Rev: E\n\n\u00d2\n\nInc. Apple\n\nCommodity Code..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_346",
+          "score": 1.0534698963165283,
+          "search_term": null,
+          "preview": "These are adhesives that aren\u2019t activated by the flex vendors and are shipped attached to the flex on one side but with a PET liner on the other side. These are often for use in system assembly to quickly and reliably adhere the flex to other materials.. |**Item**|**Material or**<br>**related proces..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_248",
+          "score": 1.08403480052948,
+          "search_term": null,
+          "preview": "The material consists of a polyimide sheet with an adhesive bonding sheet to facilitate lamination to the patterned copper surface of an FPC. Standard material is 0.012 mm PI and 0.015 mm or 0.025 mm adhesive.. |(i)TOMAINTAINTHISDOCUMENT IN CONFIDENCE(ii) NOT TOREPRODUCEORCOPY IT(iii) NOT TOREVEALOR..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_261",
+          "score": 1.0867468118667603,
+          "search_term": null,
+          "preview": "Apple\n\nCommodity Code: 01301\n\nP/N: 080-3649\n\nFigure 11-5 A cross section of a flex where the adhesive is too thin. 2um is the minimum effective thickness for local areas.\n\n## **Photo-imageable Solder Mask Materials**. Photo-imageable solder mask materials (LPI) may be applied to areas where fine-pit..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_339",
+          "score": 1.1354866027832031,
+          "search_term": null,
+          "preview": "Apple\n\nCommodity Code: 01301\n\nP/N: 080-3649\n\n## Section 15. PSAs, TSAs, and EMI shielding. Adhesives, both pressure sensitive adhesives (PSAs) and temperature sensitive adhesives (TSAs) are used in many applications to attach the flex to other surfaces or materials. Common applications include for a..."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is the LPI or Solder mask thickness",
+      "expected": "4-39um",
+      "actual": "5-39 \u00b5m (Source 2: 080-3649-E_design_guideline_FPC.pdf, Source 4: 080-3649-E_design_guideline_FPC.pdf)\n0 ~ 15 \u00b5m (Source 3: 080-2265-J_FPC_Board_Specifications.pdf, Source 5: 080-2265-J_FPC_Board_Specifications.pdf)\n0.000 mm - 0.015 mm (Source 3: 080-2265-J_FPC_Board_Specifications.pdf, Source 5: 080-2265-J_FPC_Board_Specifications.pdf)\n2 um (Source 1: 080-3649-E_design_guideline_FPC.pdf)",
+      "score": 0.0,
+      "status": "WRONG",
+      "method": "quality_filtered",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_261",
+          "score": 0.6814538240432739,
+          "search_term": null,
+          "preview": "Apple\n\nCommodity Code: 01301\n\nP/N: 080-3649\n\nFigure 11-5 A cross section of a flex where the adhesive is too thin. 2um is the minimum effective thickness for local areas.\n\n## **Photo-imageable Solder Mask Materials**. Photo-imageable solder mask materials (LPI) may be applied to areas where fine-pit..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_140",
+          "score": 0.6846244931221008,
+          "search_term": null,
+          "preview": "## **Solder Mask (LPI) categorial guidelines**. |**Item**|**Descriptions**|**Related**<br>**figures or**<br>**page**<br>**numbers**|\n|1|LPI needs to be supported bya stiffener toprevent cracking|NA|\n|2|No solder mask/LPI allowed in anybend area|NA|\n|3|General thickness of LPI is 5-39 \u00b5m (note: there..."
+        },
+        {
+          "file": "080-2265-J_FPC_Board_Specifications.pdf",
+          "chunk_id": "080-2265-J_FPC_Board_Specifications.pdf_chunk_147",
+          "score": 0.7052375078201294,
+          "search_term": null,
+          "preview": "- This shall not apply to the specific locations with a trace between pads.\n\nApple Inc.\n\nP/N: 080-2265\n\nCommodity Code: 01301\n\n## **8.3.3.Solder Mask Thickness for Watch Programs**. FPCB fabrication supplier to seek Apple DFM DRI approval in written before implementing LPI thickness controls on hot ..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_139",
+          "score": 0.7259035110473633,
+          "search_term": null,
+          "preview": "Table 6-3 Coverlay Categorical Rules. ## **Solder Mask (LPI) categorial guidelines**. |**Item**|**Descriptions**|**Related**<br>**figures or**<br>**page**<br>**numbers**|\n|1|LPI needs to be supported bya stiffener toprevent cracking|NA|\n|2|No solder mask/LPI allowed in anybend area|NA|\n|3|General th..."
+        },
+        {
+          "file": "080-2265-J_FPC_Board_Specifications.pdf",
+          "chunk_id": "080-2265-J_FPC_Board_Specifications.pdf_chunk_148",
+          "score": 0.7487229108810425,
+          "search_term": null,
+          "preview": "FPCB fabrication supplier to seek Apple DFM DRI approval in written before implementing LPI thickness controls on hot bar flexes.. Unless specify in MCO or Apple program DRI, the solder mask height **above** the exposed metal surface must be more than 0.000 mm and the absolute maximum height of sold..."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is dimension of EMI shield to coverlay edge ?",
+      "expected": "0.400 mm",
+      "actual": "0.500 mm, 0.400 mm \nSource: 080-3649-E_design_guideline_FPC.pdf (Source 2, Item 9)",
+      "score": 0.6,
+      "status": "PARTIALLY_CORRECT",
+      "method": "exact_pattern",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_261",
+          "score": 1.029686450958252,
+          "search_term": "coverlay edge",
+          "preview": "Apple\n\nCommodity Code: 01301\n\nP/N: 080-3649\n\nFigure 11-5 A cross section of a flex where the adhesive is too thin. 2um is the minimum effective thickness for local areas.\n\n## **Photo-imageable Solder Mask Materials**. Photo-imageable solder mask materials (LPI) may be applied to areas where fine-pit..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_120",
+          "score": 1.07942795753479,
+          "search_term": "coverlay edge",
+          "preview": "|**Item**|**Description**|**No DFM Sign**<br>**Off Required****Dimension on**<br>**Figures 6-1, 6-**<br>**2, & 6-3**|\n**DFM Sign Off**\n**Required**\n|1|Minimum coverlayweb for interior of flex|0.400 mm|<0.400 mm|b|\n|2|Minimum coverlayweb at outline|0.400 mm|0.000 mm|Y|\n|3|Minimum coverlay opening siz..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_147",
+          "score": 1.0844857692718506,
+          "search_term": "coverlay edge",
+          "preview": "Figure 6-7 For coverlay openings for SUS grounding, pull back component copper by 50um to reduce stress concentration on flex edge.\n\n|(i)TOMAINTAINTHISDOCUMENT IN CONFIDENCE(ii) NOT TOREPRODUCEORCOPY IT(iii) NOT TOREVEALOR PUBLISH IT IN WHOLEOR INPART\n|\ufffdApple Inc.|Size:**Letter**Scale:**NONE**|Page*..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_142",
+          "score": 1.0951848030090332,
+          "search_term": "coverlay edge",
+          "preview": "Table 6-4 Solder Mask Categorical Rules. ## **Coverlay opening shapes**. Openings in coverlay material are typically formed by punch prior to lamination to the FPC. As a result, registration between the coverlay openings and copper pattern is not precise and the size and spacing between adjacent ope..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_132",
+          "score": 1.1004735231399536,
+          "search_term": "coverlay edge",
+          "preview": "## Inc. Apple. **----- Start of picture text -----**<br>\nCommodity Code: 01301 P/N: 080-3649<br>**----- End of picture text -----**<br>\n\n**----- Start of picture text -----**<br>\nZ<br>**----- End of picture text -----**<br>\n\nFigure 6-1 Generalized Coverlay and Soldermask openings\n\n**----- Start of p..."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is FPC reflow test acceptance criteria?",
+      "expected": "function, SUS stiffener resistance, cosmetics, BVH peel fir multi-layer FPC, cross-section",
+      "actual": "Based on the provided context, the FPC reflow test acceptance criteria are not explicitly mentioned. However, I can extract some relevant information related to FPC design guidelines from the source documents:\n\n* Figure 10-4: Double-sided FPC with button plating, cross-section view (Source 1: 080-3649-E_design_guideline_FPC.pdf, page 47)\n* Figure 10-5: Double-sided FPC with panel plating and blind via, cross-section view (Source 1: 080-3649-E_design_guideline_FPC.pdf, page 47)\n* Figure 10-6: Double-sided FPC with button plating and blind via, cross-section view (Source 1: 080-3649-E_design_guideline_FPC.pdf, page 48)\n* Figure 10-7: Multi-layer FPC with Panel Plating, cross-section view (Source 1: 080-3649-E_design_guideline_FPC.pdf, page 49)\n* Figure 10-8: Multi-layer FPC with Button Plating, X-section View (Source 1: 080-3649-E_design_guideline_FPC.pdf, page 50)\n* Figure 10-9: Differential Paired Traces and Single Ended Traces (Source 1: 080-3649-E_design_guideline_FPC.pdf)\n* De-cap dimensional guidelines for De-cap with NO bending nearby (Source 5: 080-3649-E_design_guideline_FPC.pdf, page 34)\n* De-cap dimensional guidelines for De-cap with bending nearby (Source 5: 080-3649-E_design_guideline_FPC.pdf, page 35)\n* De-cap categorical guidelines (Source 5: 080-3649-E_design_guideline_FPC.pdf)\n* Coverlay to LPI Overlap (Source 5: 080-3649-E_design_guideline_FPC.pdf, page 34)\n* Section 7: De-cap (Source 5: 080-3649-E_design_guideline_FPC.pdf, page 34)\n\nSince the FPC reflow test acceptance criteria are not mentioned in the provided context, I couldn't extract any specific criteria. However, the above list includes some relevant information related to FPC design guidelines.\n\nSource documents:\n- 080-3649-E_design_guideline_FPC.pdf (Source 1, 2, 3, 4, 5)",
+      "score": 0.0,
+      "status": "NOT_FOUND",
+      "method": "exact_pattern",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_42",
+          "score": 1.0975863933563232,
+          "search_term": "cross-section",
+          "preview": "46|\n|Figure 10-4 Double sided FPC with button plating, cross section view ...................................................................... 47|\n|Figure 10-5 Double-sided FPC with panel plating and blind via, cross-section view .................................................. 47|\n|Figure 10-6 ..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_169",
+          "score": 1.116407871246338,
+          "search_term": "cross-section",
+          "preview": "Figure 7-1 An example cross section of a flex with de-cap between a three-layer portion of the flex and a one-layer portion.\n\nFigure 7-2 An example cross section of a flex with de-cap between a four-layer portion of the flex and a two-layer portion.. |(i)TOMAINTAINTHISDOCUMENT IN CONFIDENCE(ii) NOT ..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_40",
+          "score": 1.1263010501861572,
+          "search_term": "cross-section",
+          "preview": "36|\n|Figure 7-2 An example cross section of a flex with de-cap between a four-layer portion of the flex and a two-layer|\n|portion. ............................................................................................................................................................... 36|\n|Figu..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_168",
+          "score": 1.1633498668670654,
+          "search_term": "cross-section",
+          "preview": "Apple. Figure 7-1 An example cross section of a flex with de-cap between a three-layer portion of the flex and a one-layer portion.\n\nFigure 7-2 An example cross section of a flex with de-cap between a four-layer portion of the flex and a two-layer portion.. |(i)TOMAINTAINTHISDOCUMENT IN CONFIDENCE(i..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_12",
+          "score": 1.1812306642532349,
+          "search_term": "cross-section",
+          "preview": "33|\n|Coverlay to LPI Overlap .......................................................................................................................................... 34|\n|**Section 7.**<br>**De-cap ......................................................................................................."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is laser drilling quality control plan ?",
+      "expected": "visual defects, alignment, hole size\u2026.",
+      "actual": "Based on the provided technical documents, the following list items or criteria are extracted for laser drilling quality control plan:\n\n1. **Via aspect ratio**: Via aspect ratio (thickness to via width) is usually 0.7 for laser vias to confirm the depth is shallower than the width for good plating consistency. (Source 1: 080-3649-E_design_guideline_FPC.pdf)\n2. **Finished hole size vs drill hole size**: Finished hole size vs drill hole size should be clearly defined in ODB++ for via, PTH & NPTH. (Source 1: 080-3649-E_design_guideline_FPC.pdf)\n3. **Hole diameter target**: Hole diameter target is specified in ODB++ or MCO, based on the definition. (Source 2: 080-2265-J_FPC_Board_Specifications.pdf)\n4. **PTH diameter**: PTH (including through via for hot bar) diameter: metal to metal at Finished Goods level, narrowest location, usually measured from top with light from bottom. (Source 2: 080-2265-J_FPC_Board_Specifications.pdf, Source 3: 080-2265-J_FPC_Board_Specifications.pdf)\n5. **NPTH diameter**: NPTH diameter: dielectric to dielectric, top diameter, usually measured from top with light from bottom. (Source 2: 080-2265-J_FPC_Board_Specifications.pdf, Source 3: 080-2265-J_FPC_Board_Specifications.pdf)\n6. **BVH diameter**: BVH diameter: dielectric to dielectric, top diameter. (Source 2: 080-2265-J_FPC_Board_Specifications.pdf, Source 3: 080-2265-J_FPC_Board_Specifications.pdf)\n7. **Hole diameter tolerance**: Hole diameter tolerance should follow ODB++ or MCO or below table 3.2, whichever is tighter. (Source 3: 080-2265-J_FPC_Board_Specifications.pdf)\n8. **Drill sizes**: Drill sizes do not represent the actual finished hole size. The finished hole size will vary with plating thickness and the actual drill diameter (or in the case of laser, the aperture size) used. (Source 4: 080-3649-E_design_guideline_FPC.pdf)\n9. **Pad diameter**: The pad diameter should be viewed as the constraint. (Source 4: 080-3649-E_design_guideline_FPC.pdf)\n10. **Outline Tolerance**: Outline Tolerance (on the MCO) is \u00b10.200 mm. (Source 5: 080-3649-E_design_guideline_FPC.pdf)\n11. **Minimum outline to Pick and Place Stiffener**: Minimum outline to Pick and Place Stiffener (PI stiffener is 1:1 with the outline) is 0.200 mm. (Source 5: 080-3649-E_design_guideline_FPC.pdf)\n12. **Slits required for tear relief hole diameter**: Slits required for tear relief hole diameter is 0.800 mm. (Source 5: 080-3649-E_design_guideline_FPC.pdf)\n13. **Outline hard tool die multistage punch tolerance**: Outline hard tool die multistage punch tolerance is \u00b10.200 mm. (Source 5: 080-3649-E_design_guideline_FPC.pdf)\n14. **Minimum outline to outline for ZIF finger edge**: Minimum outline to outline for ZIF finger edge (slot width) is 0.500 mm. (Source 5: 080-3649-E_design_guideline_FPC.pdf)\n15. **ZIF Area Tolerance Outline to Outline**: ZIF Area Tolerance Outline to Outline is \u00b10.050 mm. (Source 5: 080-3649-E_design_guideline_FPC.pdf)\n\nThese criteria are mentioned in the following source documents:\n- Source 1: 080-3649-E_design_guideline_FPC.pdf\n- Source 2: 080-2265-J_FPC_Board_Specifications.pdf\n- Source 3: 080-2265-J_FPC_Board_Specifications.pdf\n- Source 4: 080-3649-E_design_guideline_FPC.pdf\n- Source 5: 080-3649-E_design_guideline_FPC.pdf",
+      "score": 0.2,
+      "status": "WRONG",
+      "method": "exact_pattern",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_183",
+          "score": 0.9776439666748047,
+          "search_term": "hole size",
+          "preview": "Exceptions can be approved bya DFM DRI.|NA|\n|3|When NPTHs are punched in a cover coated section of the board (coverlay or LPI),<br>the coverlay opening specified on ODB++ should say if it has the same hole size with<br>no clearance|NA|\n|4|Via aspect ratio (thickness to via width) is usually 0.7 for ..."
+        },
+        {
+          "file": "080-2265-J_FPC_Board_Specifications.pdf",
+          "chunk_id": "080-2265-J_FPC_Board_Specifications.pdf_chunk_80",
+          "score": 1.0422346591949463,
+          "search_term": "hole size",
+          "preview": "P/N: 080-2265\n\nCommodity Code: 01301\n\n## **3.2.Hole Diameter**\n\nHole diameter **target** is specified in ODB++ or MCO, based on below **definition** . Refer to illustrations for measurement locations.. - **PTH** (including through via for hot bar) **diameter** : **metal to metal** at **Finished Good..."
+        },
+        {
+          "file": "080-2265-J_FPC_Board_Specifications.pdf",
+          "chunk_id": "080-2265-J_FPC_Board_Specifications.pdf_chunk_81",
+          "score": 1.0486400127410889,
+          "search_term": "hole size",
+          "preview": "- **PTH** (including through via for hot bar) **diameter** : **metal to metal** at **Finished Goods level** , narrowest location, usually measured from top with light from bottom. For example, 0.1 mm nominal in ODB++ means FPCB fabrication supplier shall drill larger and then plate to meet 0.1 mm no..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_180",
+          "score": 1.048811912536621,
+          "search_term": "hole size",
+          "preview": "|(i)TOMAINTAINTHISDOCUMENT IN CONFIDENCE(ii) NOT TOREPRODUCEORCOPY IT(iii) NOT TOREVEALOR PUBLISH IT IN WHOLEOR INPART\n|\ufffdApple Inc.|Size:**Letter**Scale:**NONE**|Page**39 of 93**|\n|Title: Design Guidelines for Flexible Printed Circuits<br>Dwg Number: 080-3649<br>Rev: E\n\n\u00d2\n\nInc. Apple\n\nCommodity Code..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_323",
+          "score": 1.077667474746704,
+          "search_term": "hole size",
+          "preview": "This applies for small<br>distances between flex edge and hole.|\u00b10.100 mm|\u00b10.050 mm\nNA|\n|8|Outline Tolerance (on the MCO). See MCO best practices<br>section for more information.|\u00b10.200 mm|\u00b10.100<br>mm\n62|\n|9|Minimum outline to Pick and Place Stiffener (PI stiffener is 1:1<br>with the outline)|0.200..."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is UPD?",
+      "expected": "Unit Process Development",
+      "actual": "Unit Process Development \n(080-02647-J_PCB_FPC_Line_Qualification.pdf, multiple pages)",
+      "score": 1.0,
+      "status": "CORRECT",
+      "method": "quality_filtered",
+      "sources": [
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_50",
+          "score": 1.4004740715026855,
+          "search_term": null,
+          "preview": "## ***2 Exceptions for UPD step 2**\n\nThe following processes need only UPD step 1: AOI, AVI, electrical test, inkjet legend printing, outline cut/singulation using punch, coverlay cut using punch, and panel slitting using punch.. ***3 Compatible design** : A design with any of the following features..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_310",
+          "score": 1.4816899299621582,
+          "search_term": null,
+          "preview": "Continues on next page.. - Reflow\n\n- Solderability Test\n\n- Thermal Stress\n\n- Hot bar loop test\n\n- Ionic Contamination\n\n- Solder Mask/Plating Adhesion\n\n- Chemical Resistance\n\n- Flux Resistance\n\n- Thermal cycling\n\n- Heat Soak and Recovery\n\nPage 69 of 79 Rev: **J**\n\nScale: **NONE** Dwg Number: g Number..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_46",
+          "score": 1.4889674186706543,
+          "search_term": null,
+          "preview": "floor 1 to floor 4)\n\n- [UPD has 2 steps:]\n\n- **[Step 1]**[: build small quantity of DoE parts to set nominal process ] parameters and compare the product quality. It should not be statistically significantly worse than qualified machines.. - **[Step 2]**[: Build again small quantity of DoE parts at ..."
+        },
+        {
+          "file": "080-2265-J_FPC_Board_Specifications.pdf",
+          "chunk_id": "080-2265-J_FPC_Board_Specifications.pdf_chunk_19",
+          "score": 1.5218604803085327,
+          "search_term": null,
+          "preview": "Visual Inspec=on<br>...............................................................................................................................56|\n|14.3. OK2Ship Report<br>..............................................................................................................................."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_25",
+          "score": 1.5471324920654297,
+          "search_term": null,
+          "preview": "75|\n|TSA, PSA, and EMI Shielding categorical guidelines ............................................................................................... 76|\n|**Section 16.**<br>**Silk screens and Inkjets ...................................................................................................."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is CQRA of FPC line qualification.",
+      "expected": "Thermal cycle\n\u2022 Hot Oil\n\u2022 Reflow\n\u2022 Insulation resistance (via to via)\n\u2022 Thermal stability (Solder shock) fo",
+      "actual": "Based on the provided technical documents, the CQRA (Critical Quality and Reliability Attributes) of FPC line qualification includes the following items, steps, or criteria:\n\n1. **Hot Oil** (Source 1: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 3: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 4: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n2. **x20 Reflow** (Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 4: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n3. **Insulation resistance (Via to Via)** (Source 1: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 4: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n4. **Insulation resistance (Trace to Trace)** (Source 1: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 3: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 5: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n5. **Insulation resistance (Layer to Layer)** (Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 4: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n6. **Thermal stability (Solder shock)** (Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 3: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 4: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n7. **Thermal stress for FPC** (Source 3: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n8. **Flux resistance** (Source 5: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n9. **High speed ball shear test** (Source 5: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n10. **Chemical resistance** (Source 5: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n11. **Soldermask / plating adhesion (No sign of peeling)** (Source 5: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n12. **Ionic contamination** (Source 5: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n13. **Soldermask hardness** (Source 5: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n\nAdditionally, the following quality management system (QMS) components are mentioned:\n\n1. **SOP (Standard Operating Procedure)** (Source 1: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 3: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 4: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n2. **Product quality check sheet** (Source 1: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 3: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 4: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n3. **Equipment check sheet** (Source 1: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 3: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 4: 080-02647-J_PCB_FPC_Line_Qualification.pdf)\n4. **First article system** (Source 1: 080-02647-J_PCB_FPC_Line_Qualification.pdf, Source 2: 080-02647-J_PCB_FPC_Line_Qualification.pdf",
+      "score": 0.75,
+      "status": "PARTIALLY_CORRECT",
+      "method": "exact_pattern",
+      "sources": [
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_145",
+          "score": 1.0469547510147095,
+          "search_term": "insulation resistance",
+          "preview": "- Heat soak\n\n- Thermal Shock\n\n- Thermal cycle\n\n- Reflow\n\n- Hot Oil\n\n- Insulation resistance (trace to trace)\n\n- Insulation resistance (via to via)\n\n- Dielectric withstanding\n\n## 8.2.8.3.QMS\n\nSOP, Product quality check sheet, Equipment check sheet, First article system, Shop floor system, Process par..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_344",
+          "score": 1.0672012567520142,
+          "search_term": "insulation resistance",
+          "preview": "Refer to Quality Assurance and Control of Rigid and Rigid Flex PCB (099-01674) for test methods.\n\n- Hot Oil\n\n- x20 Reflow\n\n- Insulation resistance (Via to Via)\n\n- Insulation resistance (Trace to Trace)\n\n- Insulation resistance (Layer to Layer)\n\n- Thermal stability (Solder shock)\n\n## 9.2.3.3.QMS\n\nSOP..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_175",
+          "score": 1.0879240036010742,
+          "search_term": "insulation resistance",
+          "preview": "- Hot Oil\n\n- Reflow\n\n- Insulation resistance (trace to trace)\n\n- Insulation resistance (layer to layer)\n\n- Thermal stability (Solder shock) for **rigid and rigid-flex PCB** , thermal stress for **FPC**\n\n## 8.3.1.3.QMS\n\nSOP, Product quality check sheet, Equipment check sheet, First article system, Sh..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_343",
+          "score": 1.1067893505096436,
+          "search_term": "insulation resistance",
+          "preview": "## 9.2.3.2.CQRA\n\nTest items as below. Refer to Quality Assurance and Control of Rigid and Rigid Flex PCB (099-01674) for test methods.\n\n- Hot Oil\n\n- x20 Reflow\n\n- Insulation resistance (Via to Via)\n\n- Insulation resistance (Trace to Trace)\n\n- Insulation resistance (Layer to Layer)\n\n- Thermal stabili..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_230",
+          "score": 1.1287622451782227,
+          "search_term": "insulation resistance",
+          "preview": "- Insulation resistance (trace to trace)\n\n- Thermal stability (Solder shock) for **rigid and rigid-flex PCB** , thermal stress for **FPC**\n\n- Flux resistance\n\n- High speed ball shear test\n\n- Chemical resistance\n\n- Soldermask / plating adhesion (No sign of peeling)\n\n- Ionic contamination\n\n- Soldermas..."
+        }
+      ]
+    }
+  ]
+}

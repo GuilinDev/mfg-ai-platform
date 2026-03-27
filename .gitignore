@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.faiss
+*_data.json
+.env
+*.pkl
+venv/
+.streamlit/secrets.toml
+nohup.out
+*.pptx
+docs/ppt/*.pptx

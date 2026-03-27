@@ -1,0 +1,256 @@
+{
+  "approach": "PyMuPDF4LLM",
+  "summary": {
+    "correct": 2,
+    "partially_correct": 1,
+    "wrong": 6
+  },
+  "weighted_accuracy": 27.77777777777778,
+  "baseline_accuracy": 11.1,
+  "improvement": 16.677777777777777,
+  "detailed_results": [
+    {
+      "question_num": 1,
+      "question": "What is bending location tolerance?",
+      "expected_answer": "0.300 mm",
+      "actual_answer": "The bending location tolerance is not explicitly stated in the provided context documents. However, the document \"080-3649-E_design_guideline_FPC.pdf\" provides information on bend categorical rules and bend area keep-out guides, but it does not specify the bending location tolerance.\n\nThe document does provide information on general tolerances, such as:\n- Block Tolerance: \n  - X.X \u00b10.20mm\n  - X.XX \u00b10.10mm\n  - X.XXX \u00b10.050mm\n  - Angle \u03b8 \u00b15\u00ba (angle tolerance is very case specific)\n\nSource: 080-3649-E_design_guideline_FPC.pdf, Table 12-1 MCO best practices guidelines.\n\nHowever, this information is related to general tolerances and not specifically to bending location tolerance. Therefore, based on the provided context, the bending location tolerance is not available.",
+      "evaluation": "partially_correct",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_297",
+          "score": 0.8870480060577393,
+          "text_preview": "For this reason, bends are usually pre-bent by flex vendors<br>and shipped flat. If a bend is required to keepits shape,a 3D clipmight be able be|16|. |5<br>accidentally on the ODB++ design, so make sure to go back and do a REV CAM<br>compare for the whole design.<br>NA<br>6<br>Traditional polyimide..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_298",
+          "score": 0.8907660245895386,
+          "text_preview": "For this reason, bends are usually pre-bent by flex vendors<br>and shipped flat. If a bend is required to keepits shape,a 3D clipmight be able be<br>16|5<br>accidentally on the ODB++ design, so make sure to go back and do a REV CAM<br>compare for the whole design.<br>NA<br>6<br>Traditional polyimide..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_299",
+          "score": 0.9486567378044128,
+          "text_preview": "For this reason, bends are usually pre-bent by flex vendors<br>and shipped flat. If a bend is required to keepits shape,a 3D clipmight be able be<br>16|5<br>accidentally on the ODB++ design, so make sure to go back and do a REV CAM<br>compare for the whole design.<br>NA<br>6<br>Traditional polyimide..."
+        }
+      ]
+    },
+    {
+      "question_num": 2,
+      "question": "What is FPC design guideline of De-cap ?",
+      "expected_answer": "When a flex needs to have different numbers of copper layers for different regions of the same flex, de-cap isrequired at the layer transition to cut away the excess layers. For example, a flex may have two layers of copper forhalf and be only one layer for the other half, with the layer transition being the area for de-cap. The cut awayprocess is done with either a pre-punch of PI and bonding sheet (usually only for 3+ layer flexes) before laminationor with a laser after lamination",
+      "actual_answer": "The FPC design guideline for De-cap is provided in the document \"080-3649-E_design_guideline_FPC.pdf\" from Apple Inc. The guidelines are broken down into two main categories: De-cap with NO bending nearby (Table 7-1) and De-cap with bending nearby (Table 7-2).\n\nFor De-cap with NO bending nearby, the minimum distance from de-cap to bonding surface (ACF, solder, etc.) is 0.600mm (Source: 080-3649-E_design_guideline_FPC.pdf, Page 34 of 93).\n\nFor De-cap with bending nearby, the guidelines are as follows:\n\n* Minimum de-cap to pre-bend edge distance: 1.000mm (No DFM sign off required) and 0.500mm (DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 1a)\n* Minimum de-cap to natural bend in system edge distance: 0.500mm (both No DFM sign off required and DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 1b)\n* Minimum de-cap to redundant ground via distance: 0.700mm (No DFM sign off required) and 0.500mm (DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 2a)\n* Minimum de-cap to signal via pad distance: 0.700mm (No DFM sign off required) and 0.500mm (DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 2b)\n* Nearest copper to de-cap on cut layer: 0.800mm (No DFM sign off required) and 0.500mm (DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 3)\n* Nearest stiffener to de-cap transition line: 0.300mm (No DFM sign off required) and 0.250mm (DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 4)\n* Distance coverlay/EMI shield over to de-cap transition line to thinner section: 0.800mm (No DFM sign off required) and 0.500mm (DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 5)\n* Minimum distance between double sided de-cap transition lines: 1.000mm (both No DFM sign off required and DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 6)\n* De-cap transition minimum corner radius: 0.500mm (No DFM sign off required) and 0.200mm (DFM sign off required) (Source: 080-3649-E_design_guideline_FPC.pdf, Table 7-2, Item 7)\n\nNote: The values mentioned above are based on the provided context document \"080-3649-E_design_guideline_FPC.pdf\" from Apple Inc. (Source: 080-3649-E_design_guideline_FPC.pdf).",
+      "evaluation": "wrong",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_162",
+          "score": 0.8239417672157288,
+          "text_preview": "|\ufffdApple Inc.|Size:**Letter**Scale:**NONE**|Page**34 of 93**|\n|Title: Design Guidelines for Flexible Printed Circuits<br>Dwg Number: 080-3649<br>Rev: E. \u00d2. |AppleInc.<br>Commodity Code:01301P/N:080-3649\n|8|Minimum distance de-cap to bonding surface (ACF, solder,<br>etc)|0.600mm|0.500mm\n\nTable 7-1 De-..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_163",
+          "score": 0.9048322439193726,
+          "text_preview": "\u00d2. |AppleInc.<br>Commodity Code:01301P/N:080-3649\n|8|Minimum distance de-cap to bonding surface (ACF, solder,<br>etc)|0.600mm|0.500mm\n\nTable 7-1 De-cap dimensional guidelines for De-cap with NO bending nearby\n\nNote: _No DFM sign off required_ colloquially means \u201cthese are the rules that are safe to ..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_164",
+          "score": 0.9152973890304565,
+          "text_preview": "|AppleInc.<br>Commodity Code:01301P/N:080-3649\n|8|Minimum distance de-cap to bonding surface (ACF, solder,<br>etc)|0.600mm|0.500mm\n\nTable 7-1 De-cap dimensional guidelines for De-cap with NO bending nearby\n\nNote: _No DFM sign off required_ colloquially means \u201cthese are the rules that are safe to use..."
+        }
+      ]
+    },
+    {
+      "question_num": 3,
+      "question": "What is the bonding adhesive patch back?",
+      "expected_answer": "After drill hole plasma and wet desmear, the adhesive between 2 FCCL will has etch back. This is to ensure the palm and wet desmear are effective to remove adhesive.",
+      "actual_answer": "The provided context documents do not explicitly mention the term \"bonding adhesive patch back.\" However, the documents discuss adhesives for use not on stiffeners and provide guidelines for PSAs (Pressure Sensitive Adhesives) and TSAs (Temperature Sensitive Adhesives).\n\nAccording to the source document \"080-3649-E_design_guideline_FPC.pdf\" (Page 74 of 93), adhesives for use not on stiffeners are shipped attached to the flex on one side but with a PET liner on the other side. The document provides guidelines for PSAs (with liner) in terms of minimum web width, minimum total area, minimum PSA corner radius, and other dimensions.\n\nSince the term \"bonding adhesive patch back\" is not mentioned in the provided context, it is not possible to provide a clear and specific answer with exact values and units. \n\nSource: 080-3649-E_design_guideline_FPC.pdf (Page 74 of 93)",
+      "evaluation": "wrong",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_345",
+          "score": 0.9328488111495972,
+          "text_preview": "|(i)TOMAINTAINTHISDOCUMENT IN CONFIDENCE(ii) NOT TOREPRODUCEORCOPY IT(iii) NOT TOREVEALOR PUBLISH IT IN WHOLEOR INPART\n|\ufffdApple Inc.|Size:**Letter**Scale:**NONE**|Page**74 of 93**|\n|Title: Design Guidelines for Flexible Printed Circuits<br>Dwg Number: 080-3649<br>Rev: E\n\n\u00d2\n\nInc. Apple\n\nCommodity Code..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_346",
+          "score": 1.0534698963165283,
+          "text_preview": "These are adhesives that aren\u2019t activated by the flex vendors and are shipped attached to the flex on one side but with a PET liner on the other side. These are often for use in system assembly to quickly and reliably adhere the flex to other materials.. |**Item**|**Material or**<br>**related proces..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_248",
+          "score": 1.08403480052948,
+          "text_preview": "The material consists of a polyimide sheet with an adhesive bonding sheet to facilitate lamination to the patterned copper surface of an FPC. Standard material is 0.012 mm PI and 0.015 mm or 0.025 mm adhesive.. |(i)TOMAINTAINTHISDOCUMENT IN CONFIDENCE(ii) NOT TOREPRODUCEORCOPY IT(iii) NOT TOREVEALOR..."
+        }
+      ]
+    },
+    {
+      "question_num": 4,
+      "question": "What is the LPI or Solder mask thickness ?",
+      "expected_answer": "4-39um",
+      "actual_answer": "The LPI (Photo-imageable Solder Mask) thickness is generally between 5-39 \u00b5m. However, for specific cases, such as Watch Programs, the solder mask height above the exposed metal surface must be more than 0.000 mm and the absolute maximum height of solder mask above the exposed metal surface may not exceed 0.015 mm, which is equivalent to 0 ~ 15 \u00b5m.\n\nSource: \n- 080-3649-E_design_guideline_FPC.pdf (Table 6-3 Solder Mask categorial guidelines, Item 3)\n- 080-2265-J_FPC_Board_Specifications.pdf (Section 8.3.3 Solder Mask Thickness for Watch Programs)",
+      "evaluation": "correct",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_261",
+          "score": 0.6982653141021729,
+          "text_preview": "Apple\n\nCommodity Code: 01301\n\nP/N: 080-3649\n\nFigure 11-5 A cross section of a flex where the adhesive is too thin. 2um is the minimum effective thickness for local areas.\n\n## **Photo-imageable Solder Mask Materials**. Photo-imageable solder mask materials (LPI) may be applied to areas where fine-pit..."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_140",
+          "score": 0.7179886698722839,
+          "text_preview": "## **Solder Mask (LPI) categorial guidelines**. |**Item**|**Descriptions**|**Related**<br>**figures or**<br>**page**<br>**numbers**|\n|1|LPI needs to be supported bya stiffener toprevent cracking|NA|\n|2|No solder mask/LPI allowed in anybend area|NA|\n|3|General thickness of LPI is 5-39 \u00b5m (note: there..."
+        },
+        {
+          "file": "080-2265-J_FPC_Board_Specifications.pdf",
+          "chunk_id": "080-2265-J_FPC_Board_Specifications.pdf_chunk_147",
+          "score": 0.7305399179458618,
+          "text_preview": "- This shall not apply to the specific locations with a trace between pads.\n\nApple Inc.\n\nP/N: 080-2265\n\nCommodity Code: 01301\n\n## **8.3.3.Solder Mask Thickness for Watch Programs**. FPCB fabrication supplier to seek Apple DFM DRI approval in written before implementing LPI thickness controls on hot ..."
+        }
+      ]
+    },
+    {
+      "question_num": 5,
+      "question": "What is dimension of EMI shield to coverlay edge ?",
+      "expected_answer": "0.400 mm",
+      "actual_answer": "The dimension of EMI shield to coverlay edge is 0.400 mm (minimum) and 0.300 mm (typical). \n\nSource: 080-3649-E_design_guideline_FPC.pdf, Table (rows 8).",
+      "evaluation": "correct",
+      "sources": [
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_341",
+          "score": 0.7447222471237183,
+          "text_preview": "Take the<br>larger of either x orydimensions.|5.000 mm|2.500 mm|NA|\n|2|PSA/TSA/EMI<br>Shielding|Minimum total area|10.000 mm2|2.000 mm2|NA|\n|3|EMI Shielding|Minimum distance EMI shield to test point,<br>SMTpad,or fiducial mark.|0.600 mm|0.300 mm|NA|\n|4|PSA/TSA/EMI<br>Shielding|Location tolerance|\u00b10...."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_343",
+          "score": 0.7447222471237183,
+          "text_preview": "Take the<br>larger of either x orydimensions.|5.000 mm|2.500 mm|NA|\n|2|PSA/TSA/EMI<br>Shielding|Minimum total area|10.000 mm2|2.000 mm2|NA|\n|3|EMI Shielding|Minimum distance EMI shield to test point,<br>SMTpad,or fiducial mark.|0.600 mm|0.300 mm|NA|\n|4|PSA/TSA/EMI<br>Shielding|Location tolerance|\u00b10...."
+        },
+        {
+          "file": "080-3649-E_design_guideline_FPC.pdf",
+          "chunk_id": "080-3649-E_design_guideline_FPC.pdf_chunk_342",
+          "score": 0.7587941884994507,
+          "text_preview": "Note:<br>this is for better adhesion.|0.800 mm|0.800 mm|NA|\n|14|EMI shield|Minimum distance EMI shield grounding<br>coverlayopeningto non-ground traces|0.250 mm|<0.250 mm|Z|"
+        }
+      ]
+    },
+    {
+      "question_num": 6,
+      "question": "What is FPC reflow test acceptance criteria?",
+      "expected_answer": "function, SUS stiffener resistance, cosmetics, BVH peel fir multi-layer FPC, cross-section",
+      "actual_answer": "The provided context documents do not explicitly mention the FPC reflow test acceptance criteria. The documents mention various test methods, criteria, and specifications for FPC (Flexible Printed Circuit) boards, but they do not provide specific acceptance criteria for the reflow test.\n\nSource documents: \n- 080-03022-P_Apple_Bare_FPC_QCP.pdf\n- 080-2265-J_FPC_Board_Specifications.pdf\n\nThese documents refer to other specifications, such as 080-02999, which is mentioned as a reference for spec, criteria, and method, but the content of 080-02999 is not provided in the context. Therefore, the FPC reflow test acceptance criteria cannot be determined based on the given information.",
+      "evaluation": "wrong",
+      "sources": [
+        {
+          "file": "080-03022-P_Apple_Bare_FPC_QCP.pdf",
+          "chunk_id": "080-03022-P_Apple_Bare_FPC_QCP.pdf_chunk_168",
+          "score": 0.9071187973022461,
+          "text_preview": "FPC vendor shall do physical FA on all failing samples in NPI and MP, including but not limited to bHast failures.\n\n- B. Refer to 080-02999 for spec, criteria, and method.."
+        },
+        {
+          "file": "080-03022-P_Apple_Bare_FPC_QCP.pdf",
+          "chunk_id": "080-03022-P_Apple_Bare_FPC_QCP.pdf_chunk_157",
+          "score": 0.9292614459991455,
+          "text_preview": "For FPC which design has EMI shields, vendor must use products that have skipped EMI shields lamination. Vendor shall not mix parts from different lots together when doing the test.. *[2] : Optional if meet all conditions: 1) SMT is in-house 2) supplier measures SFE and WCA after SMT and before ship..."
+        },
+        {
+          "file": "080-2265-J_FPC_Board_Specifications.pdf",
+          "chunk_id": "080-2265-J_FPC_Board_Specifications.pdf_chunk_189",
+          "score": 0.9640319347381592,
+          "text_preview": "An authorized representative designated by Apple may perform, witness, or participate in such inspections and/or tests as considered necessary to ensure conformance with applicable requirements.. All drilled holes shall be inspected to ensure complete extension between the layers specified subsequen..."
+        }
+      ]
+    },
+    {
+      "question_num": 7,
+      "question": "What is laser drilling quality control plan ?",
+      "expected_answer": "visual defects, alignment, hole size....",
+      "actual_answer": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01khj1rsrxf1crv4yvfe2bwcgm` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99749, Requested 2126. Please try again in 27m0s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "evaluation": "wrong",
+      "sources": [
+        {
+          "file": "080-03022-P_Apple_Bare_FPC_QCP.pdf",
+          "chunk_id": "080-03022-P_Apple_Bare_FPC_QCP.pdf_chunk_186",
+          "score": 0.7234215140342712,
+          "text_preview": "Laser drilling**: corrected spec and via hole defnition.<br>\u2022 **7.8. Copper plating**: corrected spec.<br>\u2022 **7.21. OQC**: added PTH diameter, and ACF pad cleanliness check<br>previously specifed in CPP.<br>\u2022 **Overall**: clarifed and re-organized requirements. Added items specifed<br>previously in ..."
+        },
+        {
+          "file": "080-2265-J_FPC_Board_Specifications.pdf",
+          "chunk_id": "080-2265-J_FPC_Board_Specifications.pdf_chunk_83",
+          "score": 0.8929834365844727,
+          "text_preview": "Hole diameter tolerances. |**Forming method**|**PTH (includes through**<br>**via for hot bar)**|**NPTH**|**BVH**|\n|**Target punch**<br>**(Puncher)**|\u00b180 \u00b5m|\u00b150 \u00b5m|N/A|\n|**Mechanical drilling**<br>**(NC drill bits)**|\u00b180 \u00b5m|\u00b150 \u00b5m|N/A|\n|**Mechanical punch**<br>**(die)**|\u00b180 \u00b5m|\u00b180 \u00b5m|N/A|\n|**Laser**<..."
+        },
+        {
+          "file": "080-03022-P_Apple_Bare_FPC_QCP.pdf",
+          "chunk_id": "080-03022-P_Apple_Bare_FPC_QCP.pdf_chunk_66",
+          "score": 0.9209768772125244,
+          "text_preview": "|**Item**|**Spec / criteria**|**Method**|**Sampling Plan**|**Record /SPC**|\n|**Rollers (heat, cleaning**<br>**etc)**|Part number, date code,|Visual<br>inspection|Every batch|Checklist|\n|**Gloves/Masks\u2026**|Part number, date code,|Visual<br>inspection|Every batch|Checklist|\n\n## **8. Micro Via Formation..."
+        }
+      ]
+    },
+    {
+      "question_num": 8,
+      "question": "What is UPD?",
+      "expected_answer": "Unit Process Development",
+      "actual_answer": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01khj1rsrxf1crv4yvfe2bwcgm` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99749, Requested 1267. Please try again in 14m37.824s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "evaluation": "wrong",
+      "sources": [
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_50",
+          "score": 1.4004740715026855,
+          "text_preview": "## ***2 Exceptions for UPD step 2**\n\nThe following processes need only UPD step 1: AOI, AVI, electrical test, inkjet legend printing, outline cut/singulation using punch, coverlay cut using punch, and panel slitting using punch.. ***3 Compatible design** : A design with any of the following features..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_310",
+          "score": 1.4816899299621582,
+          "text_preview": "Continues on next page.. - Reflow\n\n- Solderability Test\n\n- Thermal Stress\n\n- Hot bar loop test\n\n- Ionic Contamination\n\n- Solder Mask/Plating Adhesion\n\n- Chemical Resistance\n\n- Flux Resistance\n\n- Thermal cycling\n\n- Heat Soak and Recovery\n\nPage 69 of 79 Rev: **J**\n\nScale: **NONE** Dwg Number: g Number..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_46",
+          "score": 1.4889674186706543,
+          "text_preview": "floor 1 to floor 4)\n\n- [UPD has 2 steps:]\n\n- **[Step 1]**[: build small quantity of DoE parts to set nominal process ] parameters and compare the product quality. It should not be statistically significantly worse than qualified machines.. - **[Step 2]**[: Build again small quantity of DoE parts at ..."
+        }
+      ]
+    },
+    {
+      "question_num": 9,
+      "question": "What is CQRA of FPC line qualification.",
+      "expected_answer": "Thermal cycle\n\u2022 Hot Oil\n\u2022 Reflow\n\u2022 Insulation resistance (via to via)\n\u2022 Thermal stability (Solder shock) fo",
+      "actual_answer": "Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01khj1rsrxf1crv4yvfe2bwcgm` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99749, Requested 1297. Please try again in 15m3.744s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+      "evaluation": "wrong",
+      "sources": [
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_64",
+          "score": 0.7793673872947693,
+          "text_preview": "Must finish short term CQRA, but can<br>continue to do long term CQRA in parallel.<br>Refer to the list on the right for details.<br>Apple Rejects<br>SQE/DFM Review<br>results After consulting x-functional<br>PCB/ Rejects team, Apple SQE/DFM PRQ or CR necessary communicates if<br>FPC vendor :<br>Rev..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_85",
+          "score": 0.7935336828231812,
+          "text_preview": "## 8.1.2.2.CQRA\n\nTest items as below. For test methods and sampling plan, refer to 099-01674 for **rigid and rigid-flex PCB** , and CQRA 080-02999 and QCP 080-03022 (NPI level frequency) for **FPC** .\n\n- Thermal cycle\n\n- Hot Oil\n\n- Reflow\n\n- Thermal stability (Solder shock) for **rigid and rigid-fle..."
+        },
+        {
+          "file": "080-02647-J_PCB_FPC_Line_Qualification.pdf",
+          "chunk_id": "080-02647-J_PCB_FPC_Line_Qualification.pdf_chunk_96",
+          "score": 0.8636928200721741,
+          "text_preview": "## 8.1.4.2.CQRA\n\nTest items as below. For test methods and sampling plan, refer to 099-01674 for **rigid and rigid-flex PCB** , and CQRA 080-02999 and QCP 080-03022 (NPI level frequency) for **FPC** .\n\n- Thermal cycle\n\n- Hot Oil\n\n- Reflow\n\n- Insulation resistance (via to via)\n\n- Thermal stability (S..."
+        }
+      ]
+    }
+  ]
+}
