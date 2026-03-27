@@ -12,29 +12,26 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Push to HuggingFace Space
+      - name: Install hf_xet and push
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          pip install huggingface_hub[hf_xet]
           git config --global user.email "guilin@mfg-ai.dev"
           git config --global user.name "GuilinDev"
           
-          # Prepare deploy directory
-          mkdir -p /tmp/hf-deploy
+          # Prepare deploy directory with only text files
+          mkdir -p /tmp/hf-deploy/src/engines /tmp/hf-deploy/src/processors /tmp/hf-deploy/src/utils /tmp/hf-deploy/outputs
           
-          # Copy Dockerfile and requirements
-          cp Dockerfile /tmp/hf-deploy/ 2>/dev/null || true
-          cp requirements.txt /tmp/hf-deploy/ 2>/dev/null || true
-          
-          # Copy prototype as app root
+          # Copy source code
+          cp Dockerfile /tmp/hf-deploy/
+          cp requirements.txt /tmp/hf-deploy/
           cp prototype/streamlit_app.py /tmp/hf-deploy/app.py
-          cp -r prototype/src/ /tmp/hf-deploy/src/
-          cp -r prototype/data/ /tmp/hf-deploy/data/ 2>/dev/null || true
-          cp -r prototype/storage/ /tmp/hf-deploy/storage/ 2>/dev/null || true
-          cp -r prototype/templates/ /tmp/hf-deploy/templates/ 2>/dev/null || true
-          mkdir -p /tmp/hf-deploy/outputs
+          cp prototype/src/engines/*.py /tmp/hf-deploy/src/engines/
+          cp prototype/src/processors/*.py /tmp/hf-deploy/src/processors/
+          cp prototype/src/utils/*.py /tmp/hf-deploy/src/utils/
+          touch /tmp/hf-deploy/src/__init__.py /tmp/hf-deploy/src/engines/__init__.py /tmp/hf-deploy/src/processors/__init__.py /tmp/hf-deploy/src/utils/__init__.py
           
-          # Add README for HF
           cat > /tmp/hf-deploy/README.md << 'READMEEOF'
           ---
           title: Manufacturing AI RAG Demo
@@ -46,10 +43,9 @@ jobs:
           ---
           READMEEOF
           
-          # Push to HF Space
-          cd /tmp/hf-deploy
-          git init
-          git checkout -b main
+          # Clone HF repo, copy files, push
+          git clone https://guilindev:${HF_TOKEN}@huggingface.co/spaces/guilindev/mfg-rag-demo /tmp/hf-repo
+          cp -r /tmp/hf-deploy/* /tmp/hf-repo/
+          cd /tmp/hf-repo
           git add -A
-          git commit -m "sync from GitHub $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          git push --force https://guilindev:${HF_TOKEN}@huggingface.co/spaces/guilindev/mfg-rag-demo main
+          git diff --cached --quiet || (git commit -m "sync from GitHub $(date -u +%Y-%m-%dT%H:%M:%SZ)" && git push)
