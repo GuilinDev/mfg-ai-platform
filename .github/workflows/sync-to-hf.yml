@@ -19,6 +19,9 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          git config --global user.email "guilin@mfg-ai.dev"
+          git config --global user.name "GuilinDev"
+          
           # Prepare deploy directory
           mkdir -p /tmp/hf-deploy
           
@@ -35,7 +38,7 @@ jobs:
           mkdir -p /tmp/hf-deploy/outputs
           
           # Add README for HF
-          cat > /tmp/hf-deploy/README.md << 'EOF'
+          cat > /tmp/hf-deploy/README.md << 'READMEEOF'
           ---
           title: Manufacturing AI RAG Demo
           emoji: 🏭
@@ -44,7 +47,7 @@ jobs:
           sdk: docker
           pinned: false
           ---
-          EOF
+          READMEEOF
           
           # Push to HF Space
           cd /tmp/hf-deploy
