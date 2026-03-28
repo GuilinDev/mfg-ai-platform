@@ -46,29 +46,34 @@ st.markdown("""
 
 @st.cache_resource
 def initialize_rag_system():
-    """Initialize the simple RAG system"""
+    """Initialize the simple RAG system (lazy — index built on first query)"""
     try:
         rag = SimpleRAGSystem()
         
-        # Try to load existing index
+        # Try to load existing index (fast, no API calls)
         if rag.load_index("simple_rag_index"):
-            st.success("✅ Loaded existing index")
+            rag._ready = True
         else:
-            st.info("🔨 Building new index from PDFs...")
-            with st.spinner("Processing PDF documents..."):
-                rag.process_pdfs(Config.DATA_DIR)
-            
-            with st.spinner("Building vector index..."):
-                rag.build_index()
-                rag.save_index("simple_rag_index")
-            
-            st.success("✅ Index built successfully")
+            rag._ready = False  # Will build on first query
         
         return rag
         
     except Exception as e:
         st.error(f"❌ Error initializing RAG system: {str(e)}")
         return None
+
+def ensure_index_ready(rag):
+    """Build index on demand, not at startup"""
+    if getattr(rag, '_ready', False):
+        return True
+    st.info("🔨 First-time setup: Building index from PDFs...")
+    with st.spinner("Processing PDF documents + generating embeddings (1-2 min)..."):
+        rag.process_pdfs(Config.DATA_DIR)
+        rag.build_index()
+        rag.save_index("simple_rag_index")
+    rag._ready = True
+    st.success("✅ Index built successfully!")
+    return True
 
 def render_confidence_badge(score: float) -> str:
     """Render confidence score as colored badge based on retrieval score"""
@@ -149,6 +154,11 @@ def main():
         top_k = st.slider("Number of sources", 3, 10, 5)
     
     if search_button and query:
+        # Build index on first query (lazy init)
+        if not ensure_index_ready(rag_system):
+            st.error("Failed to build index")
+            st.stop()
+        
         start_time = time.time()
         
         with st.spinner("🔍 Searching documents and generating answer..."):
