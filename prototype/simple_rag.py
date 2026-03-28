@@ -43,7 +43,7 @@ class Config:
 
     # File Paths - computed dynamically
     BASE_DIR = str(_BASE_DIR)
-    DATA_DIR = str(_BASE_DIR / "docs")
+    DATA_DIR = str(_THIS_DIR / "data" / "pdfs")
     STORAGE_DIR = str(_THIS_DIR / "storage")
     TEMPLATE_DIR = str(_THIS_DIR / "templates")
     OUTPUT_DIR = str(_THIS_DIR / "outputs")
