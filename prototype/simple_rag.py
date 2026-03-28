@@ -103,7 +103,7 @@ class Config:
 class SimpleRAGSystem:
     """Simple RAG system with Groq LLM and local embeddings"""
     
-    HF_API_URL = "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2"
+    HF_EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
     def __init__(self):
         # Initialize components
@@ -130,18 +130,18 @@ class SimpleRAGSystem:
         print(f"Initialized SimpleRAG with embedding dimension: {self.dimension}")
 
     def _embed(self, texts: List[str]) -> np.ndarray:
-        """Get embeddings via HF Inference API"""
-        headers = {"Authorization": f"Bearer {self._hf_token}"} if self._hf_token else {}
+        """Get embeddings via HuggingFace InferenceClient"""
+        from huggingface_hub import InferenceClient
+        client = InferenceClient(token=self._hf_token or None)
         all_embeddings = []
         batch_size = 32
         for i in range(0, len(texts), batch_size):
             batch = texts[i:i+batch_size]
             for attempt in range(3):
                 try:
-                    r = requests.post(self.HF_API_URL, headers=headers,
-                                      json={"inputs": batch, "options": {"wait_for_model": True}}, timeout=60)
-                    r.raise_for_status()
-                    all_embeddings.extend(r.json())
+                    for text in batch:
+                        vec = client.feature_extraction(text, model=self.HF_EMBED_MODEL)
+                        all_embeddings.append(vec)
                     break
                 except Exception as e:
                     if attempt < 2:
