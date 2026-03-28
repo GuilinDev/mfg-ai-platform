@@ -10,8 +10,9 @@ import numpy as np
 from pathlib import Path
 from typing import List, Dict, Any, Tuple
 import fitz  # PyMuPDF
-from sentence_transformers import SentenceTransformer
 import faiss
+import requests
+import time
 from openai import OpenAI
 
 # Add src to path
@@ -22,10 +23,12 @@ from src.utils.config import Config
 class SimpleRAGSystem:
     """Simple RAG system with Groq LLM and local embeddings"""
     
+    HF_API_URL = "https://api-inference.huggingface.co/pipeline/feature-extraction/sentence-transformers/all-MiniLM-L6-v2"
+
     def __init__(self):
         # Initialize components
-        self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
-        self.dimension = self.embedding_model.get_sentence_embedding_dimension()
+        self.dimension = 384  # all-MiniLM-L6-v2 dimension
+        self._hf_token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_TOKEN") or ""
         
         self.groq_client = OpenAI(
             api_key=Config.get_groq_api_key(),
@@ -38,6 +41,27 @@ class SimpleRAGSystem:
         self.index = None
         
         print(f"Initialized SimpleRAG with embedding dimension: {self.dimension}")
+
+    def _embed(self, texts: List[str]) -> np.ndarray:
+        """Get embeddings via HF Inference API"""
+        headers = {"Authorization": f"Bearer {self._hf_token}"} if self._hf_token else {}
+        all_embeddings = []
+        batch_size = 32
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:i+batch_size]
+            for attempt in range(3):
+                try:
+                    r = requests.post(self.HF_API_URL, headers=headers,
+                                      json={"inputs": batch, "options": {"wait_for_model": True}}, timeout=60)
+                    r.raise_for_status()
+                    all_embeddings.extend(r.json())
+                    break
+                except Exception as e:
+                    if attempt < 2:
+                        time.sleep(2)
+                    else:
+                        raise RuntimeError(f"HF Embedding API failed: {e}")
+        return np.array(all_embeddings, dtype='float32')
     
     def process_pdfs(self, pdf_dir: str) -> None:
         """Process all PDFs in a directory"""
@@ -102,8 +126,8 @@ class SimpleRAGSystem:
         
         print(f"Building index for {len(self.documents)} documents...")
         
-        # Generate embeddings
-        embeddings = self.embedding_model.encode(self.documents, show_progress_bar=True)
+        # Generate embeddings via HF API
+        embeddings = self._embed(self.documents)
         
         # Create FAISS index
         self.index = faiss.IndexFlatL2(self.dimension)
@@ -116,8 +140,8 @@ class SimpleRAGSystem:
         if self.index is None:
             return []
         
-        # Generate query embedding
-        query_embedding = self.embedding_model.encode([query])
+        # Generate query embedding via HF API
+        query_embedding = self._embed([query])
         
         # Search
         scores, indices = self.index.search(query_embedding.astype('float32'), top_k)

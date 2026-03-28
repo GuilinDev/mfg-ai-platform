@@ -26,7 +26,8 @@ jobs:
           # Copy source code
           cp Dockerfile /tmp/hf-deploy/
           cp requirements.txt /tmp/hf-deploy/
-          cp prototype/streamlit_app.py /tmp/hf-deploy/app.py
+          cp prototype/streamlit_app_simple.py /tmp/hf-deploy/app.py
+          cp prototype/simple_rag.py /tmp/hf-deploy/src/simple_rag.py
           cp prototype/src/engines/*.py /tmp/hf-deploy/src/engines/
           cp prototype/src/processors/*.py /tmp/hf-deploy/src/processors/
           cp prototype/src/utils/*.py /tmp/hf-deploy/src/utils/
