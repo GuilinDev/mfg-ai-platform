@@ -7,8 +7,9 @@ import time
 from typing import Dict, List, Any
 import json
 
-# Add src to path
-sys.path.append(str(Path(__file__).parent / "src"))
+# Add parent dir and src to path
+sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from simple_rag import SimpleRAGSystem
 from src.utils.config import Config
