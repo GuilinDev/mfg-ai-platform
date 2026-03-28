@@ -15,8 +15,8 @@ from src.utils.config import Config
 
 # Page configuration
 st.set_page_config(
-    page_title="Manufacturing AI RAG Demo (Groq)",
-    page_icon="🏭",
+    page_title="Manufacturing Spec Assistant",
+    page_icon="🔍",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -59,40 +59,65 @@ def initialize_rag_system():
         return rag
         
     except Exception as e:
-        st.error(f"❌ Error initializing RAG system: {str(e)}")
+        st.error("Unable to start the search system. Please refresh the page or contact support.")
         return None
 
 def ensure_index_ready(rag):
     """Build index on demand, not at startup"""
     if getattr(rag, '_ready', False):
         return True
-    st.info("🔨 First-time setup: Building index from PDFs...")
-    with st.spinner("Processing PDF documents + generating embeddings (1-2 min)..."):
+    with st.spinner("🔄 Preparing your document search... (first time only, ~1 min)"):
         rag.process_pdfs(Config.DATA_DIR)
         rag.build_index()
         rag.save_index("simple_rag_index")
     rag._ready = True
-    st.success("✅ Index built successfully!")
+    st.success("✅ Ready! You can now search your specifications.")
     return True
 
-def render_confidence_badge(score: float) -> str:
+def render_confidence_badge(score: float, show_label: bool = True) -> str:
     """Render confidence score as colored badge based on retrieval score"""
     # Lower FAISS L2 distance score = better match
     if score < 0.8:
-        return f'<span class="confidence-high">🟢 High Relevance (Score: {score:.3f})</span>'
+        return '🟢 High Confidence' if show_label else '🟢'
     elif score < 1.2:
-        return f'<span class="confidence-medium">🟡 Medium Relevance (Score: {score:.3f})</span>'
+        return '🟡 Medium Confidence' if show_label else '🟡'
     else:
-        return f'<span class="confidence-low">🔴 Low Relevance (Score: {score:.3f})</span>'
+        return '🔴 Low Confidence' if show_label else '🔴'
+
+
+def get_overall_confidence(sources: List[Dict]) -> tuple:
+    """Calculate overall confidence based on number of sources and their scores"""
+    if not sources:
+        return "🔴 Low", "low"
+
+    avg_score = sum(s['score'] for s in sources) / len(sources)
+    high_confidence_count = sum(1 for s in sources if s['score'] < 0.8)
+
+    # High confidence: multiple good matches with low scores
+    if len(sources) >= 3 and high_confidence_count >= 2 and avg_score < 1.0:
+        return "🟢 High", "high"
+    # Medium confidence: some good matches
+    elif high_confidence_count >= 1 or avg_score < 1.2:
+        return "🟡 Medium", "medium"
+    # Low confidence: poor matches
+    else:
+        return "🔴 Low", "low"
+
+
+def clean_document_name(filename: str) -> str:
+    """Clean up document filename for display"""
+    name = Path(filename).stem
+    # Replace underscores and hyphens with spaces, title case
+    return name.replace("_", " ").replace("-", " ").title()
 
 def main():
     """Main application"""
     
     # Header
-    st.markdown('<h1 class="main-header">🏭 Manufacturing AI RAG Demo (Groq)</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">🔍 Manufacturing Spec Assistant</h1>', unsafe_allow_html=True)
     st.markdown("""
     <div style="text-align: center; color: #666; margin-bottom: 2rem;">
-    Advanced Document Retrieval with Groq LLM - Simple RAG Implementation
+    Search across your FPC/PCB specifications instantly
     </div>
     """, unsafe_allow_html=True)
     
@@ -102,124 +127,154 @@ def main():
     if not rag_system:
         st.stop()
     
-    # Sidebar
-    st.sidebar.markdown("## 🎯 System Status")
-    
-    # Check configuration
-    groq_key_status = "✅" if Config.get_groq_api_key() else "❌"
-    data_dir_status = "✅" if os.path.exists(Config.DATA_DIR) else "❌"
-    
-    st.sidebar.markdown(f"{groq_key_status} Groq API Key")
-    st.sidebar.markdown(f"{data_dir_status} Data Directory")
-    st.sidebar.markdown(f"🤖 Model: {Config.LLM_MODEL}")
-    
-    # Show document stats
-    if hasattr(rag_system, 'documents') and rag_system.documents:
-        st.sidebar.markdown("## 📊 Index Stats")
-        st.sidebar.markdown(f"📄 Documents: {len(rag_system.documents)}")
-        
-        # Count unique files
+    # Sidebar - Knowledge Base
+    st.sidebar.markdown("## 📚 Knowledge Base")
+
+    # Show indexed documents
+    if hasattr(rag_system, 'metadata') and rag_system.metadata:
         unique_files = set(meta['source_file'] for meta in rag_system.metadata)
-        st.sidebar.markdown(f"📁 Files: {len(unique_files)}")
-        
-        # Show file list
-        with st.sidebar.expander("📋 Processed Files"):
-            for file in sorted(unique_files):
-                st.markdown(f"• {file}")
+        st.sidebar.markdown(f"**{len(unique_files)} specifications indexed**")
+        st.sidebar.markdown("---")
+        for file in sorted(unique_files):
+            # Clean file name - remove extension and path
+            clean_name = Path(file).stem.replace("_", " ").replace("-", " ")
+            st.sidebar.markdown(f"📄 {clean_name}")
+    else:
+        st.sidebar.markdown("*Documents will appear here after first search*")
     
-    # Main interface
-    st.markdown("## 💡 Sample Questions")
+    # Main interface - Sample questions as clickable chips
+    st.markdown("#### 💡 Try a sample question:")
     sample_questions = [
         "What is bending location tolerance?",
-        "What is LPI or Solder mask thickness?", 
+        "What is LPI or Solder mask thickness?",
         "What is FPC design guideline of De-cap?",
         "What is the bonding adhesive patch back?",
         "What is dimension of EMI shield to coverlay edge?",
         "What is FPC reflow test acceptance criteria?"
     ]
-    
-    selected_sample = st.selectbox("Choose a sample question:", [""] + sample_questions)
-    
+
+    # Initialize session state for query
+    if 'query_text' not in st.session_state:
+        st.session_state.query_text = ""
+    if 'auto_search' not in st.session_state:
+        st.session_state.auto_search = False
+
+    # Create clickable chips using columns
+    cols = st.columns(3)
+    for idx, question in enumerate(sample_questions):
+        with cols[idx % 3]:
+            if st.button(question, key=f"sample_{idx}", use_container_width=True):
+                st.session_state.query_text = question
+                st.session_state.auto_search = True
+                st.rerun()
+
+    st.markdown("")  # Spacer
+
     # Query input
     query = st.text_input(
-        "Enter your specification question:",
-        value=selected_sample,
-        placeholder="e.g., What is bending location tolerance?"
+        "Or type your own question:",
+        value=st.session_state.query_text,
+        placeholder="e.g., What is bending location tolerance?",
+        key="query_input"
     )
-    
+
+    # Update session state when text input changes
+    if query != st.session_state.query_text:
+        st.session_state.query_text = query
+        st.session_state.auto_search = False
+
     col1, col2 = st.columns([1, 4])
     with col1:
         search_button = st.button("🔍 Search", type="primary")
     with col2:
         top_k = st.slider("Number of sources", 3, 10, 5)
+
+    # Auto-search when sample question clicked
+    if st.session_state.auto_search:
+        search_button = True
+        st.session_state.auto_search = False
     
     if search_button and query:
         # Build index on first query (lazy init)
         if not ensure_index_ready(rag_system):
-            st.error("Failed to build index")
+            st.error("Unable to prepare the document search. Please refresh the page.")
             st.stop()
         
         start_time = time.time()
         
-        with st.spinner("🔍 Searching documents and generating answer..."):
+        with st.spinner("🔍 Searching specifications..."):
             result = rag_system.query(query, top_k=top_k)
         
         processing_time = time.time() - start_time
         
         if result['error']:
-            st.error(f"❌ Error: {result['error']}")
+            # Friendly error message for no results
+            if "No search results" in str(result['error']) or "no results" in str(result['error']).lower():
+                st.warning("🔎 No exact match found in the knowledge base.")
+                st.info("""
+                **Try these suggestions:**
+                - Rephrase your question with different keywords
+                - Use more specific terms (e.g., "coverlay thickness" instead of "thickness")
+                - Browse the indexed documents in the sidebar for available topics
+                """)
+            else:
+                st.error(f"Something went wrong. Please try again or rephrase your question.")
         else:
             # Display results
             st.markdown("## 📋 Answer")
-            
-            # Processing metrics
-            col1, col2, col3 = st.columns(3)
+
+            # Get overall confidence
+            confidence_label, confidence_level = get_overall_confidence(result['sources'])
+
+            # Show confidence and response time
+            col1, col2 = st.columns([1, 3])
             with col1:
-                st.metric("Processing Time", f"{processing_time:.2f}s")
+                st.markdown(f"**Confidence:** {confidence_label}")
             with col2:
-                st.metric("Sources Found", len(result['sources']))
-            with col3:
-                avg_score = sum(s['score'] for s in result['sources']) / len(result['sources'])
-                st.metric("Avg Relevance Score", f"{avg_score:.3f}")
-            
-            # Answer
-            st.markdown(f"**Answer:** {result['answer']}")
-            
+                st.markdown(f"*Response time: {processing_time:.1f}s • {len(result['sources'])} sources found*")
+
+            # Answer with styled box
+            st.markdown(f"""
+            <div style="background-color: #f0f7ff; border-left: 4px solid #1e3a5f; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+            {result['answer']}
+            </div>
+            """, unsafe_allow_html=True)
+
             # Sources
             st.markdown("### 📚 Sources")
-            
+
             if result['sources']:
                 for i, source in enumerate(result['sources'], 1):
-                    with st.expander(f"Source {i}: {source['file']} - Page {source['page']} {render_confidence_badge(source['score'])}"):
-                        col1, col2 = st.columns(2)
-                        
-                        with col1:
-                            st.markdown(f"**File:** {source['file']}")
-                            st.markdown(f"**Page:** {source['page']}")
-                            st.markdown(f"**Chunk ID:** {source['chunk_id']}")
-                            
-                        with col2:
-                            st.markdown(f"**Relevance Score:** {source['score']:.6f}")
-                            st.markdown("*Lower score = better match*")
-                            
-                        st.markdown("**Text Preview:**")
+                    doc_name = clean_document_name(source['file'])
+                    confidence = render_confidence_badge(source['score'], show_label=False)
+                    with st.expander(f"{confidence} 📄 {doc_name}, Page {source['page']}"):
+                        st.markdown(f"**From:** {doc_name}")
+                        st.markdown(f"**Page:** {source['page']}")
+
+                        st.markdown("**Relevant excerpt:**")
                         st.text(source['text_preview'])
-                        
+
                         # Show full text in a collapsible section
-                        if st.button(f"Show full text {i}", key=f"full_text_{i}"):
+                        if st.button(f"View full context", key=f"full_text_{i}"):
                             st.text(source.get('full_text', 'Full text not available'))
             else:
                 st.warning("No sources found")
     
-    # Footer
+    # Sidebar - About section
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### ℹ️ About")
+    st.sidebar.markdown("Powered by AI • Searches across your FPC/PCB specifications")
+
+    # Professional footer
     st.markdown("---")
-    st.markdown("""
-    **About this demo:**
-    - Uses Groq LLM (llama-3.3-70b-versatile) for fast inference
-    - Local sentence transformers for embeddings (all-MiniLM-L6-v2)
-    - FAISS vector database for efficient similarity search
-    - Processing Apple FPC/PCB manufacturing specifications
-    """)
+    doc_count = 0
+    if hasattr(rag_system, 'metadata') and rag_system.metadata:
+        doc_count = len(set(meta['source_file'] for meta in rag_system.metadata))
+    st.markdown(f"""
+    <div style="text-align: center; color: #888; font-size: 0.9rem;">
+    © 2026 • Powered by AI • {doc_count} specifications indexed
+    </div>
+    """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
