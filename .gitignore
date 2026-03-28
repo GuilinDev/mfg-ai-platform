@@ -9,3 +9,5 @@ venv/
 nohup.out
 *.pptx
 docs/ppt/*.pptx
+docs/
+prototype/data/pdfs/
