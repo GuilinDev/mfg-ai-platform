@@ -15,11 +15,89 @@ import requests
 import time
 from openai import OpenAI
 
-# Add parent dir and src to path
-sys.path.insert(0, str(Path(__file__).parent))
-sys.path.insert(0, str(Path(__file__).parent / "src"))
+# Determine base directory dynamically for Streamlit Cloud compatibility
+_THIS_DIR = Path(__file__).parent.resolve()
+_BASE_DIR = _THIS_DIR.parent  # Parent of prototype/
 
-from src.utils.config import Config
+
+class Config:
+    """
+    Central configuration management.
+    Inlined here to avoid import conflicts with Streamlit Cloud mount paths.
+    """
+
+    # API Configuration
+    GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+    GROQ_BASE_URL = "https://api.groq.com/openai/v1"
+
+    # Model Configuration
+    EMBEDDING_MODEL = "text-embedding-ada-002"  # Still using OpenAI for embeddings
+    LLM_MODEL = "llama-3.3-70b-versatile"  # Groq model
+    MAX_TOKENS = 2000
+    TEMPERATURE = 0.1  # Low temperature for precision
+
+    # Vector Store Configuration
+    CHUNK_SIZE = 1024
+    CHUNK_OVERLAP = 200
+    TOP_K = 5  # Number of chunks to retrieve
+
+    # File Paths - computed dynamically
+    BASE_DIR = str(_BASE_DIR)
+    DATA_DIR = str(_BASE_DIR / "docs")
+    STORAGE_DIR = str(_THIS_DIR / "storage")
+    TEMPLATE_DIR = str(_THIS_DIR / "templates")
+    OUTPUT_DIR = str(_THIS_DIR / "outputs")
+
+    # Document Types
+    DOC_TYPES = {
+        "specification": "PDF specifications and guidelines",
+        "postmortem": "PowerPoint postmortem reports",
+        "engineering_drawing": "Engineering drawing PDFs"
+    }
+
+    # Target elements for drawing extraction
+    DRAWING_ELEMENTS = [
+        'Prebend', 'pre-bend', 'B2B stiffener', 'B2B stiffener_SUS material',
+        'B2B stiffener_harness', 'B2B stiffener_finish', 'B2B stiffener_gloss',
+        'B2B stiffener_roughness', 'B2B stiffener_adhesive', 'bonding sheet',
+        'adhesive', 'liner', 'underfill', 'encapsulation', 'gold plating',
+        'switch', 'vestige', 'tab', 'PSA', 'TSA', 'barcode', 'stackup',
+        'bending', 'copper layers', 'coverlay', 'UL', 'mic', 'glue'
+    ]
+
+    @classmethod
+    def get_groq_api_key(cls) -> str:
+        """Get Groq API key from environment or Streamlit secrets"""
+        if cls.GROQ_API_KEY:
+            return cls.GROQ_API_KEY
+        try:
+            import streamlit as st
+            return st.secrets["groq"]["api_key"]
+        except Exception:
+            return ""
+
+    @classmethod
+    def get_openai_api_key(cls) -> str:
+        """Get OpenAI API key for embeddings (fallback to Groq for now)"""
+        return cls.get_groq_api_key()
+
+    @classmethod
+    def validate_config(cls) -> Dict[str, bool]:
+        """Validate configuration settings"""
+        return {
+            "groq_api_key": bool(cls.get_groq_api_key()),
+            "data_directory": os.path.exists(cls.DATA_DIR),
+            "storage_directory": os.path.exists(cls.STORAGE_DIR),
+        }
+
+    @classmethod
+    def create_directories(cls):
+        """Create necessary directories if they don't exist"""
+        os.makedirs(cls.STORAGE_DIR, exist_ok=True)
+        os.makedirs(cls.TEMPLATE_DIR, exist_ok=True)
+        os.makedirs(cls.OUTPUT_DIR, exist_ok=True)
+        for doc_type in cls.DOC_TYPES.keys():
+            os.makedirs(f"{cls.STORAGE_DIR}/{doc_type}", exist_ok=True)
 
 class SimpleRAGSystem:
     """Simple RAG system with Groq LLM and local embeddings"""

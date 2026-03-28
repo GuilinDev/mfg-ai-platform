@@ -7,12 +7,11 @@ import time
 from typing import Dict, List, Any
 import json
 
-# Add parent dir and src to path
+# Add parent dir to path for simple_rag import
 sys.path.insert(0, str(Path(__file__).parent))
-sys.path.insert(0, str(Path(__file__).parent / "src"))
 
-from simple_rag import SimpleRAGSystem
-from src.utils.config import Config
+# Import both SimpleRAGSystem and Config from simple_rag (Config is inlined there)
+from simple_rag import SimpleRAGSystem, Config
 
 # Page configuration
 st.set_page_config(
