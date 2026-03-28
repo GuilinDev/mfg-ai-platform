@@ -72,7 +72,8 @@ class Config:
             return cls.GROQ_API_KEY
         try:
             import streamlit as st
-            return st.secrets["groq"]["api_key"]
+            # Try flat key first, then nested
+            return st.secrets.get("GROQ_API_KEY", "") or st.secrets.get("groq", {}).get("api_key", "")
         except Exception:
             return ""
 
@@ -107,7 +108,14 @@ class SimpleRAGSystem:
     def __init__(self):
         # Initialize components
         self.dimension = 384  # all-MiniLM-L6-v2 dimension
+        # Try env var first, then Streamlit secrets
         self._hf_token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_TOKEN") or ""
+        if not self._hf_token:
+            try:
+                import streamlit as st
+                self._hf_token = st.secrets.get("HF_TOKEN", "")
+            except Exception:
+                pass
         
         self.groq_client = OpenAI(
             api_key=Config.get_groq_api_key(),
