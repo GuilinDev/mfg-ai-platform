@@ -49,15 +49,15 @@ def initialize_rag_system():
     """Initialize the simple RAG system (lazy — index built on first query)"""
     try:
         rag = SimpleRAGSystem()
-        
+
         # Try to load existing index (fast, no API calls)
         if rag.load_index("simple_rag_index"):
             rag._ready = True
         else:
             rag._ready = False  # Will build on first query
-        
+
         return rag
-        
+
     except Exception as e:
         st.error("Unable to start the search system. Please refresh the page or contact support.")
         return None
@@ -71,7 +71,6 @@ def ensure_index_ready(rag):
         rag.build_index()
         rag.save_index("simple_rag_index")
     rag._ready = True
-    st.success("✅ Ready! You can now search your specifications.")
     return True
 
 def render_confidence_badge(score: float, show_label: bool = True) -> str:
@@ -110,9 +109,36 @@ def clean_document_name(filename: str) -> str:
     # Replace underscores and hyphens with spaces, title case
     return name.replace("_", " ").replace("-", " ").title()
 
+
+def get_pdf_files_from_data_dir() -> List[str]:
+    """Scan data directory for PDF files and return cleaned names"""
+    data_path = Path(Config.DATA_DIR)
+    if not data_path.exists():
+        return []
+    pdf_files = list(data_path.glob("*.pdf"))
+    return sorted([clean_document_name(f.name) for f in pdf_files])
+
+
+def fallback_llm_answer(rag_system, query: str) -> str:
+    """Call Groq LLM directly when no knowledge base results found"""
+    try:
+        response = rag_system.groq_client.chat.completions.create(
+            model=Config.LLM_MODEL,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant for manufacturing and electronics questions. Provide clear, concise answers."},
+                {"role": "user", "content": query}
+            ],
+            temperature=0.3,
+            max_tokens=1000
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        return f"Unable to generate a response. Please try again later."
+
+
 def main():
     """Main application"""
-    
+
     # Header
     st.markdown('<h1 class="main-header">🔍 Manufacturing Spec Assistant</h1>', unsafe_allow_html=True)
     st.markdown("""
@@ -120,28 +146,35 @@ def main():
     Search across your FPC/PCB specifications instantly
     </div>
     """, unsafe_allow_html=True)
-    
+
     # Initialize RAG system
     rag_system = initialize_rag_system()
-    
+
     if not rag_system:
         st.stop()
-    
-    # Sidebar - Knowledge Base
+
+    # Sidebar - Knowledge Base (Fix 4: Show documents immediately)
     st.sidebar.markdown("## 📚 Knowledge Base")
 
-    # Show indexed documents
+    # Show indexed documents if available, otherwise show PDF files from data directory
     if hasattr(rag_system, 'metadata') and rag_system.metadata:
         unique_files = set(meta['source_file'] for meta in rag_system.metadata)
         st.sidebar.markdown(f"**{len(unique_files)} specifications indexed**")
         st.sidebar.markdown("---")
         for file in sorted(unique_files):
-            # Clean file name - remove extension and path
             clean_name = Path(file).stem.replace("_", " ").replace("-", " ")
             st.sidebar.markdown(f"📄 {clean_name}")
     else:
-        st.sidebar.markdown("*Documents will appear here after first search*")
-    
+        # Show PDF files from data directory immediately
+        pdf_files = get_pdf_files_from_data_dir()
+        if pdf_files:
+            st.sidebar.markdown(f"**{len(pdf_files)} specifications available**")
+            st.sidebar.markdown("---")
+            for name in pdf_files:
+                st.sidebar.markdown(f"📄 {name}")
+        else:
+            st.sidebar.markdown("*No documents found in data directory*")
+
     # Main interface - Sample questions as clickable chips
     st.markdown("#### 💡 Try a sample question:")
     sample_questions = [
@@ -156,63 +189,74 @@ def main():
     # Initialize session state for query
     if 'query_text' not in st.session_state:
         st.session_state.query_text = ""
-    if 'auto_search' not in st.session_state:
-        st.session_state.auto_search = False
+    if 'trigger_search' not in st.session_state:
+        st.session_state.trigger_search = False
 
-    # Create clickable chips using columns
+    # Create clickable chips using columns (Fix 5: Auto-search on click)
     cols = st.columns(3)
     for idx, question in enumerate(sample_questions):
         with cols[idx % 3]:
             if st.button(question, key=f"sample_{idx}", use_container_width=True):
                 st.session_state.query_text = question
-                st.session_state.auto_search = True
+                st.session_state.trigger_search = True
                 st.rerun()
 
     st.markdown("")  # Spacer
 
-    # Query input
-    query = st.text_input(
-        "Or type your own question:",
-        value=st.session_state.query_text,
-        placeholder="e.g., What is bending location tolerance?",
-        key="query_input"
-    )
+    # Fix 2: Use form for Enter key submission
+    with st.form(key="search_form", clear_on_submit=False):
+        query = st.text_input(
+            "Or type your own question:",
+            value=st.session_state.query_text,
+            placeholder="e.g., What is bending location tolerance?",
+            key="query_input"
+        )
+        submit_button = st.form_submit_button("🔍 Search", type="primary")
 
-    # Update session state when text input changes
-    if query != st.session_state.query_text:
+    # Update session state when form submitted
+    if submit_button:
         st.session_state.query_text = query
-        st.session_state.auto_search = False
+        st.session_state.trigger_search = True
 
-    col1, col2 = st.columns([1, 4])
-    with col1:
-        search_button = st.button("🔍 Search", type="primary")
-    with col2:
-        top_k = st.slider("Number of sources", 3, 10, 5)
+    # Determine if we should search
+    should_search = st.session_state.trigger_search and st.session_state.query_text
 
-    # Auto-search when sample question clicked
-    if st.session_state.auto_search:
-        search_button = True
-        st.session_state.auto_search = False
-    
-    if search_button and query:
+    # Reset trigger after checking
+    if st.session_state.trigger_search:
+        st.session_state.trigger_search = False
+
+    if should_search:
+        query = st.session_state.query_text
+
         # Build index on first query (lazy init)
         if not ensure_index_ready(rag_system):
             st.error("Unable to prepare the document search. Please refresh the page.")
             st.stop()
-        
+
         start_time = time.time()
-        
+
         with st.spinner("🔍 Searching specifications..."):
-            result = rag_system.query(query, top_k=top_k)
-        
+            result = rag_system.query(query, top_k=5)  # Fix 1: Hardcoded top_k=5
+
         processing_time = time.time() - start_time
-        
+
         if result['error']:
-            # Friendly error message for no results
+            # Fix 3: Fallback to general LLM when no results
             if "No search results" in str(result['error']) or "no results" in str(result['error']).lower():
-                st.warning("🔎 No exact match found in the knowledge base.")
+                st.markdown("## 📋 Answer")
+                st.warning("⚠️ No match found in your specifications. Here is a general answer:")
+
+                with st.spinner("🤖 Generating general answer..."):
+                    fallback_answer = fallback_llm_answer(rag_system, query)
+
+                st.markdown(f"""
+                <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                {fallback_answer}
+                </div>
+                """, unsafe_allow_html=True)
+
                 st.info("""
-                **Try these suggestions:**
+                **To get answers from your specifications:**
                 - Rephrase your question with different keywords
                 - Use more specific terms (e.g., "coverlay thickness" instead of "thickness")
                 - Browse the indexed documents in the sidebar for available topics
@@ -259,7 +303,7 @@ def main():
                             st.text(source.get('full_text', 'Full text not available'))
             else:
                 st.warning("No sources found")
-    
+
     # Sidebar - About section
     st.sidebar.markdown("---")
     st.sidebar.markdown("### ℹ️ About")
@@ -270,6 +314,8 @@ def main():
     doc_count = 0
     if hasattr(rag_system, 'metadata') and rag_system.metadata:
         doc_count = len(set(meta['source_file'] for meta in rag_system.metadata))
+    else:
+        doc_count = len(get_pdf_files_from_data_dir())
     st.markdown(f"""
     <div style="text-align: center; color: #888; font-size: 0.9rem;">
     © 2026 • Powered by AI • {doc_count} specifications indexed
