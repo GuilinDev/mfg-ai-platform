@@ -10,4 +10,5 @@ nohup.out
 *.pptx
 docs/ppt/*.pptx
 docs/
-prototype/data/pdfs/
+prototype/data/pdfs/080-*
+prototype/data/pdfs/056-*
