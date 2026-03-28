@@ -90,15 +90,12 @@ def get_overall_confidence(sources: List[Dict]) -> tuple:
         return "🔴 Low", "low"
 
     avg_score = sum(s['score'] for s in sources) / len(sources)
-    high_confidence_count = sum(1 for s in sources if s['score'] < 0.8)
 
-    # High confidence: multiple good matches with low scores
-    if len(sources) >= 3 and high_confidence_count >= 2 and avg_score < 1.0:
+    # FAISS L2 distance: lower = better. Typical range 0.5-2.0
+    if len(sources) >= 3 and avg_score < 1.5:
         return "🟢 High", "high"
-    # Medium confidence: some good matches
-    elif high_confidence_count >= 1 or avg_score < 1.2:
+    elif len(sources) >= 1 and avg_score < 2.0:
         return "🟡 Medium", "medium"
-    # Low confidence: poor matches
     else:
         return "🔴 Low", "low"
 
@@ -299,8 +296,8 @@ def main():
                         st.text(source['text_preview'])
 
                         # Show full text in a collapsible section
-                        if st.button(f"View full context", key=f"full_text_{i}"):
-                            st.text(source.get('full_text', 'Full text not available'))
+                        with st.expander("View full context"):
+                            st.text(source.get('full_text', source.get('text_preview', 'Full text not available')))
             else:
                 st.warning("No sources found")
 
