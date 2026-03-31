@@ -1,7 +1,7 @@
 # Hong AI Platform — Document RAG POC
 
 ## 项目信息
-- 客户: Hong (一亩三分地合同制)
+- 客户: Hong 
 - 行业: 新能源硬件制造业
 - Milestone 1: Document RAG + 自定义报告生成
 - 时间: 最多3个月
