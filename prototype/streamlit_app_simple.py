@@ -174,36 +174,14 @@ def main():
 
     # Main interface - Sample questions as clickable chips
     st.markdown("#### 💡 Try a sample question:")
-
-    q_category = st.radio("Category:", ["📄 PDF Specs", "📊 PPT Postmortem", "📐 Drawings"], horizontal=True, label_visibility="collapsed")
-
-    if q_category == "📊 PPT Postmortem":
-        sample_questions = [
-            "What is yield of P2 of V53 UAT1 in ICT?",
-            "What is top 1 issue of P2 of V53 UAT1 in ICT?",
-            "What is overall yield of P2 of V53 UAT1 in AMP?",
-            "What is top 1 issue of P2 of V53 UAT1 in AMP?",
-            "Compare FMEA between ICT and AMP for P2.",
-            "What corrective actions were taken for yield loss in AMP P2?",
-        ]
-    elif q_category == "📐 Drawings":
-        sample_questions = [
-            "What are the B2B stiffener specifications?",
-            "What is the prebend requirement?",
-            "What are the bonding sheet adhesive specifications?",
-            "What are the gold plating requirements?",
-            "What is the PSA specification?",
-            "What are the FAI dimension requirements?",
-        ]
-    else:
-        sample_questions = [
-            "What is bending location tolerance?",
-            "What is LPI or Solder mask thickness?",
-            "What is FPC design guideline of De-cap?",
-            "What is the bonding adhesive patch back?",
-            "What is dimension of EMI shield to coverlay edge?",
-            "What is FPC reflow test acceptance criteria?",
-        ]
+    sample_questions = [
+        "What is bending location tolerance?",
+        "What is LPI or Solder mask thickness?",
+        "What is FPC design guideline of De-cap?",
+        "What is yield of P2 of V53 UAT1 in ICT?",
+        "What is top 1 issue of P2 of V53 UAT1 in AMP?",
+        "What are the B2B stiffener specifications?",
+    ]
 
     # Initialize session state for query
     if 'query_text' not in st.session_state:
