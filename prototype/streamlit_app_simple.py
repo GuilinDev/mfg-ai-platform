@@ -45,16 +45,21 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 @st.cache_resource
+INDEX_VERSION = "v4"  # Bump this to force index rebuild after doc changes
+
 def initialize_rag_system():
     """Initialize the simple RAG system (lazy — index built on first query)"""
     try:
         rag = SimpleRAGSystem()
+        index_name = f"simple_rag_index_{INDEX_VERSION}"
 
         # Try to load existing index (fast, no API calls)
-        if rag.load_index("simple_rag_index"):
+        if rag.load_index(index_name):
             rag._ready = True
+            rag._index_name = index_name
         else:
             rag._ready = False  # Will build on first query
+            rag._index_name = index_name
 
         return rag
 
@@ -66,10 +71,11 @@ def ensure_index_ready(rag):
     """Build index on demand, not at startup"""
     if getattr(rag, '_ready', False):
         return True
+    index_name = getattr(rag, '_index_name', f"simple_rag_index_{INDEX_VERSION}")
     with st.spinner("🔄 Preparing your document search... (first time only, ~1 min)"):
         rag.process_pdfs(Config.DATA_DIR)
         rag.build_index()
-        rag.save_index("simple_rag_index")
+        rag.save_index(index_name)
     rag._ready = True
     return True
 
