@@ -151,15 +151,25 @@ class SimpleRAGSystem:
         return np.array(all_embeddings, dtype='float32')
     
     def process_pdfs(self, pdf_dir: str) -> None:
-        """Process all PDFs in a directory"""
-        print(f"Processing PDFs from: {pdf_dir}")
+        """Process all PDFs and markdown files in a directory (recursively)"""
+        print(f"Processing documents from: {pdf_dir}")
         
-        pdf_files = list(Path(pdf_dir).glob("*.pdf"))
+        base = Path(pdf_dir)
+        pdf_files = list(base.glob("*.pdf"))
         print(f"Found {len(pdf_files)} PDF files")
         
         for pdf_file in pdf_files:
             print(f"  Processing: {pdf_file.name}")
             self._process_single_pdf(str(pdf_file))
+        
+        # Also process markdown files (e.g. extracted PPT content)
+        md_dir = base.parent / "ppt_extracted"
+        if md_dir.exists():
+            md_files = list(md_dir.glob("*.md"))
+            print(f"Found {len(md_files)} markdown files (PPT extractions)")
+            for md_file in md_files:
+                print(f"  Processing: {md_file.name}")
+                self._process_single_markdown(str(md_file))
         
         print(f"Total documents processed: {len(self.documents)}")
     
@@ -191,7 +201,35 @@ class SimpleRAGSystem:
             
         except Exception as e:
             print(f"Error processing {pdf_path}: {e}")
-    
+
+    def _process_single_markdown(self, md_path: str) -> None:
+        """Process a single markdown file (extracted PPT content)"""
+        try:
+            filename = os.path.basename(md_path)
+            text = Path(md_path).read_text(encoding='utf-8')
+
+            # Split by slide headers (## Slide N)
+            import re
+            sections = re.split(r'(?=^## Slide \d+)', text, flags=re.MULTILINE)
+
+            for sec_idx, section in enumerate(sections):
+                if len(section.strip()) < 50:
+                    continue
+                # Chunk each section
+                chunks = self._chunk_text(section, chunk_size=512, overlap=50)
+                for i, chunk in enumerate(chunks):
+                    self.documents.append(chunk)
+                    self.metadata.append({
+                        'source_file': filename,
+                        'page_number': sec_idx,
+                        'chunk_index': i,
+                        'total_pages': len(sections),
+                        'chunk_id': f"{filename}_s{sec_idx}_c{i}"
+                    })
+
+        except Exception as e:
+            print(f"Error processing {md_path}: {e}")
+
     def _chunk_text(self, text: str, chunk_size: int = 512, overlap: int = 50) -> List[str]:
         """Simple text chunking"""
         words = text.split()
