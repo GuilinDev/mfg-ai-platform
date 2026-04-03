@@ -255,15 +255,8 @@ def main():
             # Display results
             st.markdown("## 📋 Answer")
 
-            # Get overall confidence
-            confidence_label, confidence_level = get_overall_confidence(result['sources'])
-
-            # Show confidence and response time
-            col1, col2 = st.columns([1, 3])
-            with col1:
-                st.markdown(f"**Confidence:** {confidence_label}")
-            with col2:
-                st.markdown(f"*Response time: {processing_time:.1f}s • {len(result['sources'])} sources found*")
+            # Show response time and source count
+            st.markdown(f"*Response time: {processing_time:.1f}s • {len(result['sources'])} sources found*")
 
             # Answer with styled box
             st.markdown(f"""
@@ -278,8 +271,7 @@ def main():
             if result['sources']:
                 for i, source in enumerate(result['sources'], 1):
                     doc_name = clean_document_name(source['file'])
-                    confidence = render_confidence_badge(source['score'], show_label=False)
-                    with st.expander(f"{confidence} 📄 {doc_name}, Page {source['page']}"):
+                    with st.expander(f"📄 {doc_name}, Page {source['page']}"):
                         st.markdown(f"**From:** {doc_name}")
                         st.markdown(f"**Page:** {source['page']}")
 
