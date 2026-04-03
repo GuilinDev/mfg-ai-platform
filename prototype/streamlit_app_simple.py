@@ -174,14 +174,36 @@ def main():
 
     # Main interface - Sample questions as clickable chips
     st.markdown("#### 💡 Try a sample question:")
-    sample_questions = [
-        "What is bending location tolerance?",
-        "What is LPI or Solder mask thickness?",
-        "What is FPC design guideline of De-cap?",
-        "What is the bonding adhesive patch back?",
-        "What is dimension of EMI shield to coverlay edge?",
-        "What is FPC reflow test acceptance criteria?"
-    ]
+
+    q_category = st.radio("Category:", ["📄 PDF Specs", "📊 PPT Postmortem", "📐 Drawings"], horizontal=True, label_visibility="collapsed")
+
+    if q_category == "📊 PPT Postmortem":
+        sample_questions = [
+            "What is yield of P2 of V53 UAT1 in ICT?",
+            "What is top 1 issue of P2 of V53 UAT1 in ICT?",
+            "What is overall yield of P2 of V53 UAT1 in AMP?",
+            "What is top 1 issue of P2 of V53 UAT1 in AMP?",
+            "Compare FMEA between ICT and AMP for P2.",
+            "What corrective actions were taken for yield loss in AMP P2?",
+        ]
+    elif q_category == "📐 Drawings":
+        sample_questions = [
+            "What are the B2B stiffener specifications?",
+            "What is the prebend requirement?",
+            "What are the bonding sheet adhesive specifications?",
+            "What are the gold plating requirements?",
+            "What is the PSA specification?",
+            "What are the FAI dimension requirements?",
+        ]
+    else:
+        sample_questions = [
+            "What is bending location tolerance?",
+            "What is LPI or Solder mask thickness?",
+            "What is FPC design guideline of De-cap?",
+            "What is the bonding adhesive patch back?",
+            "What is dimension of EMI shield to coverlay edge?",
+            "What is FPC reflow test acceptance criteria?",
+        ]
 
     # Initialize session state for query
     if 'query_text' not in st.session_state:
@@ -295,8 +317,25 @@ def main():
                         st.markdown("**Relevant excerpt:**")
                         st.text(source['text_preview'])
 
+                        # Render source PDF page as image
+                        try:
+                            import fitz
+                            source_file = source.get('file', '')
+                            page_num = source.get('page', 1)
+                            pdf_path = Path(Config.DATA_DIR) / source_file
+                            if pdf_path.exists() and source_file.endswith('.pdf'):
+                                doc = fitz.open(str(pdf_path))
+                                if 0 < page_num <= len(doc):
+                                    page = doc[page_num - 1]
+                                    pix = page.get_pixmap(matrix=fitz.Matrix(1.5, 1.5))
+                                    img_bytes = pix.tobytes("png")
+                                    st.image(img_bytes, caption=f"{source_file} — Page {page_num}", use_container_width=True)
+                                doc.close()
+                        except Exception:
+                            pass  # Silently skip if PDF rendering fails
+
                         # Show full text in a collapsible section
-                        with st.expander("View full context"):
+                        with st.expander("View Full Context"):
                             st.text(source.get('full_text', source.get('text_preview', 'Full text not available')))
             else:
                 st.warning("No sources found")
