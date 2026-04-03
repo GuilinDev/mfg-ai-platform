@@ -10,5 +10,4 @@ nohup.out
 *.pptx
 docs/ppt/*.pptx
 docs/
-prototype/data/pdfs/080-*
-prototype/data/pdfs/056-*
+# PDFs tracked for Streamlit Cloud deployment
