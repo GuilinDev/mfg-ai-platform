@@ -130,7 +130,17 @@ class SimpleRAGSystem:
         print(f"Initialized SimpleRAG with embedding dimension: {self.dimension}")
 
     def _embed(self, texts: List[str]) -> np.ndarray:
-        """Get embeddings via HuggingFace InferenceClient"""
+        """Get embeddings — local sentence-transformers (fast, no API key needed)"""
+        try:
+            from sentence_transformers import SentenceTransformer
+            if not hasattr(self, '_st_model'):
+                self._st_model = SentenceTransformer(self.HF_EMBED_MODEL)
+            vecs = self._st_model.encode(texts, batch_size=64, show_progress_bar=False)
+            return np.array(vecs, dtype='float32')
+        except ImportError:
+            pass
+
+        # Fallback: HuggingFace InferenceClient (slower, needs token)
         from huggingface_hub import InferenceClient
         client = InferenceClient(token=self._hf_token or None)
         all_embeddings = []
@@ -185,7 +195,7 @@ class SimpleRAGSystem:
                 
                 if len(text.strip()) > 100:  # Only process substantial content
                     # Split into chunks
-                    chunks = self._chunk_text(text, chunk_size=512, overlap=50)
+                    chunks = self._chunk_text(text, chunk_size=Config.CHUNK_SIZE, overlap=Config.CHUNK_OVERLAP)
                     
                     for i, chunk in enumerate(chunks):
                         self.documents.append(chunk)
@@ -216,7 +226,7 @@ class SimpleRAGSystem:
                 if len(section.strip()) < 50:
                     continue
                 # Chunk each section
-                chunks = self._chunk_text(section, chunk_size=512, overlap=50)
+                chunks = self._chunk_text(section, chunk_size=Config.CHUNK_SIZE, overlap=Config.CHUNK_OVERLAP)
                 for i, chunk in enumerate(chunks):
                     self.documents.append(chunk)
                     self.metadata.append({
