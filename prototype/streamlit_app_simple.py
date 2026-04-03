@@ -44,7 +44,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-INDEX_VERSION = "v4"  # Bump this to force index rebuild after doc changes
+INDEX_VERSION = "v5"  # Bump this to force index rebuild after doc changes
 
 @st.cache_resource
 def initialize_rag_system():

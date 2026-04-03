@@ -283,6 +283,8 @@ class SimpleRAGSystem:
         
         results = []
         for i, (score, idx) in enumerate(zip(scores[0], indices[0])):
+            if idx < 0 or idx >= len(self.documents):
+                continue
             results.append({
                 'text': self.documents[idx],
                 'metadata': self.metadata[idx],
