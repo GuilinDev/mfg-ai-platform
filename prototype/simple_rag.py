@@ -218,9 +218,9 @@ class SimpleRAGSystem:
             filename = os.path.basename(md_path)
             text = Path(md_path).read_text(encoding='utf-8')
 
-            # Split by slide headers (## Slide N)
+            # Split by any ## header OR Q&A pairs
             import re
-            sections = re.split(r'(?=^## Slide \d+)', text, flags=re.MULTILINE)
+            sections = re.split(r'(?=^## |\n\*\*Q: )', text, flags=re.MULTILINE)
 
             for sec_idx, section in enumerate(sections):
                 if len(section.strip()) < 50:
