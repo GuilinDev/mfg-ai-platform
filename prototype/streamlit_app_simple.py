@@ -238,22 +238,13 @@ def main():
         processing_time = time.time() - start_time
 
         if result['error']:
-            # Fix 3: Fallback to general LLM when no results
+            # No results — tell user clearly, no fabrication
             if "No search results" in str(result['error']) or "no results" in str(result['error']).lower():
                 st.markdown("## 📋 Answer")
-                st.warning("⚠️ No match found in your specifications. Here is a general answer:")
-
-                with st.spinner("🤖 Generating general answer..."):
-                    fallback_answer = fallback_llm_answer(rag_system, query)
-
-                st.markdown(f"""
-                <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
-                {fallback_answer}
-                </div>
-                """, unsafe_allow_html=True)
+                st.warning("⚠️ No matching information found in the uploaded documents.")
 
                 st.info("""
-                **To get answers from your specifications:**
+                **Tips:**
                 - Rephrase your question with different keywords
                 - Use more specific terms (e.g., "coverlay thickness" instead of "thickness")
                 - Browse the indexed documents in the sidebar for available topics

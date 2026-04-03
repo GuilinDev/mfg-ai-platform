@@ -332,10 +332,11 @@ Context:
 Question: {question}
 
 Instructions:
-- Provide a clear, specific answer with exact values and units when available
+- ONLY answer based on the provided context. Do NOT use outside knowledge.
+- If the answer is not clearly stated in the context, say "This information was not found in the available documents."
+- Provide exact values and units when available
 - Always cite the source document and page number
 - If the answer requires multiple sources, reference all relevant ones
-- If the information is not in the provided context, say so clearly
 
 Answer:"""
 
