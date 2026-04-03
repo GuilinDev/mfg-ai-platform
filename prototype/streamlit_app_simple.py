@@ -44,9 +44,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-@st.cache_resource
 INDEX_VERSION = "v4"  # Bump this to force index rebuild after doc changes
 
+@st.cache_resource
 def initialize_rag_system():
     """Initialize the simple RAG system (lazy — index built on first query)"""
     try:
