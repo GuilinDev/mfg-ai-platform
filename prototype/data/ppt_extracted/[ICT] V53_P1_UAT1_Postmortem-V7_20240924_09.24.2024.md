@@ -1,7 +1,7 @@
-# [ICT] V53_P1_UAT1_Postmortem-V7_20240924_09.24.2024
+# [ICT] V53_P1_UAT1_Postmortem-V7_20240924_09.24.2024.pptx
+**Total Slides:** 179
 
-
-## Slide 1: D23&V53 P1 Postmortem 
+## Slide 1
 D23&V53 P1 Postmortem
 Luxshare ICT
 09-24-2024
@@ -9,8 +9,9 @@ Luxshare ICT
 ## Slide 2
 0. Meeting Agenda
 
+**Table 1:**
 | China Date:9/24 | CPTO Date:9/23 |  |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | China Time | CPTO Time | L/T | Content | Vendor Site | CPTO DFM DRI | I/R DFM DRI | I/R PQM DRI |
 | 8:35~8:40 AM | 17:35~17:40 | 5 Mins | Team introduction | ICT KS | / | / | / |
 | 8:40~9:05 AM | 17:40~18:05 | 25 Mins | V53 UAT1 Flex Review |  | Erfan Mohammadi | Mark Di | Mark Di |
@@ -26,8 +27,9 @@ Luxshare ICT
 
 ## Slide 3
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -54,8 +56,9 @@ Luxshare ICT
 ## Slide 4
 0. Round table team introduction
 
+**Table 1:**
 | Department | Name | Title | Role | Contact |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | VP | Hanson Qian | VP | Overall | +86 185 1215 7889 Hanson.Qian@luxshare-ict.com |
 | EPM | Judy Du | EPM Director | Overall | +86 182 6165 4167 judy@luxshare-ict.com |
 |  | Winey Wang | EPM Manager | Overall | +86 151 5153 5501 Winey.wang@luxshare-ict.com |
@@ -77,8 +80,9 @@ Luxshare ICT
 ## Slide 5
 0. Round table team introduction
 
+**Table 1:**
 | Department | Name | Title | Role | Contact |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | DFM & SMT-PE | Daniel Zhang | DFM & PE Manager | Overall | +86 137 7313 9750 Daniel.zhang@luxshare-ict.com |
 |  | Qaa Wang | DFM & PE Leader | D23&V53 Antenna Flex | +86 182 6161 6769 Qaa.Wang@luxshare-ict.com |
 |  | Trees Yan | PE | D23 LAT1/LAT2/UAT1/UAT2 | +86 159 6253 1827 Trees.Yan@luxshare-ict.com |
@@ -97,8 +101,9 @@ Luxshare ICT
 
 ## Slide 6
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -126,9 +131,11 @@ Luxshare ICT
 1. Site Management | ICT Flex Management System
 
 ## Slide 8
+1. V53&D23 Antenna Flex | NPI Engineering Resource Plan
 
+**Table 1:**
 | Dept | Project HC Target | Project HC Actual | HC Gap | HC Hiring plan |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | EPM | 5 | 5 | 0 | NA |
 | TPM/PMC/CSR | 12 | 12 | 0 | NA |
 | PD/EE | 15 | 15 | 0 | NA |
@@ -144,7 +151,6 @@ Luxshare ICT
 | Lab and Measurement | 56 | 56 | 0 | NA |
 | Total |  | 195 | 0 | NA |
 
-1. V53&D23 Antenna Flex | NPI Engineering Resource Plan
 
 ## Slide 9
 D2 - 24,000㎡
@@ -156,21 +162,25 @@ D5 Building
 
 ## Slide 10
 D23/V53 | NPI workshop Space/Layout---D5-1F
+SMT: 5 Lines
 
+**Table 1:**
 | D23V53  NPI  Production Line Resource |  |  |
-|---|---|---|
+| --- | --- | --- |
 | SMT  Line | V53 Duran/V53 Strobe /D23 UAT1 | Dedicated 1×for V53 Duran/V53 Strobe /D23 UAT1 share line |
 |  | D23 LAT2 | Dedicated 1×for  D23 LAT2 share line |
 |  | V53 UAT1 /D23 UAT2- Bonding | Dedicated 1×for  V53 UAT1 / D23 UAT2 Bonding share line |
 |  | V53 UAT2/D23 UAT2 | Dedicated 1×for  V53 UAT2/D23 UAT2 share line |
 
-SMT: 5 Lines
 
 ## Slide 11
 SMT: 2 Lines
+BE： 8 Lines
+D23/V53 | NPI workshop Space/Layout---D5-3F
 
+**Table 1:**
 | D23V53  NPI  Production Line Resource |  |  |
-|---|---|---|
+| --- | --- | --- |
 | Backend Line | Duran | Dedicated 1×for V53 |
 |  | UAT1 | Dedicated 1×for D23 |
 |  |  | Dedicated 1×for V53 |
@@ -180,18 +190,20 @@ SMT: 2 Lines
 |  | LAT2 | Dedicated 1×for D23 |
 
 
+**Table 2:**
 | D23V53  NPI  Production Line Resource |  |  |
-|---|---|---|
+| --- | --- | --- |
 | SMT Line | V53 UAT1 | Dedicated 1×for V53 UAT1 share line |
 |  | D23 LAT1 | Dedicated 1×for D23 LAT1 share line |
 
-BE： 8 Lines
-D23/V53 | NPI workshop Space/Layout---D5-3F
 
 ## Slide 12
+D23/V53 P1 readiness review (line design plan for SMT)
+Note: Total 6 lines for D23V53 Phone flex  P1 SMT
 
+**Table 1:**
 | Project | Line | Flex | P1 line Q'ty | Line | Floor |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | D23V53 | SMT | V53 Duran/V53 Strobe /D23 UAT1 | 1 line | Share  line | D5-1F |
 |  |  | D23 LAT2 | 1 line | Share  line |  |
 |  |  | V53 UAT1 Bonding/D23 UAT2 Bonding | 1 line | Share  line |  |
@@ -199,14 +211,14 @@ D23/V53 | NPI workshop Space/Layout---D5-3F
 |  |  | V53 UAT1 | 1 line | Share  line | D5 3F |
 |  |  | D23 LAT1 | 1 line | Share  line |  |
 
-D23/V53 P1 readiness review (line design plan for SMT)
-Note: Total 6 lines for D23V53 Phone flex  P1 SMT
 
 ## Slide 13
 Note: Total 7 short lines for D23V53 Phone flex P1 Backend
+D23/V53 P1 readiness review (line design plan for Backend)
 
+**Table 1:**
 | Project | Line | Flex | P1 Bending line Q'ty (manual) | P1 1K Test line Q'ty (manual) | P1 RF/ICTTest line Q'ty(manual) | Floor |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | D23V53 | Backend | V53 Duran | 1 | NA | 1 | D5 3F |
 |  |  | D23 UAT1 | 1 | NA | 1 |  |
 |  |  | V53 UAT1 | 1 | 1 | 1 |  |
@@ -215,7 +227,6 @@ Note: Total 7 short lines for D23V53 Phone flex P1 Backend
 |  |  | D23 LAT1 | 1 | NA | 1 |  |
 |  |  | D23 LAT2 | 1 | NA | 1 |  |
 
-D23/V53 P1 readiness review (line design plan for Backend)
 
 ## Slide 14
 V53 Duran/UAT1/UAT2 & D23 LAT1/LAT2/UAT1/UAT2 P1 build Postmortem Dashboard
@@ -223,8 +234,9 @@ Low risk
 Medium risk
 High risk
 
+**Table 1:**
 | Postmortem Content | D53 UAT1 Flex | D53 UAT2 Flex | V53 Duran Flex | D23 LAT1 Flex | D23 LAT2 | D23 UAT1 | D23 UAT2 |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 O-Chart and resource plan |  |  |  |  |  |  |  |
 | 2 Configs and Build status |  |  |  |  |  |  |  |
 | 3 IQC |  |  |  |  |  |  |  |
@@ -247,16 +259,20 @@ High risk
 | 20 MP Line Qual plan (update from EVT postmortem) |  |  |  |  |  |  |  |
 
 
-## Slide 15: V53 UAT1 P1 Postmortem 
+## Slide 15
 V53 UAT1 P1 Postmortem
 Luxshare ICT
 09-24-2024
 
 ## Slide 16
 V53 UAT1 P1 build Postmortem Dashboard
+Low risk
+Medium risk
+High risk
 
+**Table 1:**
 | Postmortem Content | V53 UAT1 Flex |
-|---|---|
+| --- | --- |
 | 1 O-Chart and resource plan |  |
 | 2 Configs and Build status |  |
 | 3 IQC | 1. APN: 821-05769, vendor Avary, Failure in FAI 5 low CPK, A customer waive for P1 data collect. |
@@ -278,14 +294,12 @@ V53 UAT1 P1 build Postmortem Dashboard
 | 19 Vendor owned MP material supplier POR |  |
 | 20 MP Line Qual plan (update from EVT postmortem) |  |
 
-Low risk
-Medium risk
-High risk
 
 ## Slide 17
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -310,9 +324,13 @@ High risk
 
 
 ## Slide 18
+2. Configs - Design Highlight and Comparison
+D93 UAT1
+V53 UAT1
 
+**Table 1:**
 | Items | Last Generation | P1:X06P1-U1-MIYG8-SM | P1:X06P1-U1-MIYG9-SM | P1:X06P1-U1-MINX2-SA | P1:X06P1-U1-MINX2-SA-D1 | P1:X06P1-U1-MIYG8-SM-D1 | P1:X06P1-U1-MIYG9-SM-D1 | P1:X06P1-U1-MINA8-SA-D1 |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | FPC | 4layers,Murata | 4layers,Murata | Same | Same | 4layers,DOE Murata | 4layers,DOE Murata | 4layers,DOE Murata | 4layers,DOE Murata |
 | LCR | CAP*14,  IND*6,  RES*2 | CAP*22,  IND*21,  RES*7 | Same | Same | CAP*21,  IND*24,  RES*7 | CAP*21,  IND*24,  RES*7 | CAP*21,  IND*24,  RES*7 | CAP*21,  IND*24,  RES*7 |
 | IC | U0300:353S0330 (PSEMI) U0310:353S03654 (PSEMI) U0402:353S032651 (QORVO) | U0300:353S03304 (Psemi) U0301:353S03610 (Infineon) U0302:353S03284 (QORVO) U0303:353S03594 (QORVO) U0400:353S04043 (Psemi) | Same | Same | Same | Same | Same | Same |
@@ -326,15 +344,13 @@ High risk
 | 2D Barcode | 7.01*5.00mm,half adhesive | 7.01*4.00mm,half adhesive | Same | Same | Same | Same | Same | Same |
 | Diﬀerence / picture |  |  |  |  |  |  |  |  |
 
-2. Configs - Design Highlight and Comparison
-D93 UAT1
-V53 UAT1
 
 ## Slide 19
 2. V53 UAT1 P1 build status
 
+**Table 1:**
 | Config | Description | Bareflex | Assembly | Ship to | Shipment Qty | Build Status |  | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X06P1-U1-MIYG8-SM | 821-05715-01 | Front-end Nomi Back-end Shenzhen | ICT-KS | FXGL | 525 | Finish all shipment |  |  |
 | X06P1-U1-MIYG9-SM | 821-05494-01 | Front-end Nomi Back-end Shenzhen | ICT-KS | FXGL | 525 | Finish all shipment |  |  |
 | X06P1-U1-MINX2-SA |  | Front-end Nomi Back-end Shenzhen | ICT-KS | FXGL | 525 | Finish all shipment |  |  |
@@ -346,8 +362,9 @@ V53 UAT1
 
 ## Slide 20
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -374,8 +391,9 @@ V53 UAT1
 ## Slide 21
 3.V53 UAT1 IQC Summary and Highlight Summary
 
+**Table 1:**
 | Item | Cosmetic | Dimension | Function/Characteristic | Package |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Bare Flex (both PI and LCP) |  | APN: 821-05769, vendor Avary, Failure in FAI 5 low CPK, A customer waive for P1 data collect. |  |  |
 | Clip |  |  |  |  |
 | PSA |  |  |  |  |
@@ -392,8 +410,9 @@ V53 UAT1
 Pass
 Fail
 
+**Table 1:**
 | Component type | Supplier | Sampling Size | Checking items | Methodology | Result | Remark |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | Bare Flex (both PI and LCP) | MURATA Avary Mflex | AQL 0.4 | Cosmetic | CCD | Pass |  |
 |  |  | 32pcs | Dimension-FAI | OMM | Avary: 1 dimension low CPK | A customer waived |
 |  |  | 32pcs | Dimension-SPC | OMM | Pass |  |
@@ -422,8 +441,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | Component type | Supplier | Sampling Size | Checking items | Methodology | Result | Remark |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | B2B connector | MURATA | AQL 0.4 | Cosmetic | CCD | Pass |  |
 |  |  | 32pcs | Dimension-FAI | OMM | Pass |  |
 |  |  | 32pcs | Dimension-SPC | OMM | Pass |  |
@@ -447,8 +467,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | Component type | Supplier | Sampling Size | Checking items | Methodology | Result | Remark |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | IC | Qorvo Psemi Infineon | AQL 0.4 | Cosmetic | CCD | Pass |  |
 |  |  | 32pcs | Plating thickness | XRF | Pass |  |
 |  |  | 5pcs | Solderability | Solder Oven | Pass |  |
@@ -477,8 +498,9 @@ CA:
 ## Slide 26
 3.V53 UAT1 Flex Waiver List
 
+**Table 1:**
 | Item | Vendor | APN | Waiver item | Waiver Description | Analysis | Waiver approval date | Waiver approver | Build Impact |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Avary | 821-05769 | Dimension | FAI 5 dimension is low cpk | FA:FAI5 2*R0.3±0.20 CPK<1.33，FAI 5-1 is less than 1/4 arc，FAI 5-2 is less than 1/8 arc(Measurement equipment capability>1/4 arc)，Inaccurate point capture leads to unstable measurement.CA:1.Avary suggests to waive issues for this build2.Avary suggests to remove FAI 5，or change the two dimension as reference,please help to confirm | 2024/8/2 | Cus Mueller | No influence |
 
 
@@ -487,8 +509,9 @@ CA:
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 1 | FAI40 | 16.880 | 0.100 | 0.100 | 13.157 | 12.481 | Pass |  |
 | 2 | FAI41 | 17.630 | 0.100 | 0.100 | 10.909 | 11.913 | Pass |  |
@@ -515,8 +538,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 19 | FAI74 | 25.010 | 0.100 | 0.100 | 10.747 | 11.080 | Pass |  |
 | 20 | FAI81-1 | 9.010 | 0.100 | 0.100 | 9.805 | 10.693 | Pass |  |
@@ -543,8 +567,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | SPC | Nominal | Tol | Tol | CPK(Spec>1.67) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 1 | FAI36SPCAJ | 18.980 | 0.100 | 0.100 | 8.657 | 9.393 | Pass |  |
 | 2 | FAI37SPCAK | 20.700 | 0.100 | 0.100 | 11.943 | 10.890 | Pass |  |
@@ -570,8 +595,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | Thickness | Nominal | Tol | Tol | CPK(Spec>1.67) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 1 | FAI173/SPCX | 0.260 | 0.020 | 0.020 | 9.782 | 9.989 | Pass |  |
 | 2 | FAI174/SPCY | 0.375 | 0.030 | 0.030 | 2.849 | 3.052 | Pass |  |
@@ -591,8 +617,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 1 | FAID01 | 32.445 | 0.050 | 0.050 | 3.340 | 3.116 | Pass |  |
 | 2 | FAID02 | 24.413 | 0.050 | 0.050 | 2.525 | 2.296 | Pass |  |
@@ -619,8 +646,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 19 | FAID21 | 4.752 | 0.050 | 0.050 | 2.864 | 2.748 | Pass |  |
 | 20 | FAID22 | 5.868 | 0.050 | 0.050 | 4.141 | 3.819 | Pass |  |
@@ -651,8 +679,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 1 | FAI40 | 16.880 | 0.100 | 0.100 | 13.134 | 12.725 | Pass |  |
 | 2 | FAI41 | 17.630 | 0.100 | 0.100 | 10.907 | 11.543 | Pass |  |
@@ -679,8 +708,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 19 | FAI74 | 25.010 | 0.100 | 0.100 | 9.990 | 10.778 | Pass |  |
 | 20 | FAI81.1 | 9.010 | 0.100 | 0.100 | 8.632 | 9.127 | Pass |  |
@@ -707,8 +737,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | SPC | Nominal | Tol | Tol | CPK(Spec>1.67) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 1 | FAI36SPCAJ | 18.980 | 0.100 | 0.100 | 7.421 | 7.685 | Pass |  |
 | 2 | FAI37SPCAK | 20.700 | 0.100 | 0.100 | 8.262 | 9.250 | Pass |  |
@@ -734,8 +765,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | Thickness | Nominal | Tol | Tol | CPK(Spec>1.67) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 1 | FAI173/SPCX | 0.260 | 0.020 | 0.020 | 4.039 | 3.033 | Pass |  |
 | 2 | FAI174/SPCY | 0.375 | 0.030 | 0.030 | 3.322 | 2.388 | Pass |  |
@@ -755,8 +787,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 1 | FAI1 | 32.445 | 0.050 | 0.050 | 2.087 | 1.882 | Pass |  |
 | 2 | FAI2 | 24.413 | 0.050 | 0.050 | 1.945 | 1.713 | Pass |  |
@@ -783,8 +816,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Murata |  |  |
 | 19 | FAI21 | 4.752 | 0.050 | 0.050 | 3.067 | 2.099 | Pass |  |
 | 20 | FAI22 | 5.868 | 0.050 | 0.050 | 1.961 | 2.223 | Pass |  |
@@ -815,8 +849,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  |  |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Mflex | ICT | Avary |  |  |
 | 1 | FAI2 | 13.620 | 0.120 | 0.120 | 3.202 | 3.419 | 2.843 | 3.728 | Pass |  |
 | 2 | FAI4 | 0.060 | 0.120 | 0.120 | 2.373 | 2.280 | 6.886 | 5.872 | Pass |  |
@@ -851,8 +886,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | SPC | Nominal | Tol | Tol | CPK(Spec>1.67) |  |  |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Mflex | ICT | Avary |  |  |
 | 1 | FAI1.1-SPCA | 0.900 | 0.050 | 0.050 | 3.786 | 4.940 | 11.923 | 10.574 | Pass |  |
 | 2 | FAI1.2-SPCA | 0.900 | 0.050 | 0.050 | 2.142 | 1.730 | 10.311 | 11.947 | Pass |  |
@@ -872,8 +908,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | Thickness | Nominal | Tol | Tol | CPK(Spec>1.67) |  |  |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Mflex | ICT | Avary |  |  |
 | 1 | FAI8\SPCC | 0.142 | 0.020 | 0.020 | 3.457 | 2.409 | 5.032 | 4.787 | Pass |  |
 | 2 | FAI7\SPCF | 0.106 | 0.020 | 0.020 | 5.279 | 6.457 | 5.087 | 6.266 | Pass |  |
@@ -892,8 +929,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | FAI | Nominal | Tol | Tol | CPK(Spec>1.33) |  |  |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  | (+) | (-) | ICT | Mflex | ICT | Avary |  |  |
 | 1 | FAI1 | 4.100 | 0.050 | 0.050 | 12.042 | 13.691 | 5.328 | 5.635 | Pass |  |
 | 2 | FAI2 | 1.350 | 0.075 | 0.075 | 2.667 | 2.293 | 4.313 | 3.382 | Pass |  |
@@ -907,8 +945,9 @@ Fail
 Pass
 Fail
 
+**Table 1:**
 | SN | P/N | Items | Nominal | Tol | Tol | JT |  | DX |  | Result | Remark |
-|---|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  | CPK(Spec>1. 33) |  | CPK(Spec>1. 33) |  |  |  |
 |  |  |  | （mm） | （+） | （-） | JT | ICT | DX | ICT |  |  |
 | 1 | 029-001H-3138 | Length | 6.24 | 0.100 | 0.100 | 5.312 | 6.116 | 10.419 | 11.061 | Pass |  |
@@ -951,8 +990,9 @@ Fail
 
 ## Slide 55
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -982,8 +1022,9 @@ Panel
 Piece
 Traceabilty/Shopfloor station
 
+**Table 1:**
 | SMT (BOT) | Remove UV Film |
-|---|---|
+| --- | --- |
 |  | Panel to Tray |
 |  | Tape on metal sheet |
 |  | Flex Loading |
@@ -1000,8 +1041,9 @@ Traceabilty/Shopfloor station
 |  | Flipping |
 
 
+**Table 2:**
 | SMT  (TOP) | Flipping AOI |
-|---|---|
+| --- | --- |
 |  | HTS Print |
 |  | Add metal cover |
 |  | SPI |
@@ -1017,8 +1059,9 @@ Traceabilty/Shopfloor station
 |  | Flipping |
 
 
+**Table 3:**
 | CC Glue | Add metal cover |
-|---|---|
+| --- | --- |
 |  | UV Dispensing |
 |  | Glue inspection |
 |  | UV Cure |
@@ -1034,9 +1077,14 @@ Traceabilty/Shopfloor station
 
 
 ## Slide 57
+4. Assembly Process Flow Chart-Strobe
+Panel
+Piece
+Traceabilty/Shopfloor station
 
+**Table 1:**
 | SMT (BOT) | Tape on metal sheet |
-|---|---|
+| --- | --- |
 |  | Flex Loading |
 |  | 2DBC Link |
 |  | Add baking cover |
@@ -1058,15 +1106,16 @@ Traceabilty/Shopfloor station
 |  | Tray to bonding tray |
 |  | Package to box |
 
-4. Assembly Process Flow Chart-Strobe
+
+## Slide 58
+4. Assembly Process Flow Chart-UAT1 Bonding
 Panel
 Piece
 Traceabilty/Shopfloor station
 
-## Slide 58
-
+**Table 1:**
 | Bonding | Strobe P&P |
-|---|---|
+| --- | --- |
 |  | Flux dispensing |
 |  | AOI |
 |  | UAT1 P&P |
@@ -1090,8 +1139,9 @@ Traceabilty/Shopfloor station
 |  | Scan |
 
 
+**Table 2:**
 | Backend | Bending |
-|---|---|
+| --- | --- |
 |  | VI |
 |  | MIC Film Remove |
 |  | 1K test |
@@ -1106,19 +1156,17 @@ Traceabilty/Shopfloor station
 |  | OQC (VI) |
 |  | Package |
 
-4. Assembly Process Flow Chart-UAT1 Bonding
-Panel
-Piece
-Traceabilty/Shopfloor station
 
 ## Slide 59
 4. Assembly Yield Trend and top5 breakdown
 
 ## Slide 60
 4. Assembly Yield Trend and top5 breakdown
+100.00%
 
+**Table 1:**
 | Failure Model | Quantity | Fail Rate | Accumulation percentage |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Clip deformation | 41 | 0.70% | 24.85% |
 | Printing issue | 24 | 0.39% | 38.79% |
 | Flex deformation | 23 | 0.36% | 51.52% |
@@ -1126,13 +1174,13 @@ Traceabilty/Shopfloor station
 | Testing NTF | 19 | 0.32% | 75.15% |
 | Others | 41 | 0.70% | 100.00% |
 
-100.00%
 
 ## Slide 61
 4. Assembly Yield Trend and top5 breakdown
 
+**Table 1:**
 | Defect | Qty | FA | CA |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Component shift | 5 | Wiping the board causes component shift. | Training operator to handle products method. |
 | Printing issue | 4 | SMT check no obvious abnormal, Keeping track | Keeping track. |
 | Glue infuffient | 3 | The IC path glue amount is not set enough to cause less glue | IC path increase glue volume 0.14→0.16 tracking confirm OK |
@@ -1154,9 +1202,11 @@ Traceabilty/Shopfloor station
 
 
 ## Slide 62
+4. Assembly Yield Trend and top5 breakdown
 
+**Table 1:**
 | Item | Defect  Description | Picture | Defect Rate % | Previous  build % | FA/Root Cause | Corrective Action | DRI  Due Date | Validation (xxF/input=defect rate%) |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Clip deformation-（Handling issue） |  | 0.70% (41F/5850) | / | Improper handling of the product and remove metal cover method lead to the clip deformation. | 1.Training the operator should first align the Pin with the round hole，then place the metal cover.2.Import the automatic add metal cover machine in EVT. | Xiaofeng 8/22 | 0.00% （0F/2900T） |
 | 2 | Flex deformation-(Handling issue) |  | 0.39% (23F/5850T) | / | The metal tray wall was interference with products during remove the flex resulting in flex deformation. | 1.Optimize the Un-loading tray position for clamp flex and training operator the  method of clamp flex. 2.We will add this issue into lesson learn. 3.Import semi-automatic CCD to inspection flex in EVT. | Xiaofeng 8/26 | 0.00% (0F/3550T) |
 | 3 | Flex dent (Process issue) |  | 0.35% (21F/5850T) | / | The MIC film P&P fixture was not  fool-proof cause flex dent | Modify fixture to fool-proof, make cover head and support surface match, and add stopper of cover to avoid over press. | Peng Huang 9/8 | 0.00% (0F/3250T) |
@@ -1164,21 +1214,13 @@ Traceabilty/Shopfloor station
 | 5 | Testing NTF | NA | 0.32% (19F/5850T) | / | The probe pin is in poor contact with the strobe Pad, resulting in the high NTF issue. | 1.Change the probe design, add for two thinner pogo pins to touch the strobe area for better contact. 2.Take this as lesson for similar flex design. | Yazhou 8/27 | 0% (0F/3550T) |
 
 
+**Table 2:**
 | Flex/Assembly | Input Qty | Output Qty | Yield | Yield Target QCP | Yield Gap | *Supply Chain MP target commitment to GSM | *MP Yield by ”yield calculation” |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | UAT1 | 5850 | 5685 | 97.18% | 85% | 12.18% | / | / |
 
-4. Assembly Yield Trend and top5 breakdown
 
 ## Slide 63
-
-| Component | Flex | Vendor | Murata | APN | 056-20573 | Failure process/station | VI |
-|---|---|---|---|---|---|---|---|
-| Issue Description | Clip deformation-Handling issue Defected rate:  0.70% (41F/5850T)              Before:  2.10% (26F/1250T)                              0.95% (10F/1050T)                              0.80% (5F/650T)                After :  0.00% (0F/2900T ) |  |  |  |  |  |  |
-| FA | VI detected*41pcs of clip deformation and concentrated the carrier edge. Confirm that the Post-AOI image clip has no deformation phenomenon. Confirm X-ray image, clip deformation, the locking risk stands between the back of Post-AOI and the X-Ray. Confirmed that operator handling products may cause clip deformation risk after the reflow. Confirm that operator to remove metal which may cause the clip deformation risk. Simulation：The operator handling products and removing metal cover method , the defect reproduce. Conclusion: Improper handling of the product and remove metal cover method lead to the clip deformation. |  |  |  |  |  |  |
-| CA | 1.Training the operator holding carrier and remove metal cover method to avoid the clip. Done 8/22 Xiaofeng 2.Ask operator to follow SOP operation. Done 8/22 Xiaofeng 3.Import the automatic removed metal cover machine in EVT. On-going |  |  |  |  |  |  |
-| Validation | Tracked 2900pcs, the defective rate 0.00%(0F/2900T). Done 9/12 Xiaofeng |  |  |  |  |  |  |
-
 X-Ray Image
 4. Failure FACA
 OK
@@ -1192,30 +1234,32 @@ Mapping
 Risk Station
 Training list and SOP
 
+**Table 1:**
+| Component | Flex | Vendor | Murata | APN | 056-20573 | Failure process/station | VI |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Issue Description | Clip deformation-Handling issue Defected rate:  0.70% (41F/5850T)              Before:  2.10% (26F/1250T)                              0.95% (10F/1050T)                              0.80% (5F/650T)                After :  0.00% (0F/2900T ) |  |  |  |  |  |  |
+| FA | VI detected*41pcs of clip deformation and concentrated the carrier edge. Confirm that the Post-AOI image clip has no deformation phenomenon. Confirm X-ray image, clip deformation, the locking risk stands between the back of Post-AOI and the X-Ray. Confirmed that operator handling products may cause clip deformation risk after the reflow. Confirm that operator to remove metal which may cause the clip deformation risk. Simulation：The operator handling products and removing metal cover method , the defect reproduce. Conclusion: Improper handling of the product and remove metal cover method lead to the clip deformation. |  |  |  |  |  |  |
+| CA | 1.Training the operator holding carrier and remove metal cover method to avoid the clip. Done 8/22 Xiaofeng 2.Ask operator to follow SOP operation. Done 8/22 Xiaofeng 3.Import the automatic removed metal cover machine in EVT. On-going |  |  |  |  |  |  |
+| Validation | Tracked 2900pcs, the defective rate 0.00%(0F/2900T). Done 9/12 Xiaofeng |  |  |  |  |  |  |
+
+
 ## Slide 64
-
-| Component | UAT1 Flex | Vendor | Murata | APN | 056-20573 | Failure process/station | VI |
-|---|---|---|---|---|---|---|---|
-| Issue Description | Flex deformation-Handling issue Defected rate:  0.39% (23F/5850T)              Before:  1.04% (13F/1250T)                              0.95%(10F/1050)                After :  0.00% (0F/3550T) |  |  |  |  |  |  |
-| FA | VI detected flex deformation*23pcs, panel and cavity are not concentrated. Post-AOI images show that flex is not deformed and the locking risk is between Post-AOI and VI. Confirm that the remove cover sheet is used in the base without causing the risk of flex deformation. Confirm the dispensing operation, the product is covered by the cover sheet without deformation risk. Confirm that the flipping and remove tape method is not abnormal. Confirm the metal tray wall interference products when take the flex, so there is a risk of flex deformation. Simulation: Take the product from the metal tray, flex deformation phenomenon is consistent with it. Conclusion: The metal tray wall was interference with products during remove the flex resulting in flex deformation. |  |  |  |  |  |  |
-| CA | 1.Optimize the Un-loading tray position for clamp flex and training operator the  method of clamp flex. Done 8/26 Xiaofeng 2.Import semi-automatic CCD to inspection flex in EVT. On-going |  |  |  |  |  |  |
-| Validation | Tracked 3550pcs, the defective rate 0.00%(0F/3550T). Done 9/12 Xiaofeng |  |  |  |  |  |  |
-
 4. Failure FACA
 OK
 NG
 Before
 After
 
+**Table 1:**
+| Component | UAT1 Flex | Vendor | Murata | APN | 056-20573 | Failure process/station | VI |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Issue Description | Flex deformation-Handling issue Defected rate:  0.39% (23F/5850T)              Before:  1.04% (13F/1250T)                              0.95%(10F/1050)                After :  0.00% (0F/3550T) |  |  |  |  |  |  |
+| FA | VI detected flex deformation*23pcs, panel and cavity are not concentrated. Post-AOI images show that flex is not deformed and the locking risk is between Post-AOI and VI. Confirm that the remove cover sheet is used in the base without causing the risk of flex deformation. Confirm the dispensing operation, the product is covered by the cover sheet without deformation risk. Confirm that the flipping and remove tape method is not abnormal. Confirm the metal tray wall interference products when take the flex, so there is a risk of flex deformation. Simulation: Take the product from the metal tray, flex deformation phenomenon is consistent with it. Conclusion: The metal tray wall was interference with products during remove the flex resulting in flex deformation. |  |  |  |  |  |  |
+| CA | 1.Optimize the Un-loading tray position for clamp flex and training operator the  method of clamp flex. Done 8/26 Xiaofeng 2.Import semi-automatic CCD to inspection flex in EVT. On-going |  |  |  |  |  |  |
+| Validation | Tracked 3550pcs, the defective rate 0.00%(0F/3550T). Done 9/12 Xiaofeng |  |  |  |  |  |  |
+
+
 ## Slide 65
-
-| Component | Flex | Vendor | Murata | APN | 056-20573 | Failure process/station | SPI |
-|---|---|---|---|---|---|---|---|
-| Issue Description | Printing issue---Handling issue Defected rate:  0.34% (20F/5850T)              Before:  0.32% (4F/1250T )                              0.29% (4F/1050T )                              0.74% (7F/950T )                              0.31% (3F/650T )                              0.15% (2F/650T )                After :  0.00% (0F/1300T ) |  |  |  |  |  |  |
-| FA | SPI detected*20pcs of printing defect, distributed in different config. SPI image shows that there are not foreign material on the flex surface, but 16pcs of solder paste have wiping marks. Link-AOI images show no abnormalities on the flex surface and no pressure plate at the edges. Confirm that the stencil printing surface and printing parameters and wiping mechanism and block are normal. Confirm that the metal cover is added by manually , so operator add metal cover shift cause solder issue. Conclusion：Manual operation during smt process resulted in printing issue. |  |  |  |  |  |  |
-| CA | 1.Training the operator should first align the Pin with the round hole，then place the metal cover. Done 9/2 Xiaofeng 2.Import the automatic add metal cover machine in EVT. On-going |  |  |  |  |  |  |
-| Validation | Tracked 1300pcs, the defective rate 0.00%(0F/1300T). Done 9/2 Xiaofeng |  |  |  |  |  |  |
-
 4. Failure FACA
 SPI Image
 OK
@@ -1228,15 +1272,16 @@ Printing parameters
 Mapping
 Training list and SOP
 
+**Table 1:**
+| Component | Flex | Vendor | Murata | APN | 056-20573 | Failure process/station | SPI |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Issue Description | Printing issue---Handling issue Defected rate:  0.34% (20F/5850T)              Before:  0.32% (4F/1250T )                              0.29% (4F/1050T )                              0.74% (7F/950T )                              0.31% (3F/650T )                              0.15% (2F/650T )                After :  0.00% (0F/1300T ) |  |  |  |  |  |  |
+| FA | SPI detected*20pcs of printing defect, distributed in different config. SPI image shows that there are not foreign material on the flex surface, but 16pcs of solder paste have wiping marks. Link-AOI images show no abnormalities on the flex surface and no pressure plate at the edges. Confirm that the stencil printing surface and printing parameters and wiping mechanism and block are normal. Confirm that the metal cover is added by manually , so operator add metal cover shift cause solder issue. Conclusion：Manual operation during smt process resulted in printing issue. |  |  |  |  |  |  |
+| CA | 1.Training the operator should first align the Pin with the round hole，then place the metal cover. Done 9/2 Xiaofeng 2.Import the automatic add metal cover machine in EVT. On-going |  |  |  |  |  |  |
+| Validation | Tracked 1300pcs, the defective rate 0.00%(0F/1300T). Done 9/2 Xiaofeng |  |  |  |  |  |  |
+
+
 ## Slide 66
-
-| Component | V53 UAT1 ASSY Flex | Vendor | Murata | APN | 056-20573-37 | Failure process/station | FVI |
-|---|---|---|---|---|---|---|---|
-| Issue Description | Flex dent--Process issue  Defected rate:0.30% (21F/5850T)             Before:0.81% (21F/2600T)                After:0% (0F/3250T) |  |  |  |  |  |  |
-| FA | The defects were found in FVI, flex dent were in same location. Per backend process mapping, the risk station was MIC film P&P.  Check MIC film P&P station: The cover head and support surface of MIC film P&P fixture are mismatched, when OP manual close the cover head and over press have risk cause flex dent.  Conclusion: The MIC film P&P fixture was not  fool-proof cause flex dent. |  |  |  |  |  |  |
-| CA | 1.Modify fixture to fool-proof, make cover head and support surface match, and add stopper of cover to avoid over press.    Done   DRI: Ronghui He  9/3 |  |  |  |  |  |  |
-| Validation | Keep tracking product, 0F/3250T.    Done  DRI: Shufang Li  9/8 |  |  |  |  |  |  |
-
 4. Failure FACA
 OK
 NG
@@ -1245,23 +1290,34 @@ Cover head over press cause flex dent
 Before
 After
 
-## Slide 67
+**Table 1:**
+| Component | V53 UAT1 ASSY Flex | Vendor | Murata | APN | 056-20573-37 | Failure process/station | FVI |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Issue Description | Flex dent--Process issue  Defected rate:0.30% (21F/5850T)             Before:0.81% (21F/2600T)                After:0% (0F/3250T) |  |  |  |  |  |  |
+| FA | The defects were found in FVI, flex dent were in same location. Per backend process mapping, the risk station was MIC film P&P.  Check MIC film P&P station: The cover head and support surface of MIC film P&P fixture are mismatched, when OP manual close the cover head and over press have risk cause flex dent.  Conclusion: The MIC film P&P fixture was not  fool-proof cause flex dent. |  |  |  |  |  |  |
+| CA | 1.Modify fixture to fool-proof, make cover head and support surface match, and add stopper of cover to avoid over press.    Done   DRI: Ronghui He  9/3 |  |  |  |  |  |  |
+| Validation | Keep tracking product, 0F/3250T.    Done  DRI: Shufang Li  9/8 |  |  |  |  |  |  |
 
+
+## Slide 67
+After
+Before
+4. Failure FACA
+
+**Table 1:**
 | Component | ICT Test NTF Issue(Misjudgment issue) | Vendor | ICT | Failure process/station | Inline ICT |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Issue Description | ICT Test NTF issue(Misjudgment issue)  Defected rate:0.32%(19F/5850T)             Before:0.88%(11F/1250)(Config1：X06P1-U1-MIYG8-SM)                         0.76% (8/1050T) (config2 : X06P1-U1-MIYG9-SM)               After: 0.0% (0F/950T) (config3 : X06P1-U1-MINX2-SA)                          0.0% (0F/650T) (config4 : X06P1-U1-MINX2-SA-D1)                         0.0% (0F/650T) (config5 : X06P1-U1-MIYG8-SM-D1)                         0.0% (0F/650T) (config6 : X06P1-U1-MIYG9-SM-D1)                         0.0% (0F/650T) (config7 : X06P1-U1-MINA8-SA-D1) |  |  |  |  |
 | FA | The high ICT fail rate were found in 1st and 2nd  Configs. Based on the data analysis, the defects were concentrated on Pin3,Pin4 of strobe ICT test. After UAT1 and strobe bonding , the contact area for strobe pin3/pin4 with test probe pin is smaller since there is a little interference for UAT1 and strobe pin3/4 are, it will cause unstable ICT testing while poor contact. Conclusion :The probe pin is in poor contact with the strobe Pad, resulting in the high NTF issue. |  |  |  |  |
 | CA/Suggestion | 1.Change the probe design, add for two thinner pogo pins to touch the strobe area for better contact.--8/27 Done  TE :Yazhou Ding 2.Take this as lesson for similar flex design. |  |  |  |  |
 | Validation | Tracking the rest of configs, the NTF rate is 0%(F/R:0/3550). Will keep on tracking in P2 build. |  |  |  |  |
 
-After
-Before
-4. Failure FACA
 
 ## Slide 68
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -1291,8 +1347,9 @@ Pass
 Ongoing
 Fail
 
+**Table 1:**
 | Bareflex / Assembly | Test | Total Q’ty | Input date | 100C | 200C | 300C | 400C | 500C |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X06P1-U1-MIYG9-SM | 1.Heat Soak（500H) | 45 | 9/7 | 9/14 | 9/20 | 9/26 | 10/5 | 10/12 |
 |  | 2.Thermal Cycling（500C) | 45 | 9/6 | 9/15 | 9/20 | 9/26 | 10/5 | 10/12 |
 |  | 3.Thermal Shock（200C) | 45 | 9/9 |  | 9/18 |  |  |  |
@@ -1319,8 +1376,9 @@ Pass
 Ongoing
 Fail
 
+**Table 1:**
 | Bareflex / Assembly | Test | Total Q’ty | Input date | 100C | 200C | 300C | 400C | 500C |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X06P1-U1-MINX2-SA-D1 | 1.Heat Soak（500H) | 45 | 9/14 | 9/20 | 9/26 | 10/4 | 10/10 | 10/16 |
 |  | 2.Thermal Cycling（500C) | 45 | 9/14 | 9/20 | 9/26 | 10/4 | 10/10 | 10/16 |
 |  | 3.Thermal Shock（200C) | 45 | 9/14 |  | 9/23 |  |  |  |
@@ -1347,8 +1405,9 @@ Pass
 Ongoing
 Fail
 
+**Table 1:**
 | Bareflex / Assembly | Test | Total Q’ty | Input date | 100C | 200C | 300C | 400C | 500C |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X06P1-U1-MINA:-SA-D1 | 1.Heat Soak（500H) | 45 | 9/14 | 9/20 | 9/26 | 10/4 | 10/10 | 10/16 |
 |  | 2.Thermal Cycling（500C) | 45 | 9/14 | 9/20 | 9/26 | 10/4 | 10/10 | 10/16 |
 |  | 3.Thermal Shock（200C) | 45 | 9/14 |  | 9/23 |  |  |  |
@@ -1359,8 +1418,9 @@ Fail
 
 ## Slide 72
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -1386,8 +1446,9 @@ Fail
 
 ## Slide 73
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -1414,8 +1475,9 @@ Fail
 ## Slide 74
 7. Test Readiness and Automation Plan
 
+**Table 1:**
 | Test item | ERS/Test Plan | Test SW Readiness | Test HW Readiness | Test Automation | Test  Correlation With FATP IQC | Remark |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | Inline 1KHZ sensitivity | Y | Y | Y | NA | NA |  |
 | Inline RF | Y | Y | Y | NA | NA |  |
 | Inline ICT | Y | Y | Y | NA | NA |  |
@@ -1427,8 +1489,9 @@ Fail
 ## Slide 75
 7. Test CPK and Highlight
 
+**Table 1:**
 | Station | Test item Q’ty | CPK<1.33 | 1.33<=CPK<2.0 | CPK>=2.0 | Comments |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Inline 1KHZ sensitivity | 2 | 0 | 0 | 2 |  |
 | Inline RF | 6231 | 0 | 0 | 6231 |  |
 | Inline ICT | 58 | 0 | 0 | 58 |  |
@@ -1439,18 +1502,20 @@ Fail
 
 ## Slide 76
 7. Test Coverage
+SCH
 
+**Table 1:**
 | Flex | Station | Coverage | FA | CA |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | V53 UAT1 | RF&ICT &Mic Function | 183/193=94.8% | 1.R0302,R0303,R0304, R0400,R0401,R0402 0 ohm resistor occur short does not affect its resistance. 2.B2B 18,19,20,21Pin,same function pins are in the circuit，Short does not affect their connection. | SMT AOI and visual station will focus on check this position. |
 
-SCH
 
 ## Slide 77
 Test Coverage RF&ICT
 
+**Table 1:**
 | V53 UAT1 Mic Function +RF+ICT |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | CAP |  |  | IND |  |  | RES |  |  | IC |  |  |  | J_ UAT1 |  |  | Clip |  |
 | Component | Open | Short | Component | Open | Short | Component | Open | Short | Component | Open | Short | ESD | Component | OPEN | Short | Component | Open |
 | C0203 | Y | Y | L0305 | Y | Y | R0200 | Y | Y | U0300 | Y | Y | Y | J_ UAT1.PIN1 | Y | Y | CL_JD_M_TUNER | Y |
@@ -1487,8 +1552,9 @@ Test Coverage RF&ICT
 
 ## Slide 78
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -1514,8 +1580,9 @@ Test Coverage RF&ICT
 
 ## Slide 79
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -1542,8 +1609,9 @@ Test Coverage RF&ICT
 ## Slide 80
 9. MCO FAI / CPK Summary
 
+**Table 1:**
 | Config | Station | Total Qty | CPK<1.33 | 1.33<=CPK<1.67 | CPK>=1.67 | CPK Raw data and chart |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | X06P1-U1-MIYG8-SM | FAI | 38 | 7 | 0 | 31 | Detail follow as FAI/CPK raw data |
 |  | SPC | 30 | 0 | 0 | 30 |  |
 | X06P1-U1-MIYG9-SM | FAI | 38 | 7 | 0 | 31 | Detail follow as FAI/CPK raw data |
@@ -1561,14 +1629,6 @@ Test Coverage RF&ICT
 
 
 ## Slide 81
-
-| MCO# | 056-20573-37 | Gerber# | POR:821-05715-01/DOE:921-05695-01 |
-|---|---|---|---|
-| Issue Description | FAI148/149/150/151/152/153/154 has risk of low CPK<1.67. |  |  |
-| FA | The dimension of UV glue for normal design is a maximum distance of 0.55mm from the component. According to the current MCO definition +/-0.20mm cannot achieve CPK>1.67 |  |  |
-| CA/Suggestion | Short term: PD deviate the CPK＜1.67 for P1; Long term: Suggest to modify FAI148/149/150/151/152/153/154                      to use Max/Min for control in P2 |  |  |
-| Validation | Proposal for P2 |  |  |
-
 9. Low CPK(CPK<1.67) FACA
 Long term
 With long term
@@ -1577,10 +1637,20 @@ UV glue dispensing matrix for reference
 V54 UAT2 UV dimension control for reference
 UV glue dispensing for reference
 
+**Table 1:**
+| MCO# | 056-20573-37 | Gerber# | POR:821-05715-01/DOE:921-05695-01 |
+| --- | --- | --- | --- |
+| Issue Description | FAI148/149/150/151/152/153/154 has risk of low CPK<1.67. |  |  |
+| FA | The dimension of UV glue for normal design is a maximum distance of 0.55mm from the component. According to the current MCO definition +/-0.20mm cannot achieve CPK>1.67 |  |  |
+| CA/Suggestion | Short term: PD deviate the CPK＜1.67 for P1; Long term: Suggest to modify FAI148/149/150/151/152/153/154                      to use Max/Min for control in P2 |  |  |
+| Validation | Proposal for P2 |  |  |
+
+
 ## Slide 82
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -1607,8 +1677,9 @@ UV glue dispensing for reference
 ## Slide 83
 10. Data Collection summary
 
+**Table 1:**
 | Items | Component | Criteria | 5x Test sample pictures | Result | Note |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | X-ray | B2B | Solder void<20% | Details as below | Pass |  |
 |  | Clip | Solder void<35% | Details as below | Pass |  |
 |  | BGA | Solder void<20% | Details as below | Pass |  |
@@ -1624,8 +1695,9 @@ UV glue dispensing for reference
 ## Slide 84
 10. Data Collection summary
 
+**Table 1:**
 | Items | Component | Criteria | 5x Test sample pictures | Result | Note |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Peeling test | Clip | Peeling force >5 N  No solder crack | Details as below | Pass |  |
 |  | Bonding | Peeling force >5 N  No solder crack | Details as below | Pass |  |
 |  | B2B | Peeling force >5 N  No solder crack | Details as below | Pass |  |
@@ -1640,14 +1712,6 @@ UV glue dispensing for reference
 
 
 ## Slide 85
-
-| Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | J-UAT1 | Solder void<20% |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  | Pass |  |
-
 10. Data Collection
 Void: 0.15%
 Void:0.23%
@@ -1670,15 +1734,16 @@ Void: 0.31%
 Void: 2.98%
 Void:5.70%
 
-## Slide 86
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X-ray | J-UAT1 | Solder void<20% |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 86
 10. Data Collection
 Void: 3.98%
 Void:0.64%
@@ -1700,15 +1765,16 @@ Void: 1.08%
 Void: 0.54%
 Void:1.32%
 
-## Slide 87
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | U0400 | Solder void<20% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | J-UAT1 | Solder void<20% |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
-|  | U0301 |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 87
 Data Collection
 Void: 0.76%
 Void:0.11%
@@ -1725,14 +1791,16 @@ Void:0.31%
 Void:1.72%
 Void:0.45%
 
-## Slide 88
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | U303 | Solder void<20% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | U0400 | Solder void<20% |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
+|  | U0301 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 88
 Data Collection
 Void: 0.47%
 Void:1.94%
@@ -1746,13 +1814,15 @@ Void:0.15%
 Void:1.58%
 Void:0.19%
 
-## Slide 89
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | U302 | Solder void<20% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | U303 | Solder void<20% |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 89
 Data Collection
 Void: 0.76%
 Void:0.11%
@@ -1763,14 +1833,14 @@ Void: 2.59%
 Void:0.13%
 Void:1.72%
 
-## Slide 90
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | CL-ANT10-GND | Solder void<35% |  |  |  |  |  | Pass |  |
-|  | CL_ANT10-FEED | Solder void<35% |  |  |  |  |  | Pass |  |
-|  | CCL-STROBE-GND-WEST | Solder void<35% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | U302 | Solder void<20% |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 90
 Data Collection
 Void: 7.40%
 Void: 7.35%
@@ -1788,16 +1858,15 @@ Void: 5.53%
 Void: 7.49%
 Void: 9.20%
 
-## Slide 91
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | CL2-SUS-STIFFENER | Solder void<35% |  |  |  |  |  | Pass |  |
-|  | CL-ANT2-VERT-SP |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  | Pass |  |
-|  | CL-ANT2-SHORT |  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | CL-ANT10-GND | Solder void<35% |  |  |  |  |  | Pass |  |
+|  | CL_ANT10-FEED | Solder void<35% |  |  |  |  |  | Pass |  |
+|  | CCL-STROBE-GND-WEST | Solder void<35% |  |  |  |  |  | Pass |  |
 
+
+## Slide 91
 Data Collection
 Void: 5.79%
 Void: 10.30%
@@ -1815,13 +1884,17 @@ Void: 4.84%
 Void: 2.44%
 Void: 2.76%
 
-## Slide 92
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | L0406 | Solder void<35% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | CL2-SUS-STIFFENER | Solder void<35% |  |  |  |  |  | Pass |  |
+|  | CL-ANT2-VERT-SP |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  | Pass |  |
+|  | CL-ANT2-SHORT |  |  |  |  |  |  |  |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 92
 Data Collection
 Void: 6.20%
 Void:6.57%
@@ -1834,16 +1907,14 @@ Void:10.00%
 Void:6.50%
 Void:8.04%
 
-## Slide 93
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | SP-SPKR-POS | Solder void<35% |  |  |  |  |  | Pass |  |
-|  | SP-SPKR-POS |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | L0406 | Solder void<35% |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
-|  | CL-STROBE-GND-ESST |  |  |  |  |  |  | Pass |  |
-|  | CL-ANT2-FEED |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 93
 Data Collection
 Void: 5.81%
 Void: 5.72%
@@ -1866,15 +1937,17 @@ Void: 2.06%
 Void: 3.29%
 Void: 3.17%
 
-## Slide 94
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | CL-JINDO-M-GND | Solder void<35% |  |  |  |  |  | Pass |  |
-|  | CL-JINDO-M-TUNER |  |  |  |  |  |  | Pass |  |
-|  | CL-JINDO-L |  |  |  |  |  |  | Pass |  |
-|  | CL1-SUS-STIFFNER |  |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | SP-SPKR-POS | Solder void<35% |  |  |  |  |  | Pass |  |
+|  | SP-SPKR-POS |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  | Pass |  |
+|  | CL-STROBE-GND-ESST |  |  |  |  |  |  | Pass |  |
+|  | CL-ANT2-FEED |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 94
 Data Collection
 Void: 8.13%
 Void: 4.32 %
@@ -1897,15 +1970,16 @@ Void: 10.91%
 Void: 15.07%
 Void: 12.78%
 
-## Slide 95
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | MIC | Solder void<25% |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | CL-JINDO-M-GND | Solder void<35% |  |  |  |  |  | Pass |  |
+|  | CL-JINDO-M-TUNER |  |  |  |  |  |  | Pass |  |
+|  | CL-JINDO-L |  |  |  |  |  |  | Pass |  |
+|  | CL1-SUS-STIFFNER |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 95
 Data Collection
 Void: 1.86%
 Void: 2.86 %
@@ -1928,15 +2002,16 @@ Void: 5.26%
 Void: 3.48%
 Void: 2.37%
 
-## Slide 96
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X-ray | MIC | Solder void<25% |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 96
 Data Collection
 Void: 2.90%
 Void: 2.20%
@@ -1959,15 +2034,16 @@ Void: 3.65%
 Void: 3.35%
 Void: 5.10%
 
-## Slide 97
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| X-ray | Bonding | Solder void<35% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | MIC | Solder void<25% |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 97
 Data Collection
 Void: 15.19%
 Void: 2.70%
@@ -1990,15 +2066,16 @@ Void: 1.56%
 Void: 5.16%
 Void: 4.98%
 
-## Slide 98
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X-ray | Bonding | Solder void<35% |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 98
 Data Collection
 Void: 2.13%
 Void: 0.92%
@@ -2021,14 +2098,16 @@ Void: 2.58%
 Void: 0.62%
 Void: 0.85%
 
+**Table 1:**
+| Items | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | Bonding | Solder void<35% |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  | Pass |  |
+
+
 ## Slide 99
-
-| Items | Component | Criteria | location | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|---|
-| X-ray | Bending | Trace no crack in bending area |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  |  | Pass |  |
-
 Data Collection
 Bending 1# & 12#
 Bending 1# & 12#
@@ -2046,14 +2125,15 @@ Bending 6# & 7#
 Bending 6# & 7#
 Bending 6# & 7#
 
-## Slide 100
-
+**Table 1:**
 | Items | Component | Criteria | location | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | X-ray | Bending | Trace no crack in bending area |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 100
 Data Collection
 Bending 8# & 9#
 Bending 8# & 9#
@@ -2071,14 +2151,15 @@ Bending (1) &(2)
 Bending (1) &(2)
 Bending (1) &(2)
 
+**Table 1:**
+| Items | Component | Criteria | location | Test sample pictures |  |  |  |  | Result | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | Bending | Trace no crack in bending area |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  |  | Pass |  |
+
+
 ## Slide 101
-
-| Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
-
 G1
 G2
 P5
@@ -2114,14 +2195,15 @@ P1
 G4
 G3
 
-## Slide 102
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 102
 P8
 P9
 P14
@@ -2157,14 +2239,15 @@ P1
 G4
 G3
 
-## Slide 103
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 103
 G4
 G5
 G7
@@ -2192,14 +2275,15 @@ G5
 G7
 G8
 
-## Slide 104
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  |
 
+
+## Slide 104
 G9
 G10
 P20
@@ -2235,14 +2319,15 @@ P16
 G12
 G11
 
-## Slide 105
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 105
 P23
 P24
 P29
@@ -2278,13 +2363,15 @@ P16
 G12
 G11
 
-## Slide 106
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 106
 G12
 G13
 Data Collection
@@ -2300,14 +2387,14 @@ G12
 G11
 G13
 
-## Slide 107
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 107
 G1
 G9
 P1
@@ -2334,14 +2421,15 @@ G9
 G2
 G10
 
-## Slide 108
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 108
 P3
 P18
 P7
@@ -2368,14 +2456,15 @@ P20
 P7
 P22
 
-## Slide 109
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 109
 P9
 P24
 P13
@@ -2402,14 +2491,15 @@ Solder Thickness :30.23µm
 IMC Thickness :1.20~2.74µm
 IMC Thickness :1.34~3.12µm
 
-## Slide 110
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 110
 P15
 P30
 G4
@@ -2436,26 +2526,28 @@ G12
 P15
 P30
 
-## Slide 111
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 111
 G8
 Data Collection
 Solder Thickness :25.96µm
 IMC Thickness :1.49~3.26µm
 G8
 
-## Slide 112
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | CL_JINDO_L | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | PAD_GND_NORTH_TOP | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | CL_ANT2_FEED | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | JUAT1 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 
+
+## Slide 112
 Pass
 Fail
 Data Collection
@@ -2466,14 +2558,15 @@ IMC Thickness :1.80~3.56µm
 Solder Thickness :14.49µm
 IMC Thickness :1.28~3.13µm
 
-## Slide 113
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | CL_ANT2_SHORT | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | CL_ANT2_VERT_SP | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | CL_ANT1_GND | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | CL_JINDO_L | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | PAD_GND_NORTH_TOP | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | CL_ANT2_FEED | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
 
+
+## Slide 113
 Pass
 Fail
 Data Collection
@@ -2484,14 +2577,15 @@ IMC Thickness :1.28~2.42µm
 Solder Thickness :25.57µm
 IMC Thickness :1.42~2.94µm
 
-## Slide 114
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | CL_STROBE_GND_WEST | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | SUS_Stiffener_TOP | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | CL_STROBE_GND_EAST | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | CL_ANT2_SHORT | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | CL_ANT2_VERT_SP | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | CL_ANT1_GND | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
 
+
+## Slide 114
 Pass
 Fail
 Data Collection
@@ -2502,14 +2596,15 @@ IMC Thickness :1.42~3.27µm
 Solder Thickness :30.26µm
 IMC Thickness :1.28~2.42µm
 
-## Slide 115
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | SP_SPKR_POS | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | SP_SPKR_NEG | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | PAD_GND_NORTH_BOTTOM | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | CL_STROBE_GND_WEST | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | SUS_Stiffener_TOP | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | CL_STROBE_GND_EAST | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
 
+
+## Slide 115
 Pass
 Fail
 Data Collection
@@ -2520,13 +2615,15 @@ IMC Thickness :1.56~3.27µm
 Solder Thickness :16.62µm
 IMC Thickness :1.28~2.84µm
 
-## Slide 116
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | CL_JINDO_M_TUNER | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  | CL_JINDO_M_GND | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | SP_SPKR_POS | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | SP_SPKR_NEG | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | PAD_GND_NORTH_BOTTOM | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
 
+
+## Slide 116
 Pass
 Fail
 Data Collection
@@ -2535,13 +2632,14 @@ IMC Thickness :1.28~3.40µm
 Solder Thickness : 25.29µm
 IMC Thickness :1.28~3.27µm
 
-## Slide 117
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | L0406 | 1.Solder thickness(spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | CL_JINDO_M_TUNER | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  | CL_JINDO_M_GND | 1.Solder thickness (spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
 
+
+## Slide 117
 Pass
 Fail
 Data Collection
@@ -2550,14 +2648,14 @@ IMC Thickness :1.30~3.36µm
 Solder Thickness : 26.34µm
 IMC Thickness :1.30~2.98µm
 
-## Slide 118
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | U0300 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | L0406 | 1.Solder thickness(spec:10µm-50µm) 2.IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 118
 P1
 P4
 P2
@@ -2575,14 +2673,15 @@ P4
 P5
 P3
 
-## Slide 119
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | U0301 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | U0300 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 119
 P1
 P2
 P3
@@ -2597,14 +2696,15 @@ IMC Thickness :2.35～3.12µm
 IMC Thickness :1.44~2.69µm
 IMC Thickness :1.34~3.36µm
 
-## Slide 120
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | U0302 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | U0301 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 120
 P1
 P2
 P3
@@ -2623,14 +2723,15 @@ P2
 P9
 P7
 
-## Slide 121
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | U0302 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 121
 P7
 P8
 P9
@@ -2645,14 +2746,15 @@ P2
 P9
 P7
 
-## Slide 122
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | U0303 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | U0302 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  |
 
+
+## Slide 122
 P1
 P2
 P3
@@ -2670,14 +2772,15 @@ P3
 P4
 P6
 
-## Slide 123
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | U0303 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 123
 P5
 P7
 P8
@@ -2695,14 +2798,15 @@ P5
 P7
 P11
 
-## Slide 124
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | U0400 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | U0303 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 124
 P1
 P2
 P3
@@ -2719,12 +2823,15 @@ IMC Thickness :1.42~2.13µm
 P4
 P8
 
-## Slide 125
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | U0400 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 125
 P7
 P8
 Data Collection
@@ -2732,14 +2839,13 @@ IMC Thickness :1.28～3.27µm
 IMC Thickness :1.42~2.13µm
 P8
 
-## Slide 126
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | U0601 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | U0400 | 1. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 
+
+## Slide 126
 Data Collection
 Solder Thickness :32.82µm
 IMC Thickness :1.39~2.45µm
@@ -2753,14 +2859,15 @@ P2
 P1
 P4
 
-## Slide 127
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | U0601 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 127
 Data Collection
 Solder Thickness :36.42µm
 IMC Thickness :1.68~2.78µm
@@ -2774,13 +2881,15 @@ P5
 P5
 P8
 
-## Slide 128
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | U0601 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 128
 Data Collection
 Solder Thickness :31.53µm
 IMC Thickness :1.44~2.93µm
@@ -2791,13 +2900,14 @@ P8
 P5
 P8
 
-## Slide 129
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | U0601 |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | U0601 | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 129
 Data Collection
 P1
 P8
@@ -2809,14 +2919,14 @@ P2
 P3
 P3
 
-## Slide 130
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
-| Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | U0601 |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 130
 PP0522
 Data Collection
 Solder Thickness :32.87µm
@@ -2831,14 +2941,15 @@ PP0522
 PP0521
 PP0520
 
-## Slide 131
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 131
 PP0523
 Data Collection
 Solder Thickness :40.55µm
@@ -2853,14 +2964,15 @@ PP0503
 PP0506
 PP0523
 
-## Slide 132
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 132
 PP0509
 Data Collection
 Solder Thickness :38.20µm
@@ -2875,13 +2987,15 @@ PP0518
 PP0512
 PP0509
 
-## Slide 133
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 133
 PP0515
 Data Collection
 Solder Thickness :39.49µm
@@ -2892,14 +3006,14 @@ IMC Thickness :1.20~2.50µm
 PP0519
 PP0515
 
-## Slide 134
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 134
 PP0523
 Data Collection
 Solder Thickness :40.64µm
@@ -2914,14 +3028,15 @@ PP0505
 PP0502
 PP0523
 
-## Slide 135
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 135
 PP0508
 Data Collection
 Solder Thickness :33.64µm
@@ -2936,13 +3051,15 @@ PP0516
 PP0511
 PP0508
 
-## Slide 136
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 136
 PP0517
 Data Collection
 Solder Thickness :29.27µm
@@ -2953,14 +3070,14 @@ IMC Thickness :1.20~2.06µm
 PP0515
 PP0519
 
-## Slide 137
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 137
 PP0523
 Data Collection
 Solder Thickness :38.57µm
@@ -2975,14 +3092,15 @@ PP0523
 PP0501
 PP0504
 
-## Slide 138
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
 
+
+## Slide 138
 PP0507
 Data Collection
 Solder Thickness :32.37µm
@@ -2997,13 +3115,15 @@ PP0510
 PP0513
 PP0507
 
-## Slide 139
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 139
 PP0514
 Data Collection
 Solder Thickness :38.10µm
@@ -3014,14 +3134,14 @@ IMC Thickness :1.54~2.57µm
 PP0519
 PP0514
 
-## Slide 140
-
+**Table 1:**
 | Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
 |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  | Pass |  |
 
+
+## Slide 140
 PP0524
 Data Collection
 Solder Thickness :26.49µm
@@ -3036,14 +3156,15 @@ PP0524
 PP0525
 PP0526
 
+**Table 1:**
+| Items | Component | Criteria | Test sample pictures |  |  | Result | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross section | Bonding | 1.Solder thickness  (spec: 10~60um)  2. IMC  (spec: 1~4um) |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  | Pass |  |
+
+
 ## Slide 141
-
-| Items | Component | Criteria | location | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|---|
-| X-ray | Bending | Trace no crack in bending area |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  |  | Pass |  |
-|  |  |  |  |  |  |  |  |  | Pass |  |
-
 Data Collection
 Bending 1# & 12#
 Bending 1# & 12#
@@ -3058,15 +3179,15 @@ Bending 10# &11#
 Bending （1）&（2）
 Bending （1）&（2）
 
+**Table 1:**
+| Items | Component | Criteria | location | Test sample pictures |  |  |  |  | Result | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| X-ray | Bending | Trace no crack in bending area |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  |  | Pass |  |
+|  |  |  |  |  |  |  |  |  | Pass |  |
+
+
 ## Slide 142
-
-| Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Peeling test | CL_STROBE_GND_WEST_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ANT10_GND_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ANT10_FEED_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ANT2_VERT_SP-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-
 Pass
 Fail
 Data Collection
@@ -3091,15 +3212,16 @@ Data Collection
 6.68N
 5.62N
 
-## Slide 143
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Peeling test | CL_ANT2_SHORT_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ANT2_FEED_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_STROBE_GND_EAST_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_JINDO_L_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Peeling test | CL_STROBE_GND_WEST_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ANT10_GND_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ANT10_FEED_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ANT2_VERT_SP-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 143
 Pass
 Fail
 Data Collection
@@ -3124,15 +3246,16 @@ Data Collection
 5.92N
 5.27N
 
-## Slide 144
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Peeling test | CL_JINDO_M_TUNER_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Data collection for P1 |  |
-|  | CL_ JINDO_M_GND_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | Bonding - Z(PI) | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | Bonding - Z(LCP) | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Peeling test | CL_ANT2_SHORT_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ANT2_FEED_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_STROBE_GND_EAST_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_JINDO_L_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 144
 Pass
 Fail
 Data Collection
@@ -3157,13 +3280,16 @@ Data Collection
 7.20N
 7.73N
 
-## Slide 145
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Peeling test | MIC_U0600_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | JUAT1-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Peeling test | CL_JINDO_M_TUNER_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Data collection for P1 |  |
+|  | CL_ JINDO_M_GND_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | Bonding - Z(PI) | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | Bonding - Z(LCP) | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 145
 Pass
 Fail
 Data Collection
@@ -3178,15 +3304,14 @@ Data Collection
 9.11N
 9.49N
 
-## Slide 146
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Pull test | CL_STROBE_GND_WEST_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ANT10_GND_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ANT10_FEED_X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ANT2_VERT_SP-X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Peeling test | MIC_U0600_Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | JUAT1-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 146
 Pass
 Fail
 Data Collection
@@ -3211,15 +3336,16 @@ Data Collection
 6.20N
 6.79N
 
-## Slide 147
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Pull test | CL_ANT2_SHORT_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ANT2_FEED_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_STROBE_GND_EAST_X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_JINDO_L_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Pull test | CL_STROBE_GND_WEST_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ANT10_GND_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ANT10_FEED_X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ANT2_VERT_SP-X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 147
 Pass
 Fail
 Data Collection
@@ -3244,15 +3370,16 @@ Data Collection
 57.59N
 60.21N
 
-## Slide 148
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Pull test | CL_JINDO_M_TUNER_X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | CL_ JINDO_M_GND_X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | Bonding - Y(PI) | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | Bonding - Y（LCP) | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Pull test | CL_ANT2_SHORT_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ANT2_FEED_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_STROBE_GND_EAST_X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_JINDO_L_Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 148
 Pass
 Fail
 Data Collection
@@ -3277,13 +3404,16 @@ Data Collection
 62.16N
 62.01N
 
-## Slide 149
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Pull test | MIC -X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-|  | JUAT1-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Pull test | CL_JINDO_M_TUNER_X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | CL_ JINDO_M_GND_X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | Bonding - Y(PI) | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | Bonding - Y（LCP) | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 149
 Pass
 Fail
 Data Collection
@@ -3298,15 +3428,14 @@ Data Collection
 60.93N
 59.21N
 
-## Slide 150
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Shear test | JUAT1-Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-| Shear test | BGA U0300-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-| Shear test | BGA U0301-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-| Shear test | BGA U0302-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Pull test | MIC -X | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+|  | JUAT1-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 150
 Pass
 Fail
 Data Collection
@@ -3331,15 +3460,16 @@ Data Collection
 9.68 N
 9.21N
 
-## Slide 151
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Shear test | BGA U0303-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
-| Shear test | BGA U0400-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Shear test | JUAT1-Y | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 | Shear test | BGA U0300-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 | Shear test | BGA U0301-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| Shear test | BGA U0302-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 151
 Pass
 Fail
 Data Collection
@@ -3364,14 +3494,16 @@ Data Collection
 5.41 N
 5.35N
 
-## Slide 152
-
+**Table 1:**
 | Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
-|---|---|---|---|---|---|---|---|---|---|
-| Shear test | BGA U0302-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Shear test | BGA U0303-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 | Shear test | BGA U0400-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| Shear test | BGA U0300-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| Shear test | BGA U0301-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
 
+
+## Slide 152
 Pass
 Fail
 Data Collection
@@ -3391,10 +3523,19 @@ Data Collection
 9.37N
 9.19N
 
+**Table 1:**
+| Item | Component | Criteria | Test sample pictures |  |  |  |  | Result | Note |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Shear test | BGA U0302-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| Shear test | BGA U0303-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+| Shear test | BGA U0400-Z | 1. Force >5N 2. flex copper peel off and residual less than 25% |  |  |  |  |  | Pass |  |
+
+
 ## Slide 153
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3421,8 +3562,9 @@ Data Collection
 ## Slide 154
 11. Assembly DFMEA top5
 
+**Table 1:**
 | Process | Failure Mode | Failure Eﬀects | Sev | Occ | Det | RPN | Current Design | Improved Design | Action Results |  |  |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |  |  |  | Sev | Occ | Det | RPN |
 | Dispensing | FAI148/149/150/151/152/153/154 has risk of low CPK | Affect FATP assembly | 7 | 4 | 6 | 168 | Tight tolerance | 1.Build and monitor, collect data; 2.Optimize the parameter of dispensing machine3. Suggest to modify FAI148/149/150/151/152/153/154 to use Max/Min for control in P2Result:FAI148 CPK=0.509            FAI149 CPK=1.229            FAI150 CPK=0.305            FAI151 CPK=0.733            FAI152 CPK=-0.337            FAI153 CPK=0.932            FAI154 CPK=-3.706 | 7 | 4 | 6 | 168 |
 | SMT | Z direction peeling force is lower than the SPEC.( 5N Min) | Fall off in transfer process and assembly process in FATP. | 7 | 4 | 6 | 168 | Clip peeling start point is at the bottom layer. | 1.Build and monitor, collect data(CL_JINDO_M_TUNER); 2. Change clip structure in P2Result :  Peeling force Z:(range:3.25-5.38N,mean:4.70N) | 7 | 4 | 6 | 168 |
@@ -3432,9 +3574,11 @@ Data Collection
 
 
 ## Slide 155
+11. Assembly PFMEA top5
 
+**Table 1:**
 | Process | Failure Mode | Failure Effects | Sev | Occ | Det | RPN | Current process control | Improved control | Action results |  |  |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |  |  |  | Sev | Occ | Det | RPN |
 | SMT | Bonding coverage issue | Affect function | 6 | 5 | 5 | 150 | 1.Stencil opening follow cpp.2.SPI Inspection in spec.3.Bonding fixture and jig pressure in spec.4.Dispense flux parameter and Inspection in spec. | 1.Build and monitor, collect data.2.IQC and OQC inspection flex.3.Optimize bonding fixture & JIG.4.P1 Result: F/R=0F/5850T | 6 | 4 | 5 | 120 |
 | SMT | L0406 dispense issue | Affect function | 7 | 3 | 6 | 126 | 1.Dispense Parameter and UV volume follow CPP. 2.Optimize dispense DOE for it.3.Control the component shift issue. | 1.Data collection in LBU build. 2.IQC and OQC inspection flex.3.P1 Result: F/R=0F/5850T | 7 | 2 | 6 | 84 |
@@ -3442,12 +3586,12 @@ Data Collection
 | SMT | Bonding area flux residual issue | Cosmetic NG | 6 | 4 | 4 | 96 | 1.Dispensing flux parameter and Inspection in spec.2.fixture design for flux residual.3.Reflow profile set up in spec. | 1.Build and monitor，collect data.2.Optimize SMT carrier.3.Optimize flux dispensing parameter.4.P1 Result: F/R=0F/5850T | 6 | 3 | 4 | 72 |
 | SMT | Clip deformation issue | Cosmetic NG | 6 | 4 | 4 | 96 | 1.Op operation follow SOP production;2.Tray and carrier add avoid for clip; | 1.Build and monitor, collect data.2.IQC control deformation.3.Keep safe clearance for carrier and fixture.4.Add NG samples picture in SOP.5.P1 Result: F/R=41F/5850T | 6 | 7 | 4 | 168 |
 
-11. Assembly PFMEA top5
 
 ## Slide 156
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3474,8 +3618,9 @@ Data Collection
 ## Slide 157
 12. OK2FAB”build and collect data + Reject” item Follow up
 
+**Table 1:**
 | Item | Issue detail | Category | Apple DFM feed back | Build follow up result | Status / Next step |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 1 | FAI148/149/150/151/152/153/154 has risk of low CPK<1.67. FA: The dimension of UV glue for normal design is a maximum distance of 0.55mm from the component. | Design | Build and monitor | Result:FAI148 CPK=0.509,FAI149 CPK=1.229            FAI150 CPK=0.305,FAI151 CPK=0.733            FAI152 CPK=-0.337,FAI153 CPK=0.932            FAI154 CPK=-3.706 | Change dimension control in P2 |
 | 2 | Clip CL_JINDO_M_TUNER has risk of low peeling force in Z-axis direction. | Design | Build and monitor | Result :  Peeling force Z:(range:3.25-5.38N, mean:4.70N) | Change clip structure in P2 |
 | 3 | Current bonding pad design is cost up which solder ball in strobe tail flex(small pad). | Design | Build and monitor | Result: F/R=0F/5850T (Solder bump on strobe tail, more line and machine and fixture with this process.) | Change UAT1&strobe pad dimension in P2 |
@@ -3487,8 +3632,9 @@ Data Collection
 
 ## Slide 158
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3513,20 +3659,7 @@ Data Collection
 
 
 ## Slide 159
-
-| MCO# | 056-20573-37 | Gerber# | POR:821-05715-01/DOE:921-05695-01 |
-|---|---|---|---|
-| Issue Description | FAI148/149/150/151/152/153/154 has risk of low CPK<1.67. |  |  |
-| FA | The dimension of UV glue for normal design is a maximum distance of 0.55mm from the component. According to the current MCO definition +/-0.20mm cannot achieve CPK>1.67. |  |  |
-| CA/ Suggestion | Short term: PD deviate the CPK＜1.67 for P1; Long term: Suggest to modify FAI148/149/150/151/152/153/154                      to use Max/Min for control in P2 |  |  |
-| Validation | Proposal for P2 |  |  |
-
 13. DFM on MCO, CPP, QCP design, automation, Quality, Eﬃciency, Cost reduction
-
-| Item | Category | Issue decription | Suggestions | Status |
-|---|---|---|---|---|
-| 1 | Design | FAI148/149/150/151/152/153/154 has risk of low CPK<1.67. | Short term: PD deviate the CPK＜1.67 for P1; Long term: Suggest to modify FAI148/149/150/151/152/153/154                      to use Max/Min for control in P2 |  |
-
 P1 data collection for reference
 UV glue dispensing for reference
 UV glue dispensing matrix for reference
@@ -3534,22 +3667,24 @@ V54 UAT2 UV dimension control for reference
 With long term
 Long term
 
+**Table 1:**
+| MCO# | 056-20573-37 | Gerber# | POR:821-05715-01/DOE:921-05695-01 |
+| --- | --- | --- | --- |
+| Issue Description | FAI148/149/150/151/152/153/154 has risk of low CPK<1.67. |  |  |
+| FA | The dimension of UV glue for normal design is a maximum distance of 0.55mm from the component. According to the current MCO definition +/-0.20mm cannot achieve CPK>1.67. |  |  |
+| CA/ Suggestion | Short term: PD deviate the CPK＜1.67 for P1; Long term: Suggest to modify FAI148/149/150/151/152/153/154                      to use Max/Min for control in P2 |  |  |
+| Validation | Proposal for P2 |  |  |
+
+
+**Table 2:**
+| Item | Category | Issue decription | Suggestions | Status |
+| --- | --- | --- | --- | --- |
+| 1 | Design | FAI148/149/150/151/152/153/154 has risk of low CPK<1.67. | Short term: PD deviate the CPK＜1.67 for P1; Long term: Suggest to modify FAI148/149/150/151/152/153/154                      to use Max/Min for control in P2 |  |
+
+
 ## Slide 160
-
-| MCO# | 056-20573-37 | Gerber# |  | POR:821-05715-01/DOE:921-05695-01 |
-|---|---|---|---|---|
-| Issue Description | Clip CL_JINDO_M_TUNER(JINDO MID TUNER) Z-axis peeling force＜5N. |  |  |  |
-| FA | Clip peeling start point is at the bottom layer. |  |  |  |
-| CA/ Suggestion | Short term: Deviate the peeling force<5N for P1; Long term: Suggest to change the clip peeling start point form                     bottom layer to top layer in P2. |  |  |  |
-| Validation | Proposal for P2 |  |  |  |
-
 13. DFM on MCO, CPP, QCP design, automation, Quality, Eﬃciency, Cost reduction
 Current design
-
-| Item | Category | Issue decription | Suggestions | Status |
-|---|---|---|---|---|
-| 2 | Design | Clip CL_JINDO_M_TUNER has risk of low peeling force in Z-axis direction. | Short term: Deviate the peeling force<5N for P1; Long term: Suggest to change the clip peeling start point form                     bottom layer to top layer in P2. |  |
-
 Proposal design
 P1 data collection for reference
 ●Result: P1 Peeling force ＜5N ;
@@ -3560,21 +3695,23 @@ Lesson learn:
 Clip neck design from bottom layer to top layer can improve clip Z direction peeling force, and release stress force in FATP drop test.
 Clip neck extend from top side design——Improve z direction peeling force and reduce clip fall off risk in FATP REL and drop test.
 
-## Slide 161
-
+**Table 1:**
 | MCO# | 056-20573-37 | Gerber# |  | POR:821-05715-01/DOE:921-05695-01 |
-|---|---|---|---|---|
-| Issue Description | Current bonding pad design is cost up which solder ball in UAT1 flex(small pad). |  |  |  |
-| FA | If printing pre solder in strobe, will add more line and machine and fixture. |  |  |  |
-| CA/ Suggestion | Suggest to exchange the flex pad design and make the solder ball in strobe tail flex with small pad. |  |  |  |
+| --- | --- | --- | --- | --- |
+| Issue Description | Clip CL_JINDO_M_TUNER(JINDO MID TUNER) Z-axis peeling force＜5N. |  |  |  |
+| FA | Clip peeling start point is at the bottom layer. |  |  |  |
+| CA/ Suggestion | Short term: Deviate the peeling force<5N for P1; Long term: Suggest to change the clip peeling start point form                     bottom layer to top layer in P2. |  |  |  |
 | Validation | Proposal for P2 |  |  |  |
 
-13. DFM on MCO, CPP, QCP design, automation, Quality, Eﬃciency, Cost reduction
 
+**Table 2:**
 | Item | Category | Issue decription | Suggestions | Status |
-|---|---|---|---|---|
-| 3 | Design | Current bonding pad design is cost up which solder ball in strobe tail flex(small pad). | Suggest to exchange the flex pad design and make the solder ball in UAT1 flex with small pad. |  |
+| --- | --- | --- | --- | --- |
+| 2 | Design | Clip CL_JINDO_M_TUNER has risk of low peeling force in Z-axis direction. | Short term: Deviate the peeling force<5N for P1; Long term: Suggest to change the clip peeling start point form                     bottom layer to top layer in P2. |  |
 
+
+## Slide 161
+13. DFM on MCO, CPP, QCP design, automation, Quality, Eﬃciency, Cost reduction
 Current design
 Strobe flex: Small pad
 UAT1 flex:
@@ -3593,10 +3730,26 @@ Big pad
 UAT1 flex:
 Small pad
 
+**Table 1:**
+| MCO# | 056-20573-37 | Gerber# |  | POR:821-05715-01/DOE:921-05695-01 |
+| --- | --- | --- | --- | --- |
+| Issue Description | Current bonding pad design is cost up which solder ball in UAT1 flex(small pad). |  |  |  |
+| FA | If printing pre solder in strobe, will add more line and machine and fixture. |  |  |  |
+| CA/ Suggestion | Suggest to exchange the flex pad design and make the solder ball in strobe tail flex with small pad. |  |  |  |
+| Validation | Proposal for P2 |  |  |  |
+
+
+**Table 2:**
+| Item | Category | Issue decription | Suggestions | Status |
+| --- | --- | --- | --- | --- |
+| 3 | Design | Current bonding pad design is cost up which solder ball in strobe tail flex(small pad). | Suggest to exchange the flex pad design and make the solder ball in UAT1 flex with small pad. |  |
+
+
 ## Slide 162
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3622,9 +3775,15 @@ Small pad
 
 ## Slide 163
 Test instruction
+Twisting location
+Mishandling by engineer
+Mis-handling and Abuse Test Review – Test to fail
+Bending location
+Pressing location
 
+**Table 1:**
 | Location | Test condition | Sample size |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Bending | 10x |
 | 2 | Bending | 10x |
 | 3 | Bending | 10x |
@@ -3642,11 +3801,6 @@ Test instruction
 | 15 | Twisting | 10x |
 | 16 | Twisting | 10x |
 
-Twisting location
-Mishandling by engineer
-Mis-handling and Abuse Test Review – Test to fail
-Bending location
-Pressing location
 
 ## Slide 164
 Bending 45° one cycle
@@ -3672,9 +3826,15 @@ Hold flex
 Mis-handling and Abuse Test Review – Test to fail
 
 ## Slide 167
+MP condition Fail >10 cycles
+Severe test Fail <10 cycles
+MP condition Fail <10 cycles
+Mis-handling and Abuse Test Review – Test to fail
+Bending location
 
+**Table 1:**
 | Test instruction |  |  | Test items(10 cycles) |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Location | Test condition |  | Sample Q'ty | Condition | Cosmetic inspection | Full function each time | X-ray inspection when fail | Cross section Validation |
 | 1 | Bending | 45° | 5pcs | 10 times | 10 cycles pass | 10 cycles pass | OK | OK |
 |  |  |  | 5pcs | Test to fail or max 50 times | 50 cycles pass | 50 cycles pass | OK | OK |
@@ -3701,16 +3861,18 @@ Mis-handling and Abuse Test Review – Test to fail
 |  |  | 90° | 5pcs | 10 times | 10 cycles pass | 10 cycles pass | OK | OK |
 |  |  |  | 5pcs | Test to fail or max 50 times | 50 cycles pass | 50 cycles pass | OK | OK |
 
+
+## Slide 168
 MP condition Fail >10 cycles
 Severe test Fail <10 cycles
 MP condition Fail <10 cycles
 Mis-handling and Abuse Test Review – Test to fail
-Bending location
+Pressing location
+Twisting location
 
-## Slide 168
-
+**Table 1:**
 | Test instruction |  |  | Test items(10 cycles) |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Location | Test condition |  | Sample Q'ty | Condition | Cosmetic inspection | Full function each time | X-ray inspection when fail | Cross section Validation |
 | 7 | pressing | Normal | 10pcs | 10 times | 10 cycles pass | 10 cycles pass | OK | OK |
 |  |  | High | 10pcs | 10 times | 10 cycles pass | 10 cycles pass | OK | OK |
@@ -3733,51 +3895,49 @@ Bending location
 | 16 | Twisting | 45° | 10pcs | 10 times | 10 cycles pass | 10 cycles pass | OK | NA |
 |  |  | 90° | 10pcs | 10 times | 9 cycles NG(3pcs) 10 cycles NG(7pcs) | 9 cycles NG(3pcs) 10 cycles NG(7pcs) | NG | NA |
 
-MP condition Fail >10 cycles
-Severe test Fail <10 cycles
-MP condition Fail <10 cycles
-Mis-handling and Abuse Test Review – Test to fail
-Pressing location
-Twisting location
 
 ## Slide 169
-
-| Item | Location 3 | Location 2 | Location 3 | Location 4 |
-|---|---|---|---|---|
-|  | Bending 45° | Bending 90° | Bending 90° | Bending 90° |
-| Cosmetic |  |  |  |  |
-| X-ray |  |  |  |  |
-
 Bending location
 Failure mode
 Mis-handling and Abuse Test Review – Test to fail
 
+**Table 1:**
+| Item | Location 3 | Location 2 | Location 3 | Location 4 |
+| --- | --- | --- | --- | --- |
+|  | Bending 45° | Bending 90° | Bending 90° | Bending 90° |
+| Cosmetic |  |  |  |  |
+| X-ray |  |  |  |  |
+
+
 ## Slide 170
-
-| Item | Location 11 | Location 13 | Location 11 | Location 12 | Location 13 | Location 14 | Location 15 | Location 16 |
-|---|---|---|---|---|---|---|---|---|
-|  | Twisting 45° | Twisting 45° | Twisting 90° | Twisting 90° | Twisting 90° | Twisting 90° | Twisting 90° | Twisting 90° |
-| Cosmetic |  |  |  |  |  |  |  |  |
-| X-ray |  |  |  |  |  |  |  |  |
-
 Twisting location
 Failure mode
 Mis-handling and Abuse Test Review – Test to fail
 
+**Table 1:**
+| Item | Location 11 | Location 13 | Location 11 | Location 12 | Location 13 | Location 14 | Location 15 | Location 16 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  | Twisting 45° | Twisting 45° | Twisting 90° | Twisting 90° | Twisting 90° | Twisting 90° | Twisting 90° | Twisting 90° |
+| Cosmetic |  |  |  |  |  |  |  |  |
+| X-ray |  |  |  |  |  |  |  |  |
+
+
 ## Slide 171
 Mis-handling and Abuse Test Review – Test to fail
+Twisting location
 
+**Table 1:**
 | Design Weakness FACA |  |  |  |  |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Location | Test  Failure FA | Improve plan | DRI | Due date |
 | 11&13 | Location 11&13 failed at 45 degree twisting less than 10 cycles. FA: (1)  Flex thickness of location 11&13 are 0.208mm with 3 layers copper.        (2) The torque of twisting is smaller. Per ICT process review, there are no risk to cause over 45 degree  twisting ,  low risk | Optimize handling SOP for FATP | PQM/Yanmei Lu,  PE/Peng Huang. | 8/21, Done |
 
-Twisting location
 
 ## Slide 172
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3804,8 +3964,9 @@ Twisting location
 ## Slide 173
 15. NPI / MP Tooling status – From Bareflex to Assembly
 
+**Table 1:**
 | Station |  | Tooling | NPI soft tool | MP hard tool | FACA if not meet MP hard tool |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Assembly | SMT | Carrier |  | V |  |
 | Assembly | Glue | Carrier |  | V |  |
 | Assembly | Bonding | Carrier |  | V |  |
@@ -3818,8 +3979,9 @@ Twisting location
 
 ## Slide 174
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3845,8 +4007,9 @@ Twisting location
 
 ## Slide 175
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3872,8 +4035,9 @@ Twisting location
 
 ## Slide 176
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3899,8 +4063,9 @@ Twisting location
 
 ## Slide 177
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3925,9 +4090,13 @@ Twisting location
 
 
 ## Slide 178
+Black: Customer control
+Blue: ICT owned
+19. Vendor owned MP key part supplier POR Plan
 
+**Table 1:**
 | Category | Component | Last generation(D93 UAT1) |  | P1 POR |  | P1 DOE |  | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  | Vendor | Type/APN | Vendor | Type/APN | Vendor | Type/APN |  |
 | SMT | Flex | Murata | 821-04985-A | Murata | 821-05715-01 | Murata | 921-05695-01 |  |
 | SMT | Resistance | Cyntec | 117S00073*2 | TDK | 107S00297*1 | TDK | 107S00297*1 |  |
@@ -3949,14 +4118,12 @@ Twisting location
 | SMT | PSA | JT/DX | / | JT/DX | / | JT/DX | / |  |
 | SMT | 2D Barcode | LD/FZX | / | LD/FZX | / | LD/FZX | / |  |
 
-Black: Customer control
-Blue: ICT owned
-19. Vendor owned MP key part supplier POR Plan
 
 ## Slide 179
 
+**Table 1:**
 | Item | Agenda |
-|---|---|
+| --- | --- |
 | 0 | Round Table Introduction and Agenda |
 | 1 | O-Chart and resource plan |
 | 2 | Configs and Build status |
@@ -3978,3 +4145,4 @@ Blue: ICT owned
 | 18 | EVT readiness(update from P2 postmortem), MP readiness (update from EVT postmortem) + Automation/ traceability scores |
 | 19 | Vendor owned MP material supplier POR |
 | 20 | MP Line Qual plan (update from EVT postmortem) |
+

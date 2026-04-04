@@ -1,19 +1,20 @@
-# [AMP] V53 P2 Postmortem - UAT1_01.07.2025
+# [AMP] V53 P2 Postmortem - UAT1_01.07.2025.pptx
+**Total Slides:** 103
 
-
-## Slide 1: V53 P2 Postmortem - UAT1
-V53 P2 Postmortem - UAT1
+## Slide 1
+### V53 P2 Postmortem - UAT1
 Amphenol
 01-07-2025
 
 ## Slide 2
-PM Contents Overall
+### PM Contents Overall
 Low
 High
 Mid
 
+**Table 1:**
 | No. | PM Contents | V53 UAT1 |
-|---|---|---|
+| --- | --- | --- |
 | 1 | O-Chart and Resource |  |
 | 2 | Config and Build Status |  |
 | 3 | IQC | APD waived Clips OOS for 806-50871/806-53763 |
@@ -36,15 +37,16 @@ Mid
 | 20 | MP LQ Plan |  |
 
 
-## Slide 3: 2. Build status
-2. Build status
+## Slide 3
+### 2. Build status
 Complete
 On-Track
 At Risk - Non Blocking/TBD
 At Risk - Blocking
 
+**Table 1:**
 | Flex Name | Ass’y APN | BF Material | Config | Assembly | Ship to | Build Status |  | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | V53 UAT1 | 632-07540 | LCP | POR | AMP | FXGL | Completed |  | 4,900x shipped to FATP |
 | V53 UAT1 | 932-05144 | LCP | DOE | AMP | FXGL | Completed |  | 1,950x shipped to FATP |
 
@@ -90,16 +92,18 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 ## Slide 5
 V53 | Product Introduction | UAT1
 
+**Table 1:**
 | Project | Flat | Fold |
-|---|---|---|
+| --- | --- | --- |
 | V53 UAT1 |  |  |
 
 
 ## Slide 6
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | Outline |  |  | N/A | N/A |  |
 | Layout |  |  | N/A | N/A |  |
@@ -108,8 +112,9 @@ V53 | Design Comparison | UAT1
 ## Slide 7
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | CL_STROBE_GND_WEST | 806-50867 | 806-53366 | N/A | N/A |  |
 | CL_ANT2_FEED | 806-50868 | 806-53387 | N/A | N/A |  |
@@ -118,8 +123,9 @@ V53 | Design Comparison | UAT1
 ## Slide 8
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | CL_ANT2_SHORT | 806-50869 | 806-50869 | N/A | N/A | P2 same as P1 |
 | CL_ANT_VERT_SP | 806-50870 | 806-53763 | N/A | N/A |  |
@@ -129,8 +135,9 @@ V53 | Design Comparison | UAT1
 ## Slide 9
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | CL_STROBE_GND_EAST | 806-50873 | 806-53367 | N/A | N/A |  |
 | CL_JINDO_L | 806-51162 | 806-51162 | N/A | N/A |  |
@@ -140,8 +147,9 @@ V53 | Design Comparison | UAT1
 ## Slide 10
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | CL_ANT10_GND | 806-51346 | 806-53371 | N/A | N/A |  |
 | CL_JINDO_M_TUNER | 806-51391 | 806-51391 | N/A | N/A |  |
@@ -151,8 +159,9 @@ V53 | Design Comparison | UAT1
 ## Slide 11
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | SUS-1 |  | Removed | N/A | N/A | P2 remove SUS-1 |
 | SUS-2 |  |  | N/A | N/A | P2 same as P1 |
@@ -162,8 +171,9 @@ V53 | Design Comparison | UAT1
 ## Slide 12
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | PSA-1 |  | Removed | N/A | N/A | P2 remove PSA-1 |
 | PSA-2 |  |  | N/A | N/A | P2 same as P1 |
@@ -173,8 +183,9 @@ V53 | Design Comparison | UAT1
 ## Slide 13
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | PSA-4 | Stackup:  PSA, 0.10mm PET Spacer, 0.10mm PSA, 0.05mm Liner, 0.036mm | Stackup:  PSA, 0.14mm Liner, 0.036mm | N/A | N/A | 1. Stackup change: P1:PSA+Spacer+PSA+Liner P2:PSA+Liner 2. Size change: |
 | PSA-5 | CPSA,3M 9701H-100, 0.1mm | PSA, Nitto denko 56110B(NSS), 0.1 mm | N/A | N/A | 1. Adhesive type change: P1:CPSA,3M 9701H-100, 0.1mm P2:PSA, Nitto denko 56110B(NSS), 0.1 mm 2. Size change |
@@ -184,8 +195,9 @@ V53 | Design Comparison | UAT1
 ## Slide 14
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | Barcode |  |  | N/A | N/A |  |
 | Silkscreen |  |  | N/A | N/A |  |
@@ -195,8 +207,9 @@ V53 | Design Comparison | UAT1
 ## Slide 15
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | Glue on Clip |  |  | N/A | N/A | Add UV glue on Clip pad |
 | N/A | N/A | N/A | N/A | N/A | N/A |
@@ -206,8 +219,9 @@ V53 | Design Comparison | UAT1
 ## Slide 16
 V53 | Design Comparison | UAT1
 
+**Table 1:**
 | Difference | Build Stage |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 |  | P1 | P2 | EVT | CRB | Comparison P1 vs. P2 |
 | Bending |  |  | N/A | N/A | P2 bending line change. Refer to MCO for details. |
 | Bending |  |  | N/A | N/A | P2 bending line change. Refer to MCO for details. |
@@ -254,9 +268,14 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 
 ## Slide 18
 3. Dashboard | V53 UAT1 Dashboard
+Pass or finished
+Fail
+Waived or on-going
+NA
 
+**Table 1:**
 | Project |  | Flex | UAT1 | Remark |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 |  |  | Program | V53 |  |
 | SPOR |  | Back-End Supplier | AMP |  |
 | Status |  |  | Yellow |  |
@@ -291,15 +310,16 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 |  |  | FATP/MI Process | Green |  |
 |  |  | Sys./Mod. REL |  |  |
 
-Pass or finished
-Fail
-Waived or on-going
-NA
 
 ## Slide 19
+3. IQC Summary and Highlight | V53 UAT1
+Pass
+Fail
+Waived
 
+**Table 1:**
 | Component type | Supplier | APN | Chekcing items | Sampling size | Methology | Result |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | Clip | Ennvoi | 806-50869 806-50871 806-51162 806-51391 806-53366 806-53367 806-53371 806-53387 806-53698 806-53763 870-23918 | Cosmetic | AQL 0.4, per Reel | CCD | Pass |
 |  |  |  | Dimension | 32pcs/Reel | OMM | Pass |
 |  |  |  | Package | 32pcs/package D/C | OMM | Pass |
@@ -318,26 +338,28 @@ NA
 |  |  |  | Plating thickness | 32pcs/Reel | XRF | Pass |
 |  |  |  | Solder-ability | 10pcs/Lot | Dipping | Pass |
 
-3. IQC Summary and Highlight | V53 UAT1
-Pass
-Fail
-Waived
 
 ## Slide 20
 AP waiver
 Clip dimension NG waiver - LY
 3. IQC Summary and Highlight | V53 UAT1
 
+**Table 1:**
 | Item | Flex project | Build Phase | Vendor | APN | Waived Qty | Wavier Item | Wavier Description | Analysis | Wavier Approval Date | Wavier Approver | Layout |
-|---|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | V53 | P2 | LY | 806-50871 | P2 | Dimension | FAI 43 OOS | FA:  One of the measurement point of FAI43 1.60mm is located at the hole center, and the hole center can't be measured by the side view, so we change the measurement point to the top side and the FAI43 is changed to 2.76mm (the data of 2.76mm is ok to meet in spec). CA: We proposed to change the FAI43 from 1.60mm to 2.76mm (the hole center is controlled by the FAI39 3.07mm), and need help to waive it for P2. —-ETD：1/22 | 11/26 | Jackson Xu |  |
 | 2 | V53 | P2 | LY | 806-53763 | P2 | Dimension | FAI 26 OOS | FA:  The current 3D volume is 1.77mm³, so that calculate the mass to 0.014g (1.77mm³*7.93g/cm³/1000). 2D SPEC is 0.0065g, but actual MASS is about 0.014g.  CA:  We proposed to change the MASS SPEC from 0.0065±0.002 to 0.014±0.002, and need help to waive it for P2. —-ETD：1/20 | 11/26 | Jackson Xu |  |
 
 
 ## Slide 21
+3. IQC Summary and Highlight | V53 UAT1
+Pass
+Fail
+Waived
 
+**Table 1:**
 | Component type | Supplier | APN | Chekcing items | Sampling size | Methology | Result |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | LCP Bare Flex | muRata | 821-05715-02 921-05897-01 | Cosmetic | AQL 0.4/incoming lot | CCD | Pass |
 |  |  |  | Dimension | 32pcs/incoming lot | OMM | Pass |
 |  |  |  | Barcode read-ability | 32pcs/incoming lot | SR-2000 | Pass |
@@ -367,15 +389,16 @@ Clip dimension NG waiver - LY
 |  |  |  | Solder-ability | 5pcs/per vendor | Dipping | Pass |
 |  |  |  | Plating thickness | 32pcs/per vendor | XRF | Pass |
 
+
+## Slide 22
 3. IQC Summary and Highlight | V53 UAT1
 Pass
 Fail
 Waived
 
-## Slide 22
-
+**Table 1:**
 | Component type | Supplier | APN | Chekcing items | Sampling size | Methology | Result |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | MIC | IFX | 731-00334 | Cosmetic | AQL 0.4/Reel | CCD | Pass |
 |  |  |  | Dimension | 32pcs/Per dimension | OMM | Pass |
 |  |  |  | Solder-ability | 5pcs/per vendor | Dipping | Pass |
@@ -391,17 +414,14 @@ Waived
 |  |  |  | Peeling strength | 5pcs/adhesive lot | Pull tester | Pass |
 |  |  |  | Composition | 3pcs/die cut lot | FTIR | Pass |
 
-3. IQC Summary and Highlight | V53 UAT1
-Pass
-Fail
-Waived
 
 ## Slide 23
 V53 UAT1 LCP bare flex all outline dimension CPK can meet target 1.33.
 3. IQC Summary and Highlight | V53 UAT1
 
+**Table 1:**
 | V53 UAT1 LCP bare flex outline dimension CPK |  |  |  |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Bare flex | Dimension |  | POR |  | Dimension |  | DOE |  |
 |  |  |  | AMP | muRata |  |  | AMP | muRata |
 | muRata | FAI1 | 26.745±0.05 | 2.07 | 2.71 | FAI1 | 26.745±0.05 | 3.88 | 4.21 |
@@ -442,8 +462,9 @@ V53 UAT1 LCP bare flex all outline dimension CPK can meet target 1.33.
 V53 UAT1 Strobe Tail all outline dimension CPK can meet target 1.33.
 3. IQC Summary and Highlight | V53 UAT1
 
+**Table 1:**
 | V53 UAT1 Strobe Tail outline dimension CPK |  |  |  |  |  |  |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | Bare flex | Dimension |  | POR |  | POR |  |
 |  |  |  | AMP | Mflex | AMP | Avary |
 | Mflex Avary | FAI01 | 4.150±0.05 | 4.59 | 5.37 | 5.67 | 6.35 |
@@ -537,8 +558,9 @@ Strobe flex
 4. Flex Yield Trend and Overall Breakdown - V53 UAT1
 Others Details breakdown
 
+**Table 1:**
 | Config | Failure mode | Quantity | FR | Accu FR | Remark |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | X06P2-U1-MAYG2-SA-GEN X06P2-U1-MANG3-SM X06P2-U1-MAYA6-SA X06P2-U1-MAYA7-SM X06P2-U1-MAYX4-SM X06P2-U1-MANG3-SM-D1 X06P2-U1-MANA7-SA-D1 X06P2-U1-MANX4-SM-D1 | SPI -B Solder OOS | 9 | 0.11% | 85.42% | solder Print issue |
 | X06P2-U1-MAYA6-SA-D1 | SPI-T Solder OOS | 2 | 0.02% | 85.83% | solder Print issue |
 | X06P2-U1-MAYA7-SM X06P2-U1-MAYX4-SM | OQC X-ray low coverage | 3 | 0.04% | 87.08% | UAT1 P&P issue |
@@ -557,37 +579,41 @@ Others Details breakdown
 ## Slide 34
 4. Flex Yield Trend and Top Issues Breakdown - V53 UAT1- by Config
 
-## Slide 35: 4. Failure FACA | V53 UAT1-SMT
+## Slide 35
+### 4. Failure FACA | V53 UAT1-SMT
+Schematic diagram of cross section
 
+**Table 1:**
 | Component | FPC | Vendor | AMP | APN | 632-07540 | Failure process / station | SMT VI |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Issue Description | Bonding solder ball FR:  129F/8,300T=1.55%  FR for Config: |  |  |  |  |  |  |
 | FA | Root cause: Strobe LPI thickness issue. Normal LPI thickness (19+/-5um) 1.Check the SPI, SBI, Bonding AOI, Bonding Jig, no abnormal. 2:Check the failure sample. The solder ball was concentrated around pad 26 2.Cross-section analysis; Pic-1 2.1. Strobe (Avary) LPI thickness <14 μm. lower than the normal thickness 2.2. Avary P1 LPI Thickness= 16~18 μm, MFLEX P2 LPI thickness = 14~20um.  No solder ballIssue. Failure mode analysis: The thickness of LPI is too thin and cause the solder ball issue.  When comparing the solder coverage data of the Mflex config, it was found that even the solder mask thickness meet 19+/-5um, the coverage of some pads is still above 100%.  The current solder jetting parameter is 4Dots. The coverage:85%~110%(solder mask thickness:28~32um) Pic-2 DOE validation optimized solder jetting from 4 Dots to 3 Dots and collected coverage data: 67% to 85%. Pic-3 Marginal pass. Simulation calculation, it is found that the current bonding pad size has a critical value.  4-dots solder jetting, coverage: 75%-128% (risk for solder ball); Pic-4 3-dots solder jetting, coverage: 56%-96%   (risk for low coverage); Pic-5 according to simulation calculation.  with 3Dots solder jetting parameters, optimize pad 26 size from  LCP flex: 0.2*2.32 (PI: 0.3*2.42) to LCP flex: 0.2*2.1 (PI: 0.3*2.2).  It can meet coverage in 75% to 95%; Pic-6 |  |  |  |  |  |  |
 
-4. Failure FACA | V53 UAT1-SMT
 
+**Table 2:**
 | No. | Config | F/R | No. | Config | F/R |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 1 | X06P2-U1-MAYG2-SA | 42F/1,020T=4.1% | 6 | X06P2-U1-MAYA6-SA-D1 | 25F/700T=3.6% |
 | 2 | X06P2-U1-MANG3-SM | 0F/1,020T=0% | 7 | X06P2-U1-MANG3-SM-D1 | 0F/700T=0% |
 | 3 | X06P2-U1-MAYA6-SA | 39F/1,020T=3.8% | 8 | X06P2-U1-MANA7-SA-D1 | 23F/700T=3.3% |
 | 4 | X06P2-U1-MAYA7-SM | 0F/1,020T=0% | 9 | X06P2-U1-MANX4-SM-D1 | 0F/700T=0% |
 | 5 | X06P2-U1-MAYX4-SM | 0F/1,020T=0% | 10 | X06P2-U1-MANG2-SM-D1-AB1 | 0F/400T=0% |
 
-Schematic diagram of cross section
 
-## Slide 36: 4. Failure FACA | V53 UAT1-SMT
+## Slide 36
+### 4. Failure FACA | V53 UAT1-SMT
 
+**Table 1:**
 | Component | FPC | Vendor | AMP | APN | 632-07540 | Failure process / station | SMT VI |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Issue Description | Bonding solder ball FR:  129F/8,300T=1.55% FR for Config: |  |  |  |  |  |  |
 | CA | Improve action: 1. Continue to work with DFM/SQE/Flex vendor to control LPI thickness within 19+/-5um. Currently Flex vendor feedback can provide improve sample in EVT build.Pic-1.Pic-2 2. Change solder dispensing parameter from 4dots to 3dots. And proposal to optimized pad 26 size from LCP flex: 0.2*2.32 (PI: 0.3*2.42) to LCP flex: 0.2*2.1 (PI: 0.3*2.2). |  |  |  |  |  |  |
 | Validation | Keep monitor at EVT build. DRI: Xianhui Chen. CP: 2/28 |  |  |  |  |  |  |
 
-4. Failure FACA | V53 UAT1-SMT
 
+**Table 2:**
 | No. | Config | F/R | No. | Config | F/R |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 1 | X06P2-U1-MAYG2-SA | 42F/1,020T=4.1% | 6 | X06P2-U1-MAYA6-SA-D1 | 25F/700T=3.6% |
 | 2 | X06P2-U1-MANG3-SM | 0F/1,020T=0% | 7 | X06P2-U1-MANG3-SM-D1 | 0F/700T=0% |
 | 3 | X06P2-U1-MAYA6-SA | 39F/1,020T=3.8% | 8 | X06P2-U1-MANA7-SA-D1 | 23F/700T=3.3% |
@@ -595,17 +621,19 @@ Schematic diagram of cross section
 | 5 | X06P2-U1-MAYX4-SM | 0F/1,020T=0% | 10 | X06P2-U1-MANG2-SM-D1-AB1 | 0F/400T=0% |
 
 
-## Slide 37: 4. Failure FACA | V53 UAT1-SMT
+## Slide 37
+### 4. Failure FACA | V53 UAT1-SMT
 
+**Table 1:**
 | Component | FPC | Vendor | AMP | APN | 632-07540 | Failure process / station | SMT VI |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Issue Description | Bonding solder ball FR:  129F/8,300T=1.55%  (tracking: 0F/3,140T=0%) FR for Config: |  |  |  |  |  |  |
 | FA | Root cause: Strobe Ink issue 1.Check the distribution of failure samples, The failure samples are concentrated in 12 panels, The solder balls are distributed at pad 26. Pic1&Pic2 2. Check the SPI Data, no abnormal.Pic3 3.Check the SBI Data, no abnormal.Pic4 5.Check the Bonding Strobe Flex AOI, no abnormal.Pic5 6.Check the Bonding UAT1 AOI, no abnormal.Pic6 7.Check the elasticity data of the Bonding JIG, no abnormal.Pic7 8.The solder paste stability test: The amplitude of the solder paste at a single point is 32%, no abnormal.Pic8 |  |  |  |  |  |  |
 
-4. Failure FACA | V53 UAT1-SMT
 
+**Table 2:**
 | No. | Config | F/R | No. | Config | F/R |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 1 | X06P2-U1-MAYG2-SA | 42F/1,020T=4.1% | 6 | X06P2-U1-MAYA6-SA-D1 | 25F/700T=3.6% |
 | 2 | X06P2-U1-MANG3-SM | 0F/1,020T=0% | 7 | X06P2-U1-MANG3-SM-D1 | 0F/700T=0% |
 | 3 | X06P2-U1-MAYA6-SA | 39F/1,020T=3.8% | 8 | X06P2-U1-MANA7-SA-D1 | 23F/700T=3.3% |
@@ -623,29 +651,32 @@ solder ball sample
 Low coverage sample
 
 ## Slide 39
+Bonding issue analysis and simulation
 
+**Table 1:**
 | Pad 26 | Solder paste volume | Metal composition volume |
-|---|---|---|
+| --- | --- | --- |
 | average | 0.0317285 | 0.01586425 |
 | max | 0.036512842 | 0.018256421 |
 | min | 0.027125215 | 0.013562607 |
 
-Bonding issue analysis and simulation
 
-## Slide 40: 4. Failure FACA | V53 UAT1-SMT
+## Slide 40
+### 4. Failure FACA | V53 UAT1-SMT
+3.87mm
 
+**Table 1:**
 | Component | FPC | Vendor | AMP | APN | 632-07540 | Failure process / station | SMT VI |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Issue Description | UV Glue on CL-ANT-VERT-SP FR: 67F/8,300T=0.81%  (tracking: 0F/7,280T=0%) FR for Config: |  |  |  |  |  |  |
 | FA | Root cause: Process issue.UV glue remains on the side of the dispensing nozzle during nozzle cleaning. the side wall of the nozzle was in contact with the clip during UV glue dispensing 1. Check the defective product under violet light to confirm that the clip is UV glue. 2. Check the Dispensing Height distance: The safe distance for dispensing is 0.63 mm, this is no risk.  Pic5 3. Check the Nozzle: UV glue was found on the nozzle side.  Pic6 4. Check the dispensing nozzle clean: When cleaning the nozzle, there is a risk of UV glue sticking to the side of the nozzle. Pic7 5. Check the glue path: The distance from both the starting position and the ending position of dispensing UV glue to the CLIP is 0.85mm;  When the distance between the nozzle and the CLIP is 0.75mm, the nozzle side will make contact with the CLIP.  Pic8-9 |  |  |  |  |  |  |
 | CA | Short term: 1.Optimize the dispensing coordinates. Move the dispensing coordinates 0.25 mm to the left and  increase the distance from the CLIP to 1.1mm. Pic 10 2.Tracking 7,280pcs FR:0F/7,280T=0%  Long term: Add the issue to Lesson Learned, The distance from the dispensing coordinates to the CLIP   should be greater than 1.0 mm. |  |  |  |  |  |  |
 | Validation | FR: 0F/7,280T=0.0% |  |  |  |  |  |  |
 
-4. Failure FACA | V53 UAT1-SMT
-3.87mm
 
+**Table 2:**
 | No. | Config | F/R | No. | Config | F/R |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 1 | X06P2-U1-MAYG2-SA | 67F/1,020T=6.6% | 6 | X06P2-U1-MAYA6-SA-D1 | 0F/700T=0% |
 | 2 | X06P2-U1-MANG3-SM | 0F/1,020T=0% | 7 | X06P2-U1-MANG3-SM-D1 | 0F/700T=0% |
 | 3 | X06P2-U1-MAYA6-SA | 0F/1,020T=0% | 8 | X06P2-U1-MANA7-SA-D1 | 0F/700T=0% |
@@ -653,17 +684,19 @@ Bonding issue analysis and simulation
 | 5 | X06P2-U1-MAYX4-SM | 0F/1,020T=0% | 10 | X06P2-U1-MANG2-SM-D1-AB1 | 0F/400T=0% |
 
 
-## Slide 41: 4. Failure FACA | V53 UAT1-SMT
+## Slide 41
+### 4. Failure FACA | V53 UAT1-SMT
 
+**Table 1:**
 | Component | FPC | Vendor | AMP | APN | 632-07540 | Failure process / station | SMT VI |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Issue Description | UV Glue on CL-ANT-VERT-SP FR: 67F/8,300T=0.81%  (tracking: 0F/7,280T=0%) FR for Config: |  |  |  |  |  |  |
 | FA | Root cause: Process issue 1.Check the distribution of failure samples, The failure samples are concentrated in 3 panels.  Pic1 2. Check the defective product under violet light to confirm that the clip is UV glue.Pic2 3. Check dispensing parameters, dispensing height of 2.5mm, The running height is 4.0mm.Pic3 4. Check the CLIP Spec drawing, The Clip height is 3.84mm, Including the thickness of the solder paste, the height of the CLIP is 3.88 mm.Pic4 5. Measuring raw material data of clip: the measured value of CLIP is 3.87-3.91mm.Pic5 |  |  |  |  |  |  |
 
-4. Failure FACA | V53 UAT1-SMT
 
+**Table 2:**
 | No. | Config | F/R | No. | Config | F/R |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | 1 | X06P2-U1-MAYG2-SA | 67F/1,020T=6.6% | 6 | X06P2-U1-MAYA6-SA-D1 | 0F/700T=0% |
 | 2 | X06P2-U1-MANG3-SM | 0F/1,020T=0% | 7 | X06P2-U1-MANG3-SM-D1 | 0F/700T=0% |
 | 3 | X06P2-U1-MAYA6-SA | 0F/1,020T=0% | 8 | X06P2-U1-MANA7-SA-D1 | 0F/700T=0% |
@@ -671,25 +704,27 @@ Bonding issue analysis and simulation
 | 5 | X06P2-U1-MAYX4-SM | 0F/1,020T=0% | 10 | X06P2-U1-MANG2-SM-D1-AB1 | 0F/400T=0% |
 
 
-## Slide 42: 4. Failure FACA | V53 UAT1- Test
+## Slide 42
+### 4. Failure FACA | V53 UAT1- Test
+Pic4
 
+**Table 1:**
 | Component | V53 UAT1 | Vendor | AMP | APN | 632-07540 | Failure process / station | Inline Sensitivity Station |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Issue Description | Inline Sensitivity failure Fail Item: Sensitivity_N and Sensitivity_L Config：X06P2-U1-MAYA6-SA Rate：1F/979T=0.1% |  |  |  |  |  |  |
 | FA | Root cause: MIC raw material issue, has contamination on inner EB film. 1. Checked the appearance of the product and MIC welding, and no abnormal is found.(Pic1) 2. Returned NG MIC to AAC for analysis, AAC results are shown below:    a) Cosmetic and 3D X-ray did not find any abnormal.    b) EB flatness check with flex : Pass    c) Retest MIC function without flex: fail    d) After remove EB, cosmetic check found contamination on EB inside.(Pic2)    e) Retest function without EB, result shown fail.    f) After de-cap lid, contamination stuck between membrane and back plate that caused MIC function fail. EDX result shown the contamination were related to environment. (Pic3) 3.AAC OQC retest plot is also added，which is aligned with AMP inline；both fail.(Pic4)   The reason for the pass of AAC original data is that the position of particle has changed during the process, which is the analysis provided by AAC. |  |  |  |  |  |  |
 
-Pic4
-4. Failure FACA | V53 UAT1- Test
 
-## Slide 43: 4. Failure FACA | V53 UAT1- Test
+## Slide 43
+### 4. Failure FACA | V53 UAT1- Test
 
+**Table 1:**
 | Component | V53 UAT1 | Vendor | AMP | APN | 632-07540 | Failure process / station | Inline Sensitivity Station |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Issue Description | Inline Sensitivity failure Fail Item: Sensitivity_N and Sensitivity_L Config：X06P2-U1-MAYA6-SA Rate：1F/979T=0.1% |  |  |  |  |  |  |
 | CA | Actions from AAC:    1. Keep regularly check all equipment cleaning and avoid Friction of equipment air tubes, wires.    2. Add clean frequency for MEMS suction nozzle from 1 time/shift to 1 time/lot.     3. Installation of ionizing nozzles on MEMS Die Bond machine. |  |  |  |  |  |  |
 | Validation | Keep tracking in future build |  |  |  |  |  |  |
 
-4. Failure FACA | V53 UAT1- Test
 
 ## Slide 44
 Postmortem Review Items:
@@ -732,8 +767,9 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 ## Slide 45
 5. ORT | V53 UAT1
 
+**Table 1:**
 | Project | Config | Test | Cycle/Hour | Total Qty | Begin date | Due date | Status |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | V53 UAT1 | X06P2-U1-MAYG2-SA-GEN | Thermal cycling | 500 cycles | 45 | 12/10 | 1/8 | 400 cycles Pass, Next CP: 1/8 |
 |  |  | Heat soak and recovery | 500 hrs | 45 | 12/6 | 1/3 | Pass |
 |  |  | Thermal shock | 200 cycles | 45 | 12/10 | 12/18 | Pass |
@@ -751,8 +787,9 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 ## Slide 46
 5. ORT | V53 UAT1
 
+**Table 1:**
 | Project | Config | Test | Cycle/Hour | Total Qty | Begin date | Due date | Status |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | V53 UAT1 | X06P2-U1-MAYA6-SA | Thermal cycling | 500 cycles | 45 | 12/13 | 1/9 | 400 cycles Pass, Next CP: 1/9 |
 |  |  | Heat soak and recovery | 500 hrs | 45 | 12/9 | 1/8 | 400 cycles Pass, Next CP: 1/8 |
 |  |  | Thermal shock | 200 cycles | 45 | 12/10 | 12/18 | Pass |
@@ -770,8 +807,9 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 ## Slide 47
 5. ORT | V53 UAT1
 
+**Table 1:**
 | Project | Config | Test | Cycle/Hour | Total Qty | Begin date | Due date | Status |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | V53 UAT1 | X06P2-U1-MAYX4-SM | Thermal cycling | 500 cycles | 45 | 12/20 | 1/19 | 300 cycles Pass, Next CP: 1/19 |
 |  |  | Heat soak and recovery | 500 hrs | 45 | 12/17 | 1/14 | 400 cycles Pass, Next CP: 1/14 |
 |  |  | Thermal shock | 200 cycles | 45 | 12/17 | 12/27 | Pass |
@@ -789,8 +827,9 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 ## Slide 48
 5. ORT | V53 UAT1
 
+**Table 1:**
 | Project | Config | Test | Cycle/Hour | Total Qty | Begin date | Due date | Status |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | V53 UAT1 | X06P2-U1-MANG3-SM-D1 | Thermal cycling | 500 cycles | 45 | 12/20 | 1/19 | 200 cycles Pass, Next CP: 1/19 |
 |  |  | Heat soak and recovery | 500 hrs | 45 | 12/17 | 1/14 | 400 cycles Pass, Next CP: 1/14 |
 |  |  | Thermal shock | 200 cycles | 45 | 12/17 | 12/27 | Pass |
@@ -807,9 +846,12 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 
 ## Slide 49
 5. ORT | V53 UAT1
+Remark
+ORT test covered all configs, all items will be finished by 2025/01/19.
 
+**Table 1:**
 | Project | Config | Test | Cycle/Hour | Total Qty | Begin date | Due date | Status |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | V53 UAT1 | X06P2-U1-MANX4-SM-D1 | Thermal cycling | 500 cycles | 45 | 12/20 | 1/19 | 200 cycles Pass, Next CP: 1/19 |
 |  |  | Heat soak and recovery | 500 hrs | 45 | 12/17 | 1/14 | 400 cycles Pass, Next CP: 1/14 |
 |  |  | Thermal shock | 200 cycles | 45 | 12/17 | 12/27 | Pass |
@@ -823,8 +865,6 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 |  |  | Thermal Cycling and Flex Bending | 100 cycles+50 cycles | 20 | 12/30 | 1/3 | Pass |
 |  |  | Heat Soak and Flex Bending | 168 hrs+50 cycles | 20 | 12/27 | 1/1 | Pass |
 
-Remark
-ORT test covered all configs, all items will be finished by 2025/01/19.
 
 ## Slide 50
 Postmortem Review Items:
@@ -865,13 +905,14 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 20) MP line qual plan including, define DRI and team list
 
 ## Slide 51
-
-| Process/Station | Failure Description | Failure Rate | Root Cause | Corrective Action | DRI/ Due Date | Validation (Defect Rate%) |
-|---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |
-
 6. FATP/MI IQC, in-Line, ORT MIL and FACA | V53 UAT1
 So far no feedback
+
+**Table 1:**
+| Process/Station | Failure Description | Failure Rate | Root Cause | Corrective Action | DRI/ Due Date | Validation (Defect Rate%) |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  |  |  |  |
+
 
 ## Slide 52
 Postmortem Review Items:
@@ -912,13 +953,14 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 20) MP line qual plan including, define DRI and team list
 
 ## Slide 53
+### 7. Tester readiness V53 UAT1
 Ready
 Not ready
 Ongoing
-7. Tester readiness V53 UAT1
 
+**Table 1:**
 | Project | Flex | Test Items | Station | Test ERS/Plan | Test SW Readiness | Fixture HW Readiness | Test Qualification | Remark |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | V53 | UAT1 | Mic | Inline | Y | Y | Y | Y |  |
 |  |  | RF+ICT |  | Y | Y | Y | Y |  |
 |  |  | Mic | OQC | Y | Y | Y | Y |  |
@@ -926,22 +968,24 @@ Ongoing
 
 
 ## Slide 54
-
-| Flex | Station | Coverage |
-|---|---|---|
-| V53 UAT1 | RF+ICT | 97.27% |
-
-7. Function Test Coverage V53 UAT1
+### 7. Function Test Coverage V53 UAT1
 Yes
 No
+
+**Table 1:**
+| Flex | Station | Coverage |
+| --- | --- | --- |
+| V53 UAT1 | RF+ICT | 97.27% |
+
 
 ## Slide 55
 Covered
 Uncovered
 7. Function Test Coverage | V53 UAT1
 
+**Table 1:**
 | Failure mode :Open |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | B2B | Pin name | Test coverage | Pin name | Test coverage | Clip | Clip name | Test coverage | PAD |  | PAD name | Test coverage | Component | Component Name | Test coverage | Component Name | Test coverage | Component Name | Test coverage |
 | JUAT1 | Pin1 | Y | Pin22 | Y | Clip | CL_ANT10_GND | Y | Strobe_Pad |  | PIN1 | Y | Components | R0401 | Y | U0303 | Y | MIC L0603 | Y |
 |  | Pin2 | Y | Pin23 | Y |  | CL_ATN10_FEED | Y |  |  | PIN2 | Y |  | C0412 | Y | C0311 | Y | MIC C0600 | Y |
@@ -979,8 +1023,9 @@ Covered
 Uncovered
 7. Function Test Coverage | V53 UAT1 Mic
 
+**Table 1:**
 | Item | Failure mode | Sensitivity test | Summary |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | #1 | No tin on Mic signal pads | Y | Y |
 | #2 | Short between signal and other pads | Y | Y |
 
@@ -989,67 +1034,73 @@ Uncovered
 Covered
 Uncovered
 7. Function Test Coverage | | V53 UAT1 Mic
+EB membrane has a dustproof effect, and damage does not affect sensitivity testing .
 
+**Table 1:**
 | Failure mode | Sensitivity test | Summary |
-|---|---|---|
+| --- | --- | --- |
 | Shatter EB membrane   (manually break) | N | N |
 
-EB membrane has a dustproof effect, and damage does not affect sensitivity testing .
 
 ## Slide 58
 7. Function Test Coverage | V53 UAT1 Mic
-
-| Failure mode | Sensitivity test | Summary |
-|---|---|---|
-| Mic shielding case void(≥φ0.06mm) | N | N |
-
 Covered
 Uncovered
+
+**Table 1:**
+| Failure mode | Sensitivity test | Summary |
+| --- | --- | --- |
+| Mic shielding case void(≥φ0.06mm) | N | N |
+
 
 ## Slide 59
 Covered
 Uncovered
+7. Function Test Coverage | | V53 UAT1 Mic
 
+**Table 1:**
 | Failure mode | Sensitivity test | Summary |
-|---|---|---|
+| --- | --- | --- |
 | No tin on Mic signal pads | Y | Y |
 
-7. Function Test Coverage | | V53 UAT1 Mic
 
 ## Slide 60
 Covered
 Uncovered
-
-| Failure mode | Sensitivity test | Summary |
-|---|---|---|
-| Short between signal and other pads | Y | Y |
-
 7. Function Test Coverage | | V53 UAT1 Mic
 
+**Table 1:**
+| Failure mode | Sensitivity test | Summary |
+| --- | --- | --- |
+| Short between signal and other pads | Y | Y |
+
+
 ## Slide 61
-
-| Station | Test item Q’ty | CPK<1.33 | 1.33<=CPK<1.67 | 1.67<=CPK<2.0 | CPK>=2.0 | Comments |
-|---|---|---|---|---|---|---|
-| V53 UAT1 | 5,030 | 0 | 0 | 0 | 5,030 | All CPK value are above 2.0 ,which means the spec we are using is a good balance between  limit and data. |
-
-7. Function test CPK V53 UAT1
+### 7. Function test CPK V53 UAT1
 >2.00
 <1.33
 1.33~2.00
 
+**Table 1:**
+| Station | Test item Q’ty | CPK<1.33 | 1.33<=CPK<1.67 | 1.67<=CPK<2.0 | CPK>=2.0 | Comments |
+| --- | --- | --- | --- | --- | --- | --- |
+| V53 UAT1 | 5,030 | 0 | 0 | 0 | 5,030 | All CPK value are above 2.0 ,which means the spec we are using is a good balance between  limit and data. |
+
+
 ## Slide 62
 7. Test Yield, Retest Rate
+OK
+NG
 
+**Table 1:**
 | Station | V53 UAT1 |  |  |
-|---|---|---|---|
+| --- | --- | --- | --- |
 |  | Mic | RF | ICT |
 | Input Q’ty | 8,081 | 8,078 | 8,072 |
 | First Pass Yield  Target 97% | 99.12% | 98.89% | 99.24% |
 | Final Yield | 99.96% | 99.93% | 100.00% |
 | Retest Rate  Target 3% | 0.84% | 1.04% | 0.76% |
 
-OK
-NG
 
 ## Slide 63
 Postmortem Review Items:
@@ -1091,17 +1142,18 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 
 ## Slide 64
 V53 | MCO CPK Summary | UAT1
-
-| Flex | Project | Station | Total Qty | CPK<1.33 | 1.33<=CPK<1.67 | CPK>=1.67 |
-|---|---|---|---|---|---|---|
-| V53 UAT1 | Flex | FAI | 58 | 5 | 0 | 53 |
-|  |  | SPC | 28 | 0 | 0 | 28 |
-
 FAI225, Clip SMT dimension, refer to DFM.
 FAI226, Clip SMT dimension, refer to DFM.
 FAI229, Clip SMT dimension, refer to DFM.
 FAI230, Clip SMT dimension, refer to DFM.
 FAI233, Bonding dimension, refer to DFM.
+
+**Table 1:**
+| Flex | Project | Station | Total Qty | CPK<1.33 | 1.33<=CPK<1.67 | CPK>=1.67 |
+| --- | --- | --- | --- | --- | --- | --- |
+| V53 UAT1 | Flex | FAI | 58 | 5 | 0 | 53 |
+|  |  | SPC | 28 | 0 | 0 | 28 |
+
 
 ## Slide 65
 Postmortem Review Items:
@@ -1142,9 +1194,11 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 20) MP line qual plan including, define DRI and team list
 
 ## Slide 66
+10. Data Collection Summary | V53 UAT1
 
+**Table 1:**
 | Flex | Test Item |  | Result | Remark |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | V53 UAT1 | X-ray | Clip | Pass | Max void is 12.29%. meet spec<35% |
 |  |  | B2B | Pass | No void |
 |  |  | IC | Pass | No void |
@@ -1167,7 +1221,6 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 |  |  | Bonding | Pass | IMC: 1.16um-2.21um. meet spec (1-4um), soldring OK. |
 |  |  | Bending | Pass | No micro crack. |
 
-10. Data Collection Summary | V53 UAT1
 
 ## Slide 67
 10. Data Collection Summary | V53 UAT1 - Clip Peeling Force Summary
@@ -1221,11 +1274,12 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 19) Vendor owned MP material supplier POR (Plan Of Record), including FCCL, coverlay, PSA&TSA, DIE Cut suppliers, SUS. Also need tracking list of these material used in each build (Proto,EVT, Carrier, DVT,PVT, Rampup).
 20) MP line qual plan including, define DRI and team list
 
-## Slide 71: 11. Assembly PFMEA  Top 5 | UAT1  
-11. Assembly PFMEA  Top 5 | UAT1
+## Slide 71
+### 11. Assembly PFMEA  Top 5 | UAT1
 
+**Table 1:**
 | Process | Failure Mode | Failure Effects | Sev | Occ | Det | RPN | Current Design | Improved Design | Action Results |  |  |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  |  |  |  |  |  |  |  |  | Sev | Occ | Det | RPN |
 | Top Process | Clip Pollution Flux | Function Fail | 8 | 6 | 6 | 288 | Process: When the SUS is reflow twice, the Flux will remain on the carrier, and there is a risk of SUS contamination   Detection: - 100% inspection by VI | Process: Optimize the carrier, and the carrier is designed to avoid SUS；SUS do not contact with the carrier to reduce the risk.  Detection: -100% VI using CCD | 8 | 3 | 6 | 144 |
 | Dispensing UV Glue | CLIP Over glue | Cosmetic fail | 7 | 6 | 5 | 210 | Process: The height of CL-ANT-VERT-SP is 3.84mm. The dispensing path is incorrect, and there is a risk of glue hanging  Detection: - 100% inspection by VI | Process: Optimize the parameters of the dispensing path. The running height of the nozzle is required to be at least 1mm higher than that of the CLI Detection: - 100% inspection by VI | 7 | 3 | 5 | 105 |
@@ -1281,9 +1335,21 @@ Total 7 locations, no abnormal
 Total 11 locations, no abnormal.
 
 ## Slide 74
+45°(10 times)
+Bend instruction
+45°
+90°
+Defects
+90°(10 times)
+13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
+45°(test to fail or 50 times)
+90°(test to fail or 50 times)
+Location 1
+1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 1 (Bending area) | Engineer | 45° (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1305,22 +1371,23 @@ Total 11 locations, no abnormal.
 |  |  |  | 4 | 8 | 8 | 8 | N/A |
 |  |  |  | 5 | 9 | 9 | 9 | N/A |
 
+
+## Slide 75
 45°(10 times)
 Bend instruction
+Location 2
 45°
 90°
 Defects
 90°(10 times)
-13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
 45°(test to fail or 50 times)
 90°(test to fail or 50 times)
-Location 1
-1
+2
+13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
 
-## Slide 75
-
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 2 (Bending area) | Engineer | 45° (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1342,22 +1409,23 @@ Location 1
 |  |  |  | 4 | 7 | 7 | 7 | N/A |
 |  |  |  | 5 | 6 | 6 | 6 | N/A |
 
+
+## Slide 76
 45°(10 times)
 Bend instruction
-Location 2
+Location 3
 45°
 90°
 Defects
 90°(10 times)
 45°(test to fail or 50 times)
 90°(test to fail or 50 times)
-2
+3
 13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
 
-## Slide 76
-
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 3 (Bending area) | Engineer | 45° (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1379,22 +1447,23 @@ Defects
 |  |  |  | 4 | 7 | 7 | 7 | N/A |
 |  |  |  | 5 | 7 | 7 | 7 | N/A |
 
+
+## Slide 77
 45°(10 times)
 Bend instruction
-Location 3
+Location 4
 45°
 90°
 Defects
 90°(10 times)
 45°(test to fail or 50 times)
 90°(test to fail or 50 times)
-3
+4
 13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
 
-## Slide 77
-
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 4 (Bending area) | Engineer | 45° (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1416,22 +1485,23 @@ Defects
 |  |  |  | 4 | 9 | 9 | 9 | N/A |
 |  |  |  | 5 | 7 | 7 | 7 | N/A |
 
+
+## Slide 78
 45°(10 times)
 Bend instruction
-Location 4
+Location 5
 45°
 90°
 Defects
 90°(10 times)
 45°(test to fail or 50 times)
 90°(test to fail or 50 times)
-4
+5
 13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
 
-## Slide 78
-
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 5 (Bending area) | Engineer | 45° (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1453,22 +1523,23 @@ Defects
 |  |  |  | 4 | 10 | 10 | 10 | N/A |
 |  |  |  | 5 | 15 | 15 | 15 | N/A |
 
+
+## Slide 79
 45°(10 times)
 Bend instruction
-Location 5
+Location 6
 45°
 90°
 Defects
 90°(10 times)
 45°(test to fail or 50 times)
 90°(test to fail or 50 times)
-5
+6
 13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
 
-## Slide 79
-
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 6 (Bending area) | Engineer | 45° (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1490,22 +1561,23 @@ Defects
 |  |  |  | 4 | OK | OK | OK | N/A |
 |  |  |  | 5 | OK | OK | OK | N/A |
 
+
+## Slide 80
 45°(10 times)
 Bend instruction
-Location 6
+Location 7
 45°
 90°
 Defects
 90°(10 times)
 45°(test to fail or 50 times)
 90°(test to fail or 50 times)
-6
+7
 13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
 
-## Slide 80
-
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 7 (Bending area) | Engineer | 45° (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1527,23 +1599,19 @@ Defects
 |  |  |  | 4 | OK | OK | OK | N/A |
 |  |  |  | 5 | OK | OK | OK | N/A |
 
-45°(10 times)
-Bend instruction
-Location 7
-45°
-90°
-Defects
-90°(10 times)
-45°(test to fail or 50 times)
-90°(test to fail or 50 times)
-7
-13. Flex Mishandling and Abuse Test Review – Mishandling Test | V53 UAT1
 
 ## Slide 81
 13. Flex Mishandling and Abuse Test Review - Twist Test | V53 UAT1
+Location1
+Location2
+Location3
+Location4
+Twist test location
+Defects
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 1 | Engineer | 45° | 1 | 7 | 7 | 7 | N/A |
 |  |  |  | 2 | 7 | 7 | 7 | N/A |
 |  |  |  | 3 | 6 | 6 | 6 | N/A |
@@ -1565,17 +1633,18 @@ Defects
 |  |  |  | 4 | 6 | 6 | 6 | N/A |
 |  |  |  | 5 | 7 | 7 | 7 | N/A |
 
-Location1
-Location2
-Location3
-Location4
-Twist test location
-Defects
 
 ## Slide 82
+Location5
+Location6
+Location7
+Twist test location
+Defects
+13. Flex Mishandling and Abuse Test Review - Twist Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 5 | Engineer | 45° | 1 | 7 | 7 | 7 | N/A |
 |  |  |  | 2 | 7 | 7 | 7 | N/A |
 |  |  |  | 3 | 6 | 6 | 6 | N/A |
@@ -1592,17 +1661,18 @@ Defects
 |  |  |  | 4 | 7 | 7 | 7 | N/A |
 |  |  |  | 5 | 8 | 8 | 8 | N/A |
 
-Location5
-Location6
-Location7
-Twist test location
-Defects
-13. Flex Mishandling and Abuse Test Review - Twist Test | V53 UAT1
 
 ## Slide 83
+Normal pressure(10 times)
+Pressure test instruction
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
+Location1(Mic area)
+Defects
+High pressure(10 times)
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 1 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1624,17 +1694,19 @@ Defects
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
-Location1(Mic area)
-Defects
-High pressure(10 times)
 
 ## Slide 84
+Normal pressure(10 times)
+Pressure test instruction
+Location2（coating area）
+Defects
+High pressure(10 times)
+Location 2
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 2 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1656,18 +1728,20 @@ High pressure(10 times)
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location2（coating area）
-Defects
-High pressure(10 times)
-Location 2
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 85
+Normal pressure(10 times)
+Pressure test instruction
+Location3(PSA area)
+Defects
+High pressure(10 times)
+No defects, result is OK
+Location 3
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 3 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1689,19 +1763,19 @@ Location 2
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location3(PSA area)
-Defects
-High pressure(10 times)
-No defects, result is OK
-Location 3
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 86
+Normal pressure(10 times)
+Pressure test instruction
+Location4(B2B area)
+Defects
+High pressure(10 times)
+Location 4
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 4 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1723,18 +1797,19 @@ Location 3
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location4(B2B area)
-Defects
-High pressure(10 times)
-Location 4
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 87
+Normal pressure(10 times)
+Pressure test instruction
+Location5(Coating area)
+Defects
+High pressure(10 times)
+Location 5
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 5 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1756,18 +1831,18 @@ Location 4
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location5(Coating area)
-Defects
-High pressure(10 times)
-Location 5
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 88
+Normal pressure(10 times)
+Pressure test instruction
+Location6(Coating area)
+Defects
+High pressure(10 times)
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 6 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1789,17 +1864,19 @@ Location 5
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location6(Coating area)
-Defects
-High pressure(10 times)
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 89
+Normal pressure(10 times)
+Pressure test instruction
+Location7(PSA area)
+Defects
+High pressure(10 times)
+Location 7
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 7 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1821,18 +1898,19 @@ High pressure(10 times)
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location7(PSA area)
-Defects
-High pressure(10 times)
-Location 7
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 90
+Normal pressure(10 times)
+Pressure test instruction
+Location8(Coating area)
+Defects
+High pressure(10 times)
+Location 8
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 8 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1854,18 +1932,19 @@ Location 7
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location8(Coating area)
-Defects
-High pressure(10 times)
-Location 8
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 91
+Normal pressure(10 times)
+Pressure test instruction
+Location9(PSA area)
+Defects
+High pressure(10 times)
+Location 9
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 9 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1887,18 +1966,19 @@ Location 8
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location9(PSA area)
-Defects
-High pressure(10 times)
-Location 9
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 92
+Normal pressure(10 times)
+Pressure test instruction
+Location10(Coating area)
+Defects
+High pressure(10 times)
+Location 10
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 10 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1920,18 +2000,19 @@ Location 9
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location10(Coating area)
-Defects
-High pressure(10 times)
-Location 10
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 93
+Normal pressure(10 times)
+Pressure test instruction
+Location11(Bonding area)
+Defects
+High pressure(10 times)
+Location 11
+13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
+**Table 1:**
 | Location | Test Condition |  | Sample | Cosmetic | X-ray | Function Test | Proposal |
-|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Location 11 | Engineer | Normal pressure  (10times) | 1 | OK | OK | OK | N/A |
 |  |  |  | 2 | OK | OK | OK | N/A |
 |  |  |  | 3 | OK | OK | OK | N/A |
@@ -1953,13 +2034,6 @@ Location 10
 |  |  |  | 9 | OK | OK | OK | N/A |
 |  |  |  | 10 | OK | OK | OK | N/A |
 
-Normal pressure(10 times)
-Pressure test instruction
-Location11(Bonding area)
-Defects
-High pressure(10 times)
-Location 11
-13. Flex Mishandling and Abuse Test Review – Pressure Test | V53 UAT1
 
 ## Slide 94
 Postmortem Review Items:
@@ -2002,8 +2076,9 @@ MP hard tool refers to MP intended hard tool, any tool not for final MP is not M
 ## Slide 95
 V53 | Open DFM_P2 | UAT1
 
+**Table 1:**
 | Item | Flex | Drawing | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 1 | V53 UAT1 | MCO 056-21672-16 | FAI low CPK | FAI 225 / 226 CPK < 1.67 due to tightened tolerance ±0.05mm. | Release tolerance from ±0.05 to ±0.10mm. | Open for EVT |
 | 2 | V53 UAT1 | MCO 056-21672-16 | FAI low CPK | FAI 229 / 230 CPK < 1.67 due to tightened tolerance ±0.05mm. | Release tolerance from ±0.05 to ±0.10mm. | Open for EVT |
 | 3 | V53 UAT1 | MCO 056-21672-16 | FAI low CPK | FAI 233 CPK < 1.67 due to tightened tolerance ±0.10mm. | Release tolerance from ±0.10 to ±0.20mm. | Open for EVT |
@@ -2016,12 +2091,6 @@ V53 | Open DFM_P2 | UAT1
 
 ## Slide 96
 V53 | Open DFM_P2 | UAT1
-
-| Item | Flex | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|
-| 1 | V53 UAT1 | MCO 056-21672-16 | FAI 225 / 226 CPK < 1.67 due to tightened tolerance ±0.05mm. | Release tolerance from ±0.05 to ±0.10mm. | Open for EVT |
-|  |  |  |  |  |  |
-
 Issue:
 FAI 225 / 226 CPK < 1.67 due to tightened tolerance ±0.05mm.
 Proposal:
@@ -2031,14 +2100,15 @@ PD waived for P2.
 CPK < 1.67 with current ±0.05mm.
 CPK > 1.67 with proposed ±0.10mm.
 
-## Slide 97
-V53 | Open DFM_P2 | UAT1
-
+**Table 1:**
 | Item | Flex | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|
-| 2 | V53 UAT1 | MCO 056-21672-16 | FAI 229 / 230 CPK < 1.67 due to tightened tolerance ±0.05mm. | Release tolerance from ±0.05 to ±0.10mm. | Open for EVT |
+| --- | --- | --- | --- | --- | --- |
+| 1 | V53 UAT1 | MCO 056-21672-16 | FAI 225 / 226 CPK < 1.67 due to tightened tolerance ±0.05mm. | Release tolerance from ±0.05 to ±0.10mm. | Open for EVT |
 |  |  |  |  |  |  |
 
+
+## Slide 97
+V53 | Open DFM_P2 | UAT1
 Issue:
 FAI 229 / 230 CPK < 1.67 due to tightened tolerance ±0.05mm.
 Proposal:
@@ -2048,14 +2118,15 @@ PD waived for P2.
 CPK < 1.67 with current ±0.05mm.
 CPK > 1.67 with proposed ±0.10mm.
 
-## Slide 98
-V53 | Open DFM_P2 | UAT1
-
+**Table 1:**
 | Item | Flex | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|
-| 3 | V53 UAT1 | MCO 056-21672-16 | FAI 233 CPK < 1.67 due to tightened tolerance ±0.10mm. | Release tolerance from ±0.10 to ±0.20mm. | Open for EVT |
+| --- | --- | --- | --- | --- | --- |
+| 2 | V53 UAT1 | MCO 056-21672-16 | FAI 229 / 230 CPK < 1.67 due to tightened tolerance ±0.05mm. | Release tolerance from ±0.05 to ±0.10mm. | Open for EVT |
 |  |  |  |  |  |  |
 
+
+## Slide 98
+V53 | Open DFM_P2 | UAT1
 Issue:
 FAI 233 CPK < 1.67 due to tightened tolerance ±0.10mm.
 Proposal:
@@ -2068,37 +2139,31 @@ CPK < 1.67 with current ±0.10mm.
 CPK > 1.67 with proposed ±0.20mm.
 V54 UAT1 for reference
 Bonding tolerance ±0.20mm
+More data collection:
 
+**Table 1:**
+| Item | Flex | Category | Issue description | Suggestions | Status |
+| --- | --- | --- | --- | --- | --- |
+| 3 | V53 UAT1 | MCO 056-21672-16 | FAI 233 CPK < 1.67 due to tightened tolerance ±0.10mm. | Release tolerance from ±0.10 to ±0.20mm. | Open for EVT |
+|  |  |  |  |  |  |
+
+
+**Table 2:**
 | FAI233 CPK by config |  |  |  |  |  |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | Tolerance | 1 | 2 | 3 | 4 | 5 |
 | ±0.10 | 1.092 | 1.030 | 1.061 | 1.080 | 0.947 |
 | ±0.15 | 1.670 | 1.556 | 1.657 | 1.636 | 1.494 |
 | ±0.20 | 2.248 | 2.082 | 2.253 | 2.193 | 2.041 |
 
-More data collection:
 
 ## Slide 99
-
-| Item | Flex | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|
-| 4 | V53 UAT1 | MCO 056-21672-16 | CL_ANT10_FEED Clip Peeling force increased only 1N by adding Encap glue. Still similar as P1 and still has risk of peel off. | Option-1: Enlarge Clip pad from 1.78 to 2.78mm (Remove Encap glue).  Option-2: Change Clip pad design to make Clip arm on top layer. | Open for EVT |
-|  |  |  |  |  |  |
-
 V53 | Open DFM_P2 | UAT1
 Issue:
 CL_ANT10_FEED Clip Peeling force increased only 1N by adding Encap glue. Still similar as P1 and still has risk of peel off.
 Proposal:
 Option-1: Enlarge Clip pad from 1.78 to 2.78mm. (Remove Encap glue, also cost down)
 Option-2: Change Clip pad design to make Clip arm on top layer.
-
-|  | Peeling force / N |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Config | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Min | Max | Ave | Difference |
-| P1 W/O Encap | 6.07 | 5.88 | 5.82 | 5.29 | 6.03 | 5.59 | 5.50 | 5.67 | 5.74 | 5.99 | 5.29 | 6.07 | 5.76 | - |
-| P2 W/O Encap | 5.92 | 6.29 | 5.95 | 5.92 | 5.74 | 5.91 | 5.95 | 5.40 | 5.96 | 5.89 | 5.40 | 6.29 | 5.89 | Same as P1 |
-| P2 W/    Encap | 6.94 | 6.41 | 7.37 | 6.84 | 7.05 | 7.53 | 7.44 | 6.18 | 7.35 | 6.41 | 6.18 | 7.53 | 6.95 | 1.06N ↑ |
-
 Encap increased only 1N Peeling force.
 Risk of  Clip peel off again.
 CL_ANT10_FEED Clip
@@ -2107,27 +2172,29 @@ W/O Encap glue
 Peeling force 1N ↑ with Encap around Clip pad.
 2.65
 
-## Slide 100
-V53 | Open DFM_P2 | UAT1
-
+**Table 1:**
 | Item | Flex | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|
-| 5 | V53 UAT1 | MCO 056-21672-16 | CL_ANT_VERT_SP Clip  Peeling force increased only 1N by adding Encap glue around Clip pad. Risk of peel off again. | Option-1: Enlarge Clip pad from 1.59 to 2.59mm (Remove Encap glue).  Option-2: Change Clip pad design to make Clip arm on top layer. | Open for EVT |
+| --- | --- | --- | --- | --- | --- |
+| 4 | V53 UAT1 | MCO 056-21672-16 | CL_ANT10_FEED Clip Peeling force increased only 1N by adding Encap glue. Still similar as P1 and still has risk of peel off. | Option-1: Enlarge Clip pad from 1.78 to 2.78mm (Remove Encap glue).  Option-2: Change Clip pad design to make Clip arm on top layer. | Open for EVT |
 |  |  |  |  |  |  |
 
+
+**Table 2:**
+|  | Peeling force / N |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Config | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Min | Max | Ave | Difference |
+| P1 W/O Encap | 6.07 | 5.88 | 5.82 | 5.29 | 6.03 | 5.59 | 5.50 | 5.67 | 5.74 | 5.99 | 5.29 | 6.07 | 5.76 | - |
+| P2 W/O Encap | 5.92 | 6.29 | 5.95 | 5.92 | 5.74 | 5.91 | 5.95 | 5.40 | 5.96 | 5.89 | 5.40 | 6.29 | 5.89 | Same as P1 |
+| P2 W/    Encap | 6.94 | 6.41 | 7.37 | 6.84 | 7.05 | 7.53 | 7.44 | 6.18 | 7.35 | 6.41 | 6.18 | 7.53 | 6.95 | 1.06N ↑ |
+
+
+## Slide 100
+V53 | Open DFM_P2 | UAT1
 Issue:
 CL_ANT_VERT_SP Clip Peeling force increased only 1N by adding Encap glue around Clip pad. Risk of peel off again.
 Proposal:
 Option-1: Enlarge Clip pad from 1.59 to 2.59mm. (Remove Encap glue, also cost down)
 Option-2: Change Clip pad design to make Clip arm on top layer.
-
-|  | Peeling force / N |  |  |  |  |  |  |  |  |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Config | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Min | Max | Ave | Difference |
-| P1 W/O Encap | 6.64 | 6.14 | 5.33 | 5.82 | 5.22 | 7.80 | 6.95 | 5.45 | 7.56 | 5.45 | 5.22 | 7.80 | 6.24 | - |
-| P2 W/O Encap | 7.68 | 9.91 | 9.58 | 10.02 | 9.66 | 8.44 | 9.28 | 8.50 | 8.44 | 10.23 | 7.68 | 10.23 | 9.17 | 2.93N ↑ |
-| P2 W/    Encap | 11.58 | 11.55 | 11.09 | 10.64 | 9.00 | 11.18 | 10.00 | 8.81 | 11.71 | 10.17 | 8.81 | 11.71 | 10.57 | 1.40N ↑ |
-
 Encap increased only 1N Peeling force.
 Risk of  Clip peel off again.
 CL_ANT_VERT_SP Clip
@@ -2135,39 +2202,51 @@ W/ Encap glue
 W/O Encap glue
 Peeling force 1N ↑ with Encap around Clip pad.
 
-## Slide 101
-V53 | Open DFM_P2 | UAT1
-
+**Table 1:**
 | Item | Flex | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|
-| 6 | V53 UAT1 | MCO 056-21672-16 | SUS Stiffener has Ni plated on both contact side and solder side.  Risk of CAN NOT identify it if solder side face up. | Change SUS Stiffener solder side plating from “Ni” to “Sn over Ni”. (Same as V54 UAT1) | Open for EVT |
+| --- | --- | --- | --- | --- | --- |
+| 5 | V53 UAT1 | MCO 056-21672-16 | CL_ANT_VERT_SP Clip  Peeling force increased only 1N by adding Encap glue around Clip pad. Risk of peel off again. | Option-1: Enlarge Clip pad from 1.59 to 2.59mm (Remove Encap glue).  Option-2: Change Clip pad design to make Clip arm on top layer. | Open for EVT |
 |  |  |  |  |  |  |
 
+
+**Table 2:**
+|  | Peeling force / N |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Config | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Min | Max | Ave | Difference |
+| P1 W/O Encap | 6.64 | 6.14 | 5.33 | 5.82 | 5.22 | 7.80 | 6.95 | 5.45 | 7.56 | 5.45 | 5.22 | 7.80 | 6.24 | - |
+| P2 W/O Encap | 7.68 | 9.91 | 9.58 | 10.02 | 9.66 | 8.44 | 9.28 | 8.50 | 8.44 | 10.23 | 7.68 | 10.23 | 9.17 | 2.93N ↑ |
+| P2 W/    Encap | 11.58 | 11.55 | 11.09 | 10.64 | 9.00 | 11.18 | 10.00 | 8.81 | 11.71 | 10.17 | 8.81 | 11.71 | 10.57 | 1.40N ↑ |
+
+
+## Slide 101
+V53 | Open DFM_P2 | UAT1
 Issue:
 SUS Stiffener has Ni plated on both contact side and solder side. Risk of CAN NOT identify it if solder side face up.
 Proposal:
 Change SUS Stiffener solder side plating from Ni to Sn over Ni. (same as V54 UAT1)
 SUS Stiffener
+Solder side
+Contact side
+Contact side
+Solder side
 
+**Table 1:**
+| Item | Flex | Category | Issue description | Suggestions | Status |
+| --- | --- | --- | --- | --- | --- |
+| 6 | V53 UAT1 | MCO 056-21672-16 | SUS Stiffener has Ni plated on both contact side and solder side.  Risk of CAN NOT identify it if solder side face up. | Change SUS Stiffener solder side plating from “Ni” to “Sn over Ni”. (Same as V54 UAT1) | Open for EVT |
+|  |  |  |  |  |  |
+
+
+**Table 2:**
 | Plating | Contact side: Ni / Solder side: Ni |  | Contact side: Ni / Solder side: Sn over Ni |  |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | DOE | POR Contact side face up | DOE Solder side face up | POR Contact side face up | DOE Solder side face up |
 | Identified Picture (Pre-AOI) |  |  |  |  |
 | DOE result | Can NOT identify if solder side face up. |  | Can identify if solder side face up. |  |
 
-Solder side
-Contact side
-Contact side
-Solder side
 
 ## Slide 102
 V53 | Open DFM_P2 | UAT1
-
-| Item | Flex | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|
-| 7 | V53 UAT1 | MCO 056-21672-16 | Current PSA has lower utilization rate of raw material in diecut process. Raw material utilization rate could be increased 50.0% when change PSA liner as proposed. | Change PSA liner tab position to upper side. | Open for EVT |
-|  |  |  |  |  |  |
-
 Issue:
 Current PSA has lower utilization rate of raw material in diecut process.
 Raw material utilization rate could be increased 50.0% when change PSA liner as proposed.
@@ -2179,14 +2258,15 @@ Raw material utilization rate 50.0% ↑
 Current PSA liner
 Proposed PSA liner
 
-## Slide 103
-V53 | Open DFM_P2 | UAT1
-
+**Table 1:**
 | Item | Flex | Category | Issue description | Suggestions | Status |
-|---|---|---|---|---|---|
-| 8 | V53 UAT1 | MCO 056-21672-16 | Solder ball issue in bonding area due to LPI thickness and Pad size. FR: 129F/8,300T=1.55%. (Focused on configs with Avary strobe flex) | Reduce UAT1 Pad length from 2.32 to 2.10mm. Reduce Strobe Pad length from 2.42 to 2.20mm. | Open for EVT |
+| --- | --- | --- | --- | --- | --- |
+| 7 | V53 UAT1 | MCO 056-21672-16 | Current PSA has lower utilization rate of raw material in diecut process. Raw material utilization rate could be increased 50.0% when change PSA liner as proposed. | Change PSA liner tab position to upper side. | Open for EVT |
 |  |  |  |  |  |  |
 
+
+## Slide 103
+V53 | Open DFM_P2 | UAT1
 Issue:
 Solder ball issue in bonding area. FR: 129F/8,300T=1.55%.
 Proposal:
@@ -2195,9 +2275,25 @@ Reduce Strobe Pad length from 2.42 to 2.20mm.
 Failure focused on P2 Avary Flex:
 LPI thickness < general spec 19±5um.
 Failure also focused on narrow GND pad.
+Jetting 4 dots solder, when LPI thickness to be lower limit 14um,
+risk of coverage > 100%, cause solder ball issue.
+Jetting 3 dots solder, when LPI thickness to be upper limit 24um, risk of low solder coverage.
+Simulated calculation, suggest reduce pad size to: UAT1 0.20 * 2.10 & Strobe 0.30 * 2.20mm.
+UAT1
+0.20 * 2.32 → 0.20 * 2.10
+Strobe
+0.30 * 2.42 → 0.30 * 2.20
 
+**Table 1:**
+| Item | Flex | Category | Issue description | Suggestions | Status |
+| --- | --- | --- | --- | --- | --- |
+| 8 | V53 UAT1 | MCO 056-21672-16 | Solder ball issue in bonding area due to LPI thickness and Pad size. FR: 129F/8,300T=1.55%. (Focused on configs with Avary strobe flex) | Reduce UAT1 Pad length from 2.32 to 2.10mm. Reduce Strobe Pad length from 2.42 to 2.20mm. | Open for EVT |
+|  |  |  |  |  |  |
+
+
+**Table 2:**
 | Solder | Total LPI thickness / um | 28(14+14) | 32(16+16) | 38(19+19) | 42(21+21) | 48(24+24) |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | 4 dots | Solder volume / mm² | 0.021312 | 0.021312 | 0.021312 | 0.021312 | 0.021312 |
 |  | Bonding volume / mm² | 0.01666 | 0.01904 | 0.02261 | 0.02499 | 0.02856 |
 |  | Coverage | 127.92% | 111.93% | 94.26% | 85.28% | 74.62% |
@@ -2205,12 +2301,10 @@ Failure also focused on narrow GND pad.
 |  | Bonding volume / mm² | 0.01666 | 0.01904 | 0.02261 | 0.02499 | 0.02856 |
 |  | Coverage | 95.94% | 83.95% | 70.69% | 63.96% | 55.97% |
 
-Jetting 4 dots solder, when LPI thickness to be lower limit 14um,
-risk of coverage > 100%, cause solder ball issue.
-Jetting 3 dots solder, when LPI thickness to be upper limit 24um, risk of low solder coverage.
 
+**Table 3:**
 | Solder | UAT1  Pad size | Strobe Pad size | Total  LPI thickness | 28(14+14) | 32(16+16) | 38(19+19) | 42(21+21) | 48(24+24) |
-|---|---|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 3 dots | 0.20 * 2.32 | 0.30 * 2.42 | Bonding volume | 0.01666 | 0.01904 | 0.02261 | 0.02499 | 0.02856 |
 |  |  |  | Coverage | 95.94% | 83.95% | 70.69% | 63.96% | 55.97% |
 |  | 0.20 * 2.20 | 0.30 * 2.30 | Bonding volume | 0.01582 | 0.01808 | 0.02147 | 0.02373 | 0.02712 |
@@ -2220,8 +2314,3 @@ Jetting 3 dots solder, when LPI thickness to be upper limit 24um, risk of low so
 |  | 0.20 * 2.00 | 0.30 * 2.10 | Bonding volume | 0.01442 | 0.01648 | 0.01957 | 0.02163 | 0.02472 |
 |  |  |  | Coverage | 110.85% | 96.99% | 81.68% | 73.90% | 64.66% |
 
-Simulated calculation, suggest reduce pad size to: UAT1 0.20 * 2.10 & Strobe 0.30 * 2.20mm.
-UAT1
-0.20 * 2.32 → 0.20 * 2.10
-Strobe
-0.30 * 2.42 → 0.30 * 2.20

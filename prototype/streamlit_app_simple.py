@@ -44,7 +44,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-INDEX_VERSION = "v6"  # Bump this to force index rebuild after doc changes
+INDEX_VERSION = "v7"  # Bump this to force index rebuild after doc changes
 
 @st.cache_resource
 def initialize_rag_system():
@@ -111,6 +111,56 @@ def clean_document_name(filename: str) -> str:
     name = Path(filename).stem
     # Replace underscores and hyphens with spaces, title case
     return name.replace("_", " ").replace("-", " ").title()
+
+
+def render_pdf_page_image(source_file: str, page_num: int) -> bool:
+    """
+    Render a PDF page as an image using PyMuPDF.
+    Returns True if successful, False otherwise.
+    """
+    try:
+        import fitz
+        pdf_path = Path(Config.DATA_DIR) / source_file
+
+        if not pdf_path.exists():
+            return False
+
+        if not source_file.lower().endswith('.pdf'):
+            return False
+
+        doc = fitz.open(str(pdf_path))
+
+        if page_num < 1 or page_num > len(doc):
+            doc.close()
+            return False
+
+        # Render page at 1.5x scale for better readability
+        page = doc[page_num - 1]
+        pix = page.get_pixmap(matrix=fitz.Matrix(1.5, 1.5))
+        img_bytes = pix.tobytes("png")
+        doc.close()
+
+        # Display the image
+        st.image(
+            img_bytes,
+            caption=f"{clean_document_name(source_file)} - Page {page_num}",
+            use_container_width=True
+        )
+        return True
+
+    except Exception as e:
+        # Log error for debugging but don't show to user
+        print(f"PDF render error for {source_file} page {page_num}: {e}")
+        return False
+
+
+def render_ppt_slide_info(source_file: str, slide_num: int):
+    """
+    For PPT-sourced content (markdown extractions), show a styled info card
+    since we don't have the original PPT files.
+    """
+    st.info(f"Source: **{clean_document_name(source_file)}** - Slide {slide_num}")
+    st.caption("Note: PPT slides are shown as text extractions. Original slide images not available.")
 
 
 def get_pdf_files_from_data_dir() -> List[str]:
@@ -276,30 +326,46 @@ def main():
 
             if result['sources']:
                 for i, source in enumerate(result['sources'], 1):
-                    doc_name = clean_document_name(source['file'])
-                    with st.expander(f"📄 {doc_name}, Page {source['page']}"):
-                        st.markdown(f"**From:** {doc_name}")
-                        st.markdown(f"**Page:** {source['page']}")
+                    source_file = source.get('file', '')
+                    page_num = source.get('page', 1)
+                    doc_name = clean_document_name(source_file)
+                    is_pdf = source_file.lower().endswith('.pdf')
+                    is_ppt_extract = source_file.lower().endswith('.md')
 
-                        st.markdown("**Relevant excerpt:**")
+                    # Determine source type label
+                    if is_pdf:
+                        source_label = f"📄 {doc_name}, Page {page_num}"
+                    elif is_ppt_extract:
+                        source_label = f"📊 {doc_name}, Slide {page_num}"
+                    else:
+                        source_label = f"📄 {doc_name}"
+
+                    with st.expander(source_label, expanded=(i == 1)):
+                        # Source metadata
+                        col1, col2 = st.columns([2, 1])
+                        with col1:
+                            st.markdown(f"**Document:** {doc_name}")
+                            if is_pdf:
+                                st.markdown(f"**Page:** {page_num}")
+                            elif is_ppt_extract:
+                                st.markdown(f"**Slide:** {page_num}")
+
+                        # Render source document page as image (for PDFs)
+                        if is_pdf:
+                            st.markdown("---")
+                            st.markdown("**📖 Source Page Preview:**")
+                            if not render_pdf_page_image(source_file, page_num):
+                                st.caption("Page preview not available")
+
+                        # For PPT extractions, show info about the slide
+                        elif is_ppt_extract:
+                            st.markdown("---")
+                            render_ppt_slide_info(source_file, page_num)
+
+                        # Show text excerpt
+                        st.markdown("---")
+                        st.markdown("**📝 Relevant Text Excerpt:**")
                         st.text(source['text_preview'])
-
-                        # Render source PDF page as image
-                        try:
-                            import fitz
-                            source_file = source.get('file', '')
-                            page_num = source.get('page', 1)
-                            pdf_path = Path(Config.DATA_DIR) / source_file
-                            if pdf_path.exists() and source_file.endswith('.pdf'):
-                                doc = fitz.open(str(pdf_path))
-                                if 0 < page_num <= len(doc):
-                                    page = doc[page_num - 1]
-                                    pix = page.get_pixmap(matrix=fitz.Matrix(1.5, 1.5))
-                                    img_bytes = pix.tobytes("png")
-                                    st.image(img_bytes, caption=f"{source_file} — Page {page_num}", use_container_width=True)
-                                doc.close()
-                        except Exception:
-                            pass  # Silently skip if PDF rendering fails
 
                         # Show full text in a collapsible section
                         with st.expander("View Full Context"):
@@ -327,4 +393,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-# v1774664921
+# v1774664922 - Added PDF page display in source expanders
