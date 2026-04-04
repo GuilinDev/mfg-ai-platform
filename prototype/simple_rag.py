@@ -324,58 +324,61 @@ class SimpleRAGSystem:
         
         import re
 
-        def clean_chunk(text: str, src: str, page) -> str:
-            """Strip boilerplate and return clean answer text."""
+        def extract_qa(text: str):
+            """From a Q&A chunk, return (question_str, answer_str) or (None, None)."""
+            # Match **Q: ...**\nA: ... or Q: ...\nA: ...
+            q = re.search(r'\*\*Q:\s*(.*?)\*\*', text, re.DOTALL)
+            if not q:
+                q = re.search(r'Q:\s*(.+?)(?:\n|$)', text)
+            a = re.search(r'\nA:\s*(.+?)(?:\n\n|$)', text, re.DOTALL)
+            if not a:
+                a = re.search(r'A:\s*(.+?)(?:\n|$)', text)
+            q_str = q.group(1).strip().rstrip('?').strip() if q else None
+            a_str = a.group(1).strip() if a else None
+            return q_str, a_str
+
+        def clean_pdf_chunk(text: str) -> str:
+            """Strip Apple header boilerplate from PDF chunks."""
             t = text.strip()
-            # Remove Apple header boilerplate
             idx = t.find('Rev: E')
             if idx != -1:
                 t = t[idx + 6:].strip()
-            # Strip Q: line, keep A: value
-            t = re.sub(r'\*\*Q:.*?\*\*\s*', '', t, flags=re.DOTALL).strip()
-            t = re.sub(r'^Q:.*\n?', '', t, flags=re.MULTILINE).strip()
-            # Truncate at sentence boundary ~400 chars
             if len(t) > 400:
                 cutoff = t.rfind('.', 0, 400)
                 t = t[:cutoff + 1] if cutoff > 50 else t[:400]
             return t
 
-        # Detect comparison / multi-fact questions
-        comparison_keywords = ['compare', 'difference', 'vs', 'versus', 'p1 and p2',
-                               'p2 and p1', 'both', 'all', 'each', 'list']
+        # Build answer from top results
+        comparison_keywords = ['compare', 'vs', 'versus', 'p1 and p2', 'p2 and p1',
+                               'both', 'difference', 'each']
         is_comparison = any(kw in question.lower() for kw in comparison_keywords)
+        n_chunks = 4 if is_comparison else 1
 
-        if is_comparison:
-            # Gather top-3 chunks and combine Q&A answers
-            parts = []
-            seen = set()
-            for r in search_results[:3]:
-                t = r['text'].strip()
-                # Extract A: value from Q&A chunks
-                a_match = re.search(r'A:\s*(.+)', t)
-                q_match = re.search(r'Q:\s*(.+)', t)
-                if a_match:
-                    q_text = q_match.group(1).strip() if q_match else ''
-                    a_text = a_match.group(1).strip()
-                    entry = f"• {q_text}: **{a_text}**" if q_text else f"• {a_text}"
-                    if a_text not in seen:
-                        parts.append(entry)
-                        seen.add(a_text)
-                else:
-                    cleaned = clean_chunk(t, r['metadata']['source_file'], r['metadata']['page_number'])
-                    if cleaned not in seen:
-                        parts.append(cleaned)
-                        seen.add(cleaned)
-            answer = '\n'.join(parts) if parts else clean_chunk(
-                search_results[0]['text'], search_results[0]['metadata']['source_file'],
-                search_results[0]['metadata']['page_number'])
-            top_src = search_results[0]['metadata']['source_file']
-            top_page = search_results[0]['metadata']['page_number']
-            answer += f"\n\n📄 Source: {top_src}"
-        else:
-            top = search_results[0]
-            answer = clean_chunk(top['text'], top['metadata']['source_file'], top['metadata']['page_number'])
-            answer += f"\n\n📄 Source: {top['metadata']['source_file']}, Page {top['metadata']['page_number']}"
+        answer_parts = []
+        seen_answers = set()
+
+        for r in search_results[:n_chunks]:
+            text = r['text']
+            src = r['metadata']['source_file']
+            page = r['metadata']['page_number']
+
+            q_str, a_str = extract_qa(text)
+            if a_str and a_str not in seen_answers:
+                label = f"**{q_str}:** {a_str}" if q_str else a_str
+                answer_parts.append(label)
+                seen_answers.add(a_str)
+            elif not a_str and src.endswith('.pdf'):
+                cleaned = clean_pdf_chunk(text)
+                if cleaned not in seen_answers:
+                    answer_parts.append(cleaned)
+                    seen_answers.add(cleaned)
+
+        if not answer_parts:
+            answer_parts.append("This information was not found in the provided documents.")
+
+        top_src = search_results[0]['metadata']['source_file']
+        answer = '\n\n'.join(answer_parts)
+        answer += f"\n\n📄 *Source: {top_src}*"
 
         return {
             'answer': answer,

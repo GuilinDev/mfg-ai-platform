@@ -346,13 +346,8 @@ def main():
                             if not render_pdf_page_image(source_file, page_num):
                                 st.caption("Page preview not available")
 
-                        # Show text excerpt (concise, no redundant headers)
-                        st.markdown("**Relevant excerpt:**")
+                        # Show text excerpt only
                         st.text(source['text_preview'])
-
-                        # Show full text in a collapsible section
-                        with st.expander("View Full Context"):
-                            st.text(source.get('full_text', source.get('text_preview', 'Full text not available')))
             else:
                 st.warning("No sources found")
 
