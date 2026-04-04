@@ -343,8 +343,18 @@ def main():
                             if not render_pdf_page_image(source_file, page_num):
                                 st.caption("Page preview not available")
 
-                        # Show text excerpt only
-                        st.text(source['text_preview'])
+                        # Show clean excerpt: for Q&A show only A: value, for PDF show raw text
+                        import re as _re
+                        preview = source['text_preview']
+                        a_match = _re.search(r'A:\s*(.+)', preview)
+                        if a_match:
+                            st.markdown(f"**Answer:** {a_match.group(1).strip()}")
+                        else:
+                            # Strip Apple header boilerplate for PDF
+                            idx = preview.find('Rev: E')
+                            if idx != -1:
+                                preview = preview[idx+6:].strip()
+                            st.text(preview[:300])
             else:
                 st.warning("No sources found")
 
