@@ -340,7 +340,7 @@ def main():
                     else:
                         source_label = f"📄 {doc_name}"
 
-                    with st.expander(source_label, expanded=(i == 1)):
+                    with st.expander(source_label, expanded=(i == 0)):
                         # Source metadata
                         col1, col2 = st.columns([2, 1])
                         with col1:
