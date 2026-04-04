@@ -322,53 +322,31 @@ class SimpleRAGSystem:
                 'text_preview': result['text'][:200] + "..." if len(result['text']) > 200 else result['text']
             })
         
-        context = "\\n\\n---\\n\\n".join(context_texts)
-        
-        # Create prompt
-        prompt = f"""You are a technical document assistant. Your ONLY job is to extract and quote relevant information from the context below.
+        # No LLM generation — return the top matching chunk directly
+        # This prevents hallucination entirely for spec lookup use cases
+        top = search_results[0]
+        top_text = top['text'].strip()
+        top_src = top['metadata']['source_file']
+        top_page = top['metadata']['page_number']
 
-CONTEXT (source documents):
-{context}
+        # Clean up boilerplate Apple header if present
+        header_end = top_text.find('Rev: E')
+        if header_end != -1:
+            top_text = top_text[header_end + 6:].strip()
 
-QUESTION: {question}
+        # Truncate to ~400 chars, cut at sentence boundary
+        if len(top_text) > 400:
+            cutoff = top_text.rfind('.', 0, 400)
+            top_text = top_text[:cutoff + 1] if cutoff > 50 else top_text[:400]
 
-STRICT RULES:
-1. ONLY quote text that appears VERBATIM in the context above. Do NOT invent, infer, or generate any new content.
-2. If the exact answer is present, quote it directly and state which document/page it came from.
-3. If the answer is NOT clearly stated in the context, say exactly: "This information was not found in the provided documents."
-4. Do NOT create section numbers, headings, or structure that doesn't exist in the context.
-5. Maximum 3 sentences total.
+        answer = f"{top_text}\n\n📄 Source: {top_src}, Page {top_page}"
 
-Answer:"""
-
-        try:
-            # Query Groq
-            response = self.groq_client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
-                messages=[
-                    {"role": "system", "content": "You are a strict document extraction assistant. You only quote text that exists verbatim in the provided context. You never generate, infer, or fabricate content."},
-                    {"role": "user", "content": prompt}
-                ],
-                temperature=0.0,
-                max_tokens=300
-            )
-            
-            answer = response.choices[0].message.content
-            
-            return {
-                'answer': answer,
-                'sources': sources,
-                'query': question,
-                'error': None
-            }
-            
-        except Exception as e:
-            return {
-                'answer': f'Error generating answer: {str(e)}',
-                'sources': sources,
-                'query': question,
-                'error': str(e)
-            }
+        return {
+            'answer': answer,
+            'sources': sources,
+            'query': question,
+            'error': None
+        }
     
     def save_index(self, filename: str) -> None:
         """Save the index and metadata"""
