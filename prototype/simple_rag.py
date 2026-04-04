@@ -303,9 +303,18 @@ class SimpleRAGSystem:
         
         if not search_results:
             return {
-                'answer': 'No relevant documents found.',
+                'answer': '⚠️ No relevant documents found in the current knowledge base.',
                 'sources': [],
                 'error': 'No search results'
+            }
+
+        # Confidence gate: if best match is too far, say so
+        CONFIDENCE_THRESHOLD = 1.5  # L2 distance; higher = less similar
+        if search_results[0]['score'] > CONFIDENCE_THRESHOLD:
+            return {
+                'answer': '⚠️ This information was not found in the current knowledge base (5 PDFs + postmortem Q&A). You may need to add relevant documents.',
+                'sources': search_results[:2],
+                'error': None
             }
         
         # Prepare context

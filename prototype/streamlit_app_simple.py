@@ -314,12 +314,9 @@ def main():
             # Show response time and source count
             st.markdown(f"*Response time: {processing_time:.1f}s • {len(result['sources'])} sources found*")
 
-            # Answer with styled box
-            st.markdown(f"""
-            <div style="background-color: #f0f7ff; border-left: 4px solid #1e3a5f; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
-            {result['answer']}
-            </div>
-            """, unsafe_allow_html=True)
+            # Answer with styled box — use st.markdown so bold/italic renders
+            with st.container(border=True):
+                st.markdown(result['answer'])
 
             # Sources
             st.markdown("### 📚 Sources")
