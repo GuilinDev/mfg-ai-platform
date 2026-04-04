@@ -322,30 +322,60 @@ class SimpleRAGSystem:
                 'text_preview': result['text'][:200] + "..." if len(result['text']) > 200 else result['text']
             })
         
-        # No LLM generation — return the top matching chunk directly
-        # This prevents hallucination entirely for spec lookup use cases
-        top = search_results[0]
-        top_text = top['text'].strip()
-        top_src = top['metadata']['source_file']
-        top_page = top['metadata']['page_number']
-
-        # Clean up boilerplate Apple header if present
-        header_end = top_text.find('Rev: E')
-        if header_end != -1:
-            top_text = top_text[header_end + 6:].strip()
-
-        # Strip Q&A format — remove the "**Q: ...**" line, keep only the answer
         import re
-        top_text = re.sub(r'\*\*Q:.*?\*\*\s*', '', top_text, flags=re.DOTALL).strip()
-        # Also clean plain "Q: ..." prefix
-        top_text = re.sub(r'^Q:.*?\n', '', top_text).strip()
 
-        # Truncate to ~400 chars, cut at sentence boundary
-        if len(top_text) > 400:
-            cutoff = top_text.rfind('.', 0, 400)
-            top_text = top_text[:cutoff + 1] if cutoff > 50 else top_text[:400]
+        def clean_chunk(text: str, src: str, page) -> str:
+            """Strip boilerplate and return clean answer text."""
+            t = text.strip()
+            # Remove Apple header boilerplate
+            idx = t.find('Rev: E')
+            if idx != -1:
+                t = t[idx + 6:].strip()
+            # Strip Q: line, keep A: value
+            t = re.sub(r'\*\*Q:.*?\*\*\s*', '', t, flags=re.DOTALL).strip()
+            t = re.sub(r'^Q:.*\n?', '', t, flags=re.MULTILINE).strip()
+            # Truncate at sentence boundary ~400 chars
+            if len(t) > 400:
+                cutoff = t.rfind('.', 0, 400)
+                t = t[:cutoff + 1] if cutoff > 50 else t[:400]
+            return t
 
-        answer = f"{top_text}\n\n📄 Source: {top_src}, Page {top_page}"
+        # Detect comparison / multi-fact questions
+        comparison_keywords = ['compare', 'difference', 'vs', 'versus', 'p1 and p2',
+                               'p2 and p1', 'both', 'all', 'each', 'list']
+        is_comparison = any(kw in question.lower() for kw in comparison_keywords)
+
+        if is_comparison:
+            # Gather top-3 chunks and combine Q&A answers
+            parts = []
+            seen = set()
+            for r in search_results[:3]:
+                t = r['text'].strip()
+                # Extract A: value from Q&A chunks
+                a_match = re.search(r'A:\s*(.+)', t)
+                q_match = re.search(r'Q:\s*(.+)', t)
+                if a_match:
+                    q_text = q_match.group(1).strip() if q_match else ''
+                    a_text = a_match.group(1).strip()
+                    entry = f"• {q_text}: **{a_text}**" if q_text else f"• {a_text}"
+                    if a_text not in seen:
+                        parts.append(entry)
+                        seen.add(a_text)
+                else:
+                    cleaned = clean_chunk(t, r['metadata']['source_file'], r['metadata']['page_number'])
+                    if cleaned not in seen:
+                        parts.append(cleaned)
+                        seen.add(cleaned)
+            answer = '\n'.join(parts) if parts else clean_chunk(
+                search_results[0]['text'], search_results[0]['metadata']['source_file'],
+                search_results[0]['metadata']['page_number'])
+            top_src = search_results[0]['metadata']['source_file']
+            top_page = search_results[0]['metadata']['page_number']
+            answer += f"\n\n📄 Source: {top_src}"
+        else:
+            top = search_results[0]
+            answer = clean_chunk(top['text'], top['metadata']['source_file'], top['metadata']['page_number'])
+            answer += f"\n\n📄 Source: {top['metadata']['source_file']}, Page {top['metadata']['page_number']}"
 
         return {
             'answer': answer,

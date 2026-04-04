@@ -341,30 +341,13 @@ def main():
                         source_label = f"📄 {doc_name}"
 
                     with st.expander(source_label, expanded=(i == 0)):
-                        # Source metadata
-                        col1, col2 = st.columns([2, 1])
-                        with col1:
-                            st.markdown(f"**Document:** {doc_name}")
-                            if is_pdf:
-                                st.markdown(f"**Page:** {page_num}")
-                            elif is_ppt_extract:
-                                st.markdown(f"**Slide:** {page_num}")
-
-                        # Render source document page as image (for PDFs)
+                        # Render PDF page image
                         if is_pdf:
-                            st.markdown("---")
-                            st.markdown("**📖 Source Page Preview:**")
                             if not render_pdf_page_image(source_file, page_num):
                                 st.caption("Page preview not available")
 
-                        # For PPT extractions, show info about the slide
-                        elif is_ppt_extract:
-                            st.markdown("---")
-                            render_ppt_slide_info(source_file, page_num)
-
-                        # Show text excerpt
-                        st.markdown("---")
-                        st.markdown("**📝 Relevant Text Excerpt:**")
+                        # Show text excerpt (concise, no redundant headers)
+                        st.markdown("**Relevant excerpt:**")
                         st.text(source['text_preview'])
 
                         # Show full text in a collapsible section
