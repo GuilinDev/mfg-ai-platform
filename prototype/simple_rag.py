@@ -325,21 +325,19 @@ class SimpleRAGSystem:
         context = "\\n\\n---\\n\\n".join(context_texts)
         
         # Create prompt
-        prompt = f"""You are a manufacturing expert analyzing technical specifications.
-Based on the provided context documents, give a concise, direct answer to the question.
+        prompt = f"""You are a technical document assistant. Your ONLY job is to extract and quote relevant information from the context below.
 
-Context:
+CONTEXT (source documents):
 {context}
 
-Question: {question}
+QUESTION: {question}
 
-Instructions:
-- Give ONE clear, concise answer. Do NOT repeat the same information multiple times.
-- ONLY use information from the provided context. Do NOT use outside knowledge.
-- If the answer is not in the context, say "This information was not found in the available documents."
-- Include exact values and units when available (e.g., "4-39 µm").
-- Cite the source document name and page number once at the end.
-- Keep your answer under 150 words.
+STRICT RULES:
+1. ONLY quote text that appears VERBATIM in the context above. Do NOT invent, infer, or generate any new content.
+2. If the exact answer is present, quote it directly and state which document/page it came from.
+3. If the answer is NOT clearly stated in the context, say exactly: "This information was not found in the provided documents."
+4. Do NOT create section numbers, headings, or structure that doesn't exist in the context.
+5. Maximum 3 sentences total.
 
 Answer:"""
 
@@ -348,11 +346,11 @@ Answer:"""
             response = self.groq_client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
                 messages=[
-                    {"role": "system", "content": "You are a concise manufacturing expert assistant. Never repeat the same fact more than once."},
+                    {"role": "system", "content": "You are a strict document extraction assistant. You only quote text that exists verbatim in the provided context. You never generate, infer, or fabricate content."},
                     {"role": "user", "content": prompt}
                 ],
-                temperature=0.1,
-                max_tokens=400
+                temperature=0.0,
+                max_tokens=300
             )
             
             answer = response.choices[0].message.content
