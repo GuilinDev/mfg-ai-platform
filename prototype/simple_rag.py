@@ -334,6 +334,12 @@ class SimpleRAGSystem:
         if header_end != -1:
             top_text = top_text[header_end + 6:].strip()
 
+        # Strip Q&A format — remove the "**Q: ...**" line, keep only the answer
+        import re
+        top_text = re.sub(r'\*\*Q:.*?\*\*\s*', '', top_text, flags=re.DOTALL).strip()
+        # Also clean plain "Q: ..." prefix
+        top_text = re.sub(r'^Q:.*?\n', '', top_text).strip()
+
         # Truncate to ~400 chars, cut at sentence boundary
         if len(top_text) > 400:
             cutoff = top_text.rfind('.', 0, 400)
